@@ -47,7 +47,7 @@ assert(SMODS.load_file("jokers/common/GivewaySign.lua"))()
 assert(SMODS.load_file("jokers/common/CandyWrapper.lua"))()
 assert(SMODS.load_file("jokers/common/MutantJoker.lua"))()
 assert(SMODS.load_file("jokers/common/CrumpledBanknote.lua"))()
--- assert(SMODS.load_file("jokers/common/Chalks.lua"))()
+assert(SMODS.load_file("jokers/common/Chalks.lua"))()
 
 -- Uncommon
 assert(SMODS.load_file("jokers/uncommon/ColoredBag.lua"))()
