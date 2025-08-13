@@ -47,7 +47,7 @@ assert(SMODS.load_file("jokers/common/GivewaySign.lua"))()
 assert(SMODS.load_file("jokers/common/CandyWrapper.lua"))()
 assert(SMODS.load_file("jokers/common/MutantJoker.lua"))()
 assert(SMODS.load_file("jokers/common/CrumpledBanknote.lua"))()
-assert(SMODS.load_file("jokers/common/Chalks.lua"))()
+-- assert(SMODS.load_file("jokers/common/Chalks.lua"))()
 
 -- Uncommon
 assert(SMODS.load_file("jokers/uncommon/ColoredBag.lua"))()
@@ -57,10 +57,10 @@ assert(SMODS.load_file("jokers/uncommon/Dinosaur.lua"))()
 assert(SMODS.load_file("jokers/uncommon/BlackClover.lua"))()
 
 -- Rare
-assert(SMODS.load_file("jokers/rare/CrystalJoker.lua"))()
-assert(SMODS.load_file("jokers/rare/Trinket.lua"))()
-assert(SMODS.load_file("jokers/rare/TheGoddess.lua"))()
-assert(SMODS.load_file("jokers/rare/Pocket.lua"))()
-assert(SMODS.load_file("jokers/rare/PlanetsParade.lua"))()
+-- assert(SMODS.load_file("jokers/rare/CrystalJoker.lua"))()
+-- assert(SMODS.load_file("jokers/rare/Trinket.lua"))()
+-- assert(SMODS.load_file("jokers/rare/TheGoddess.lua"))()
+-- assert(SMODS.load_file("jokers/rare/Pocket.lua"))()
+-- assert(SMODS.load_file("jokers/rare/PlanetsParade.lua"))()
 
 -- Legendary

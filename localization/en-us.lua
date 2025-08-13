@@ -211,7 +211,7 @@ return {
             },
 			
 			j_dentalion_crumpledbanknote={
-                name = "Crumpled Blanknote",
+                name = "Crumpled Banknote",
                 text = {
                     "Changes its {C:attention}sell value{} to a",
 					"random one from {C:money}$#1#{} to {C:money}$#2#{}",
