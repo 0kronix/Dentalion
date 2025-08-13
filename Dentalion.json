@@ -1,0 +1,16 @@
+{
+	"id": "Dentalion",
+	"name": "Dentalion",
+	"display_name": "Dentalion",
+	"author": ["Okronix"],
+	"description": "Adds new interesting content in *mostly* vanilla style",
+	"prefix": "dentalion",
+	"main_file": "main.lua",
+	"priority": 0,
+	"badge_colour": "483D8B",
+	"version": "1.0.0",
+	"dependencies": [
+		"Steamodded (>=1.*)", 
+		"Lovely (>=0.6)"
+		]
+}
