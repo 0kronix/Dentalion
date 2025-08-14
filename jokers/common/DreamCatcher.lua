@@ -24,7 +24,7 @@ SMODS.Joker {
 	end,
 
     calculate = function(self, card, context)
-		if context.before and not context.repetition and not context.blueprintthen then
+		if context.before and not context.repetition and not context.blueprint then
 			if #context.full_hand == 1 and (context.full_hand[1]:get_id() == 2 or context.full_hand[1]:get_id() == 3) then
 				if pseudorandom("dreamcatcher") < G.GAME.probabilities.normal / card.ability.extra.odds and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
 					G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1

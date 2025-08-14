@@ -227,6 +227,35 @@ return {
                     "into {C:attention}Wild Card{}"
                 },
             },
+
+            j_dentalion_piechart={
+                name = "Pie Chart",
+                text = {
+                    "Divide {C:money}dollars{} by {C:attention}4{} after",
+                    "selecting {C:attention}Boss Blind{}. This joker gains",
+                    "a {C:mult}+1 Mult{} for each {C:money}dollar{} lost",
+                    "{C:inactive}(No more than 20 at once)",
+                    "{C:inactive}(Currently {C:mult}+#1#{}{C:inactive})"
+                },
+            },
+
+            j_dentalion_snakesnladders={
+                name = "Snakes&Ladders",
+                text = {
+                    "A hand is considered to",
+                    "contain a {C:attention}Straight{}, if it",
+                    "contains scored cards with",
+                    "a difference in ranks of {C:attention}5{}",
+                },
+            },
+
+            j_dentalion_devilish={
+                name = "Devilish",
+                text = {
+                    "Using {C:tarot}Death{} {C:red}destroy{} {C:attention}2{}",
+                    "random cards in {C:attention}full deck",
+                },
+            },
         },
 		Other = {
 			palindrome = {
@@ -234,7 +263,7 @@ return {
                 text = {
                     "Multi-digit number that is",
                     "{C:attention}unchanged{} when reversed",
-                    "{C:inactive}e.g 33, 151, 3003{}"
+                    "{C:inactive}e.g 11, 292, 3443{}"
                 }
             },
 		}

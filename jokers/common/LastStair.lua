@@ -19,7 +19,7 @@ SMODS.Joker {
 		if context.destroying_card then
 			local eval = evaluate_poker_hand(context.full_hand)
 			if next(eval["Straight"]) then
-				return not context.destroying_card.ability.eternal
+				return true
 			end
 		end
 	end
