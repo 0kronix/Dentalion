@@ -290,16 +290,22 @@ return {
             j_dentalion_door={
                 name = "Door",
                 text = {
-                    "Gains {X:chips,C:white}X0.25{} Chips each round.",
-                    "Loses {X:chips,C:white}X0.5{} each {C:green}reroll{} in the {C:attention}Shop{}",
+                    "Gains {X:chips,C:white}X#2#{} Chips each round.",
+                    "Loses {X:chips,C:white}X#3#{} each {C:green}reroll{} in the {C:attention}Shop{}",
                     "{C:inactive}(cannot be less than {X:chips,C:white}X0.5{}{C:inactive})",
                     "{C:inactive}(Currently {X:chips,C:white}X#1#{}{C:inactive})"
                 },
             },
+
+            j_dentalion_bipolarjoker={
+                name = "Bipolar Joker",
+                text = {
+                    "{C:green}#1# in #2#{} chance to {C:green}decrease{} or {C:red}increase{}",
+                    "the score requirement of the",
+                    "current {C:attention}Blind{} by {C:attention}#3#%"
+                },
+            },
         },
-
-
-
 
 
 		Other = {

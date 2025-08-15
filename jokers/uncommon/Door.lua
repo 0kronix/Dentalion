@@ -11,15 +11,15 @@ SMODS.Joker {
     unlocked = true,
     discovered = true,
 	
-    config = { extra = { cur_xchips = 1 } },
+    config = { extra = { cur_xchips = 1, mod_xchips = 0.25 } },
 
     loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.cur_xchips } }
+		return { vars = { card.ability.extra.cur_xchips, card.ability.extra.mod_xchips, card.ability.extra.mod_xchips * 2 } }
 	end,
 
     calculate = function(self, card, context)
     	if context.setting_blind then
-            card.ability.extra.cur_xchips = card.ability.extra.cur_xchips + 0.25
+            card.ability.extra.cur_xchips = card.ability.extra.cur_xchips + card.ability.extra.mod_xchips
             return {
                 message = 'Upgrade!',
                 card = card,
@@ -27,12 +27,14 @@ SMODS.Joker {
             }
         end
         if context.reroll_shop then
-            card.ability.extra.cur_xchips = math.min(0.5, card.ability.extra.cur_xchips - 0.5)
-            return {
-                message = 'Degrade!',
-                card = card,
-                colour = G.C.CHIPS
-            }
+            if card.ability.extra.cur_xchips >= 0.5 then
+                card.ability.extra.cur_xchips = math.max(0.5, card.ability.extra.cur_xchips - card.ability.extra.mod_xchips * 2)
+                return {
+                    message = 'Degrade!',
+                    card = card,
+                    colour = G.C.CHIPS
+                }
+            end
         end
         if context.joker_main then
             return {
