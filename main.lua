@@ -34,6 +34,14 @@ SMODS.Atlas{
     py = 95
 }
 
+-- Legendary
+SMODS.Atlas{
+    key = 'legendary-jokers',
+    path = 'legendary-jokers.png',
+    px = 71,
+    py = 95
+}
+
 -- Load Jimbos
 -- Common
 assert(SMODS.load_file("jokers/common/DreamCatcher.lua"))()
@@ -73,3 +81,4 @@ assert(SMODS.load_file("jokers/rare/Pocket.lua"))()
 assert(SMODS.load_file("jokers/rare/PlanetsParade.lua"))()
 
 -- Legendary
+assert(SMODS.load_file("jokers/legendary/Marbas.lua"))()

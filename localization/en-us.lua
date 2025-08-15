@@ -313,6 +313,15 @@ return {
                     "played {C:attention}Stone Cards"
                 },
             },
+
+            j_dentalion_marbas={
+                name = "Marbas",
+                text = {
+                    "{C:green}#1# in #2#{} chance to apply {C:dark_edition}Negative{}",
+                    "to a {C:attention}random{} Joker after",
+                    "defeating the {C:attention}Boss Blind{}"
+                },
+            },
         },
 
 

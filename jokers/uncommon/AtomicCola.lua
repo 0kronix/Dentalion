@@ -12,6 +12,7 @@ SMODS.Joker {
     discovered = true,
 
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = 'tag_boss', set = 'Tag' }
 		return { vars = { localize{type = 'name_text', set = 'Tag', key = 'tag_boss', nodes = {}} } }
 	end,
 
