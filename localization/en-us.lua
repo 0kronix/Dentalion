@@ -305,6 +305,14 @@ return {
                     "current {C:attention}Blind{} by {C:attention}#3#%"
                 },
             },
+
+            j_dentalion_lapizore={
+                name = "Lapiz Ore",
+                text = {
+                    "Add a {C:blue}Blue Seal{} to",
+                    "played {C:attention}Stone Cards"
+                },
+            },
         },
 
 

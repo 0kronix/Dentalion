@@ -1,0 +1,40 @@
+SMODS.Joker {
+    key = "lapizore",
+    atlas = 'uncommon-jokers',
+    pos = {x = 2, y = 2},
+
+    cost = 6,
+    rarity = 2,
+    blueprint_compat = false,
+    eternal_compat = true,
+    perishable_compat = true,
+    unlocked = true,
+    discovered = true,
+	
+    config = { extra = { } },
+
+    loc_vars = function(self, info_queue, card)
+		return { vars = { } }
+	end,
+
+    calculate = function(self, card, context)
+        if context.after then
+            if context.scoring_hand and context.full_hand and #context.scoring_hand > 0 and #context.full_hand > 0 then
+                for _, played_card in ipairs(context.full_hand) do
+                    if played_card.ability.name == 'Stone Card' then
+                        G.E_MANAGER:add_event(Event({
+                            trigger = 'after',
+                            delay = 0.1,
+                            func = function()
+                                played_card:set_seal("Blue", nil, true)
+                                return true
+                            end
+                        }))
+                        delay(0.5)
+                    end
+                end
+                delay(1)
+            end
+        end
+	end
+}
