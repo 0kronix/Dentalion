@@ -275,6 +275,7 @@ return {
                     "{C:inactive}(Currently {C:mult}+#1#{}{C:inactive})"
                 },
             },
+
             j_dentalion_murdermystery={
                 name = "Murder Mystery",
                 text = {
@@ -283,6 +284,16 @@ return {
                     "times in a row, this joker gains {X:mult,C:white}X#2#{} Mult",
                     "{C:inactive}(Currently {X:mult,C:white}X#1#{}{C:inactive}, #3#/3)",
                     "{C:inactive}#4#"
+                },
+            },
+
+            j_dentalion_door={
+                name = "Door",
+                text = {
+                    "Gains {X:chips,C:white}X0.25{} Chips each round.",
+                    "Loses {X:chips,C:white}X0.5{} each {C:green}reroll{} in the {C:attention}Shop{}",
+                    "{C:inactive}(cannot be less than {X:chips,C:white}X0.5{}{C:inactive})",
+                    "{C:inactive}(Currently {X:chips,C:white}X#1#{}{C:inactive})"
                 },
             },
         },
