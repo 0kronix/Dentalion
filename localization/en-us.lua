@@ -233,7 +233,7 @@ return {
                 text = {
                     "Divide {C:money}dollars{} by {C:attention}4{} after",
                     "selecting {C:attention}Boss Blind{}. This joker gains",
-                    "a {C:mult}+1 Mult{} for each {C:money}dollar{} lost",
+                    "{C:mult}+1 Mult{} for each {C:money}dollar{} lost",
                     "{C:inactive}(No more than 20 at once)",
                     "{C:inactive}(Currently {C:mult}+#1#{}{C:inactive})"
                 },
@@ -271,8 +271,18 @@ return {
                 name = "Fare Joker",
                 text = {
                     "At end of the round, this joker gets",
-                    "{C:mult}+Mult{} equal to its {C:money}selling value",
+                    "{C:mult}+Mult{} equal to half of its {C:money}selling value",
                     "{C:inactive}(Currently {C:mult}+#1#{}{C:inactive})"
+                },
+            },
+            j_dentalion_murdermystery={
+                name = "Murder Mystery",
+                text = {
+                    "{C:red}Destroys{} first played card each round.",
+                    "If a {C:attention}face{} card has been {C:red}destroyed{} three",
+                    "times in a row, this joker gains {X:mult,C:white}X#2#{} Mult",
+                    "{C:inactive}(Currently {X:mult,C:white}X#1#{}{C:inactive}, #3#/3)",
+                    "{C:inactive}#4#"
                 },
             },
         },
