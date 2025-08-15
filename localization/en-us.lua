@@ -256,7 +256,31 @@ return {
                     "random cards in {C:attention}full deck",
                 },
             },
+
+            j_dentalion_alephzero={
+                name = "Aleph Zero",
+                text = {
+                    "If the {C:attention}leftmost{} card {C:attention}rank{} in {C:attention}played hand{}",
+                    "is at least three times of the {C:attention}rightmost{}",
+                    "card {C:attention}rank{}, turn the right card into",
+                    "the left one after scoring",
+                },
+            },
+
+            j_dentalion_farejoker={
+                name = "Fare Joker",
+                text = {
+                    "At end of the round, this joker gets",
+                    "{C:mult}+Mult{} equal to its {C:money}selling value",
+                    "{C:inactive}(Currently {C:mult}+#1#{}{C:inactive})"
+                },
+            },
         },
+
+
+
+
+
 		Other = {
 			palindrome = {
                 name = "Palindrome",

@@ -48,7 +48,20 @@ SMODS.Joker {
 			                return true
 			            end
 			        }))
-			        delay(0.5)
+			        delay(0.2)
+			        G.E_MANAGER:add_event(Event({
+            			trigger = 'after',
+            			delay = 0.15,
+            			func = function()
+            				context.full_hand[1]:flip()
+                			context.full_hand[crads]:flip()
+                			play_sound('card1')
+			                context.full_hand[1]:juice_up(0.3, 0.3)
+			                context.full_hand[crads]:juice_up(0.3, 0.3)
+			                return true
+			            end
+			        }))
+			        delay(1.7)
 				end
 			end
 		end

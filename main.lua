@@ -59,6 +59,7 @@ assert(SMODS.load_file("jokers/uncommon/PieChart.lua"))()
 assert(SMODS.load_file("jokers/uncommon/SnakesNLadders.lua"))()
 assert(SMODS.load_file("jokers/uncommon/Devilish.lua"))()
 assert(SMODS.load_file("jokers/uncommon/AlephZero.lua"))()
+assert(SMODS.load_file("jokers/uncommon/FareJoker.lua"))()
 
 -- Rare
 assert(SMODS.load_file("jokers/rare/CrystalJoker.lua"))()
