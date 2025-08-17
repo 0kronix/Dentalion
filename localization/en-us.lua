@@ -1,31 +1,6 @@
 return {
     descriptions = {
         Joker = {
-
-            j_dentalion_jokerjoker = {
-                name = "JokerJoker",
-                text = {
-                    "{C:red,s:1.1}+#1#{} Mult"
-                }
-            },
-			
-			j_dentalion_mitosis = {
-                name = "Mitosis",
-                text = {
-                    "{C:mult}+#1#{} Mult for each {C:attention}Double Tag",
-                    "held",
-                    "{C:inactive}(Currently {C:mult}+#2#{} {C:inactive}Mult)"
-                }
-            },
-			
-			j_dentalion_giantcarrot = {
-                name = "Giant Carrot",
-                text = {
-                    "{C:chips}+#1#{} Chips if the largest card",
-					"in the hand is a {C:attention}number{} and",
-			        "not an {C:attention}Ace"
-                }
-            },
 			
 			j_dentalion_coloredbag={
                 name = "Colored Bag",
@@ -57,8 +32,9 @@ return {
 			j_dentalion_firefly={
                 name = "Firefly",
                 text = {
-                    "Each card gives {C:chips}+#1#{} Chips",
-					"when scored"
+                    "Played {C:attention}cards{}",
+                    "permanently gain",
+                    "{C:chips}+#1#{} Chips when scored"
                 },
             },
 			
@@ -320,6 +296,16 @@ return {
                     "{C:green}#1# in #2#{} chance to apply {C:dark_edition}Negative{}",
                     "to a {C:attention}random{} Joker after",
                     "defeating the {C:attention}Boss Blind{}"
+                },
+            },
+
+            j_dentalion_milkyway={
+                name = "Milky Way",
+                text = {
+                    "Once per round, used {C:planet}Planet{} card",
+                    "give permanent {C:chips}+#1#{} Chips",
+                    "to {C:attention}random{} card in hand",
+                    "{C:inactive}#2#"
                 },
             },
         },
