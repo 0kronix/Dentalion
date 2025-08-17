@@ -21,9 +21,8 @@ SMODS.Joker {
     	if context.end_of_round and not context.blueprint and context.cardarea == G.jokers then
             card.ability.extra.cur_mult = card.ability.extra.cur_mult + math.floor(card.sell_cost / 2)
             return {
-                message = 'Upgrade!',
-                card = card,
-                colour = G.C.MULT
+                extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT },
+                card = card
             }
         end
         if context.joker_main then

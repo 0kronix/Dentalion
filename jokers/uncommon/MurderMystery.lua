@@ -45,9 +45,8 @@ SMODS.Joker {
                     card.ability.extra.active = false
                     delay(1)
                     return {
-                        message = 'Upgrade!',
-                        card = card,
-                        colour = G.C.MULT
+                        extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT },
+                        card = card
                     }
                 end
             else

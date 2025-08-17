@@ -81,6 +81,7 @@ assert(SMODS.load_file("jokers/rare/Trinket.lua"))()
 assert(SMODS.load_file("jokers/rare/TheGoddess.lua"))()
 assert(SMODS.load_file("jokers/rare/Pocket.lua"))()
 assert(SMODS.load_file("jokers/rare/PlanetsParade.lua"))()
+assert(SMODS.load_file("jokers/rare/Obsidian.lua"))()
 
 -- Legendary
 assert(SMODS.load_file("jokers/legendary/Marbas.lua"))()

@@ -303,9 +303,19 @@ return {
                 name = "Milky Way",
                 text = {
                     "Once per round, used {C:planet}Planet{} card",
-                    "give permanent {C:chips}+#1#{} Chips",
+                    "gives permanent {C:chips}+#1#{} Chips",
                     "to {C:attention}random{} card in hand",
                     "{C:inactive}#2#"
+                },
+            },
+
+            j_dentalion_obsidian={
+                name = "Obsidian",
+                text = {
+                    "Gains {C:chips}+#2#{} Chips for each {C:attention}dark suit{}",
+                    "card scored. Every {C:attention}light suit{} scored",
+                    "card turns into {C:attention}dark suit{} after scoring",
+                    "{C:inactive}(Currently {C:chips}+#1#{}{C:inactive})"
                 },
             },
         },
@@ -318,6 +328,28 @@ return {
                     "Multi-digit number that is",
                     "{C:attention}unchanged{} when reversed",
                     "{C:inactive}e.g 11, 292, 3443{}"
+                }
+            },
+
+            dark_suits = {
+                name = "Dark Suits",
+                text = {
+                    "{C:spades}Spades{} and {C:clubs}Clubs{}"
+                }
+            },
+
+            light_suits = {
+                name = "Light Suits",
+                text = {
+                    "{C:hearts}Hearts{} and {C:diamonds}Diamonds{}"
+                }
+            },
+
+            suits_change = {
+                name = "Change of suits",
+                text = {
+                    "{C:hearts}Hearts{} into {C:spades}Spades{}",
+                    "{C:diamonds}Diamonds{} into {C:clubs}Clubs{}"
                 }
             },
 		}
