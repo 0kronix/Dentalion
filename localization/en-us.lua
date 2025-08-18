@@ -318,6 +318,42 @@ return {
                     "{C:inactive}(Currently {C:chips}+#1#{}{C:inactive})"
                 },
             },
+
+            j_dentalion_pegasus={
+                name = "Pegasus",
+                text = {
+                    "Gives {X:mult,C:white}X#1#{} Mult.",
+                    "{C:attention}#2#{}, {C:attention}#3#{}, {C:attention}#4#{} or",
+                    "{C:attention}#5#{} are debuffed"
+                },
+            },
+
+            j_dentalion_partner={
+                name = "Partner",
+                text = {
+                    "This joker gains {C:chips}+#1#{} and {C:mult}+#2#{}",
+                    "then {C:attention}#3#{} is discarded",
+                    "{C:inactive}(Currently {C:chips}+#4#{}{C:inactive} and {C:mult}+#5#{}{C:inactive})"
+                },
+            },
+
+            j_dentalion_dentalion={
+                name = "Dentalion",
+                text = {
+                    "This joker gains {X:mult,C:white}X#2#{} Mult",
+                    "every {C:money}$20{} of solded cards",
+                    "{C:inactive}(Currently {X:mult,C:white}X#1#{}{C:inactive}, {C:money}$#3#/$20{}{C:inactive})"
+                },
+            },
+
+            j_dentalion_trafficlights={
+                name = "Traffic Lights",
+                text = {
+                    "Change mod each round: {C:chips}+#1#{} Chips,",
+                    "{C:mult}+#2#{} Mult or {C:money}$#3#{} at end of round",
+                    "{C:inactive}(Currently: {}#4#{C:inactive})"
+                },
+            },
         },
 
 

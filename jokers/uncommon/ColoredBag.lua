@@ -13,15 +13,13 @@ SMODS.Joker {
 
     loc_vars = function(self, info_queue, card)
 		return { vars = { 
-					localize('Two Pair', 'poker_hands'),
-					localize('Full House', 'poker_hands'),
-					localize('Flush House', 'poker_hands')
+					localize('Two Pair', 'poker_hands')
 				}
 		}
 	end,
 
     calculate = function(self, card, context)
-		if context.before and next(context.poker_hands['Two Pair']) and not next(context.poker_hands['Full House']) and not next(context.poker_hands['Flush House']) and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+		if context.before and context.scoring_name == "Two Pair" and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
 			local suits = { ['Hearts'] = 0, ['Diamonds'] = 0, ['Spades'] = 0, ['Clubs'] = 0 }
             for i = 1, #context.scoring_hand do
                 if context.scoring_hand[i].ability.name ~= 'Wild Card' then

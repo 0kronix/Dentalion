@@ -57,7 +57,8 @@ assert(SMODS.load_file("jokers/common/MutantJoker.lua"))()
 assert(SMODS.load_file("jokers/common/CrumpledBanknote.lua"))()
 assert(SMODS.load_file("jokers/common/Chalks.lua"))()
 assert(SMODS.load_file("jokers/common/MilkyWay.lua"))()
-
+assert(SMODS.load_file("jokers/common/Partner.lua"))()
+assert(SMODS.load_file("jokers/common/TrafficLights.lua"))()
 
 -- Uncommon
 assert(SMODS.load_file("jokers/uncommon/ColoredBag.lua"))()
@@ -82,6 +83,8 @@ assert(SMODS.load_file("jokers/rare/TheGoddess.lua"))()
 assert(SMODS.load_file("jokers/rare/Pocket.lua"))()
 assert(SMODS.load_file("jokers/rare/PlanetsParade.lua"))()
 assert(SMODS.load_file("jokers/rare/Obsidian.lua"))()
+assert(SMODS.load_file("jokers/rare/Pegasus.lua"))()
 
 -- Legendary
 assert(SMODS.load_file("jokers/legendary/Marbas.lua"))()
+assert(SMODS.load_file("jokers/legendary/Dentalion.lua"))()
