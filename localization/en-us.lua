@@ -354,6 +354,22 @@ return {
                     "{C:inactive}(Currently: {}#4#{C:inactive})"
                 },
             },
+
+            j_dentalion_uroboros={
+                name = "Uroboros",
+                text = {
+                    "Gives {C:chips}+#1#{} Chips. Rettriger",
+                    "random amount of times"
+                },
+            },
+
+            j_dentalion_cryinggoblin={
+                name = "Crying Goblin",
+                text = {
+                    "{C:attention}Lucky Cards{} gives {C:chips}+#1#{}",
+                    "when failed to trigger"
+                },
+            },
         },
 
 
