@@ -323,7 +323,7 @@ return {
                 name = "Pegasus",
                 text = {
                     "Gives {X:mult,C:white}X#1#{} Mult.",
-                    "{C:attention}#2#{}, {C:attention}#3#{}, {C:attention}#4#{} or",
+                    "{C:attention}#2#{}, {C:attention}#3#{}, {C:attention}#4#{} and",
                     "{C:attention}#5#{} are debuffed"
                 },
             },
