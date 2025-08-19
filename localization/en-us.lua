@@ -370,6 +370,17 @@ return {
                     "when failed to trigger"
                 },
             },
+
+            j_dentalion_cyclops={
+                name = "Cyclops",
+                text = {
+                    "Set number of hands to {C:red}1{} at start",
+                    "of round. If more than {C:attention}5{} hands are",
+                    "removed, gives {C:attention}+1{} Joker Slot",
+                    "{C:inactive}(Once per Ante), #2#",
+                    "{C:inactive}(Currently: {}+#1#{C:inactive})"
+                },
+            },
         },
 
 
