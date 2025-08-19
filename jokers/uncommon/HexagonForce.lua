@@ -2,7 +2,6 @@ SMODS.Joker {
     key = "hexagonforce",
     atlas = 'uncommon-jokers',
     pos = {x = 2, y = 0},
-	soul_pos = {x = 0, y = 7},
 
     cost = 6,
     rarity = 2,

@@ -355,8 +355,8 @@ return {
                 },
             },
 
-            j_dentalion_uroboros={
-                name = "Uroboros",
+            j_dentalion_ouroboros={
+                name = "Ouroboros",
                 text = {
                     "Gives {C:chips}+#1#{} Chips. Rettriger",
                     "random amount of times"

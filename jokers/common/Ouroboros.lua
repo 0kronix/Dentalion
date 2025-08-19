@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "uroboros",
+    key = "ouroboros",
     atlas = 'common-jokers',
     pos = {x = 0, y = 3},
 
@@ -22,7 +22,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
 		if context.repetition_only or (context.retrigger_joker_check) then
-        	local ret = pseudorandom('uroboros', card.ability.extra.min_ret, card.ability.extra.max_ret)
+        	local ret = pseudorandom('ouroboros', card.ability.extra.min_ret, card.ability.extra.max_ret)
 	        if context.other_card == card then
 	            return {
 	                repetitions = ret,
