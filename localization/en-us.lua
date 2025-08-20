@@ -381,6 +381,35 @@ return {
                     "{C:inactive}(Currently: {}+#1#{C:inactive})"
                 },
             },
+
+            j_dentalion_sight={
+                name = "Sight",
+                text = {
+                    "Open {C:attention}#2#{} Booster Packs to",
+                    "create {C:attention}#3#{} random tags",
+                    "{C:inactive}(Once per Ante)",
+                    "{C:inactive}#4#, (#1#/#2#)"
+                },
+            },
+
+            j_dentalion_sparklingwater={
+                name = "Sparkling Water",
+                text = {
+                    "Skip {C:attention}#1#/#2#{} Booster Packs to create",
+                    "a random {C:spectral}Spectral{} card",
+                    "{S:1.1,C:red,E:2}self destructs{}"
+                },
+            },
+
+            j_dentalion_virus={
+                name = "Virus",
+                text = {
+                    "{C:green}#1# in #2#{} chance to {C:red}self destructs{}",
+                    "at end of round. Gains {X:mult,C:white}X1{} Mult and {C:green}+1",
+                    "{C:green}chance{} for each copy of themself you have",
+                    "{C:inactive}(Currently: {X:mult,C:white}X#3#{C:inactive})"
+                },
+            },
         },
 
 
