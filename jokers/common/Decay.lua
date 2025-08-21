@@ -5,7 +5,7 @@ SMODS.Joker {
 
     pixel_size = { w = 71, h = 52 },
 
-    cost = 4,
+    cost = 3,
     rarity = 1,
     blueprint_compat = false,
     eternal_compat = true,
@@ -22,7 +22,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
 		if context.destroying_card then
 			if pseudorandom("decay") < G.GAME.probabilities.normal / card.ability.extra.odds then
-				return not context.destroying_card.ability.eternal
+				return true
 			end
 		end
 	end

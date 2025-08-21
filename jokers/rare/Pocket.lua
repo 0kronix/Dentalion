@@ -3,7 +3,7 @@ SMODS.Joker {
     atlas = 'rare-jokers',
     pos = {x = 3, y = 0},
 
-    cost = 8,
+    cost = 9,
     rarity = 3,
     blueprint_compat = false,
     eternal_compat = true,
@@ -17,6 +17,10 @@ SMODS.Joker {
 		return { vars = { card.ability.extra.hand_size_mod, card.ability.extra.hand_size_need } }
 	end,
 
+	remove_from_deck = function(self, card, from_debuff)
+        G.hand:change_size(-card.ability.extra.hand_size_mod)
+    end,
+
     calculate = function(self, card, context)
 		if context.first_hand_drawn then
 			if #G.hand.cards < card.ability.extra.hand_size_need then
@@ -25,7 +29,7 @@ SMODS.Joker {
 				}
 			end
 		end
-		if context.selling_self then
+		if context.end_of_round then
 			G.hand:change_size(-card.ability.extra.hand_size_mod)
 		end
 	end

@@ -5,7 +5,7 @@ SMODS.Joker {
 
     pixel_size = { w = 71, h = 62 },
 
-    cost = 4,
+    cost = 3,
     rarity = 1,
     blueprint_compat = true,
     eternal_compat = true,

@@ -15,7 +15,8 @@ return {
 			j_dentalion_crystaljoker={
                 name = "Crystal Joker",
                 text = {
-                    "Retrigger all played {C:attention}Glass Card"
+                    "Retrigger all played {C:attention}Glass Card",
+                    "{C:attention}#1#{} additional times"
                 },
             },
 			
@@ -50,8 +51,9 @@ return {
 			j_dentalion_trinket={
                 name = "Trinket",
                 text = {
-                    "Gives {X:mult,C:white}X#1#{} Mult if",
-					"all consumable slots are filled"
+                    "Gives {X:mult,C:white}X#1#{} Mult if all",
+					"consumable slots are filled",
+                    "{C:inactive}#2#"
                 },
             },
 			
@@ -121,7 +123,7 @@ return {
                 name = "Bodyguard",
                 text = {
                     "{C:mult}+#1#{} Mult",
-					"{C:money}-$#2#{} every {C:attention}5{} rounds",
+					"{C:red}-$#2#{} every {C:attention}5{} rounds",
 					"{C:inactive}(Currently #3#/5)"
                 },
             },
@@ -234,7 +236,7 @@ return {
             },
 
             j_dentalion_alephzero={
-                name = "Aleph Zero",
+                name = "Aleph 0",
                 text = {
                     "If the {C:attention}leftmost{} card {C:attention}rank{} in {C:attention}played hand{}",
                     "is at least three times of the {C:attention}rightmost{}",
@@ -351,7 +353,7 @@ return {
                 text = {
                     "Change mod each round: {C:chips}+#1#{} Chips,",
                     "{C:mult}+#2#{} Mult or {C:money}$#3#{} at end of round",
-                    "{C:inactive}(Currently: {}#4#{C:inactive})"
+                    "{C:inactive}(Currently {}#4#{C:inactive})"
                 },
             },
 
@@ -378,7 +380,7 @@ return {
                     "of round. If more than {C:attention}5{} hands are",
                     "removed, gives {C:attention}+1{} Joker Slot",
                     "{C:inactive}(Once per Ante), #2#",
-                    "{C:inactive}(Currently: {}+#1#{C:inactive})"
+                    "{C:inactive}(Currently {}+#1#{C:inactive})"
                 },
             },
 
@@ -407,7 +409,7 @@ return {
                     "{C:green}#1# in #2#{} chance to {C:red}self destructs{}",
                     "at end of round. Gains {X:mult,C:white}X1{} Mult and {C:green}+1",
                     "{C:green}chance{} for each copy of themself you have",
-                    "{C:inactive}(Currently: {X:mult,C:white}X#3#{C:inactive})"
+                    "{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive})"
                 },
             },
 
@@ -416,6 +418,44 @@ return {
                 text = {
                     "{C:attention}Lucky Cards{} are {X:black,C:white}1.5{} times",
                     "more effective"
+                },
+            },
+
+            j_dentalion_phone={
+                name = "Phone",
+                text = {
+                    "Scored cards gives {C:chips}+Chips{}",
+                    "equal to the number of cards in",
+                    "{C:attention}full deck{} with the same suit"
+                },
+            },
+
+            j_dentalion_nahidwin={
+                name = "Nah I'd Win",
+                text = {
+                    "Gains {C:chips}+#1#{} if {C:attention}Blind{} is",
+                    "beaten in exactly {C:attention}2 hands{}",
+                    "{C:inactive}(Currently {C:chips}+#2#{}{C:inactive})"
+                },
+            },
+
+            j_dentalion_bugs={
+                name = "Bugs",
+                text = {
+                    "Gains {X:mult,C:white}X#1#{} at and of",
+                    "round, if you have {C:money}$10{} or less",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{}{C:inactive})"
+                },
+            },
+
+            j_dentalion_oracle={
+                name = "Oracle",
+                text = {
+                    "Using {C:attention}consumable{} {C:green}decrease{}",
+                    "score requirement of",
+                    "the current {C:attention}Blind{} by {C:attention}#1#%{}",
+                    "{C:inactive}Up to #2#%. (Currently {C:attention}#3#%{C:inactive})",
+                    "{C:inactive}#4#"
                 },
             },
         },

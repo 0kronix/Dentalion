@@ -4,7 +4,7 @@ SMODS.Joker {
     pos = {x = 1, y = 0},
     soul_pos = {x = 1, y = 1},
 
-    cost = 10,
+    cost = 20,
     rarity = 4,
     blueprint_compat = true,
     eternal_compat = true,
@@ -25,7 +25,7 @@ SMODS.Joker {
 	end,
 
     calculate = function(self, card, context)
-        if context.selling_card then
+        if context.selling_card and not context.blueprint then
             local card_sell = context.card.sell_cost
             card.ability.extra.cur_sell = card.ability.extra.cur_sell + card_sell
             if card.ability.extra.cur_sell >= 20 then

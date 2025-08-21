@@ -3,7 +3,7 @@ SMODS.Joker {
     atlas = 'uncommon-jokers',
     pos = {x = 0, y = 0},
 
-    cost = 6,
+    cost = 8,
     rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
@@ -15,7 +15,7 @@ SMODS.Joker {
 		return { vars = { 
 					localize('Two Pair', 'poker_hands')
 				}
-		}
+		    }
 	end,
 
     calculate = function(self, card, context)

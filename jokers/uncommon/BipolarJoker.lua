@@ -1,9 +1,9 @@
 SMODS.Joker {
     key = "bipolarjoker",
     atlas = 'uncommon-jokers',
-    pos = {x = 1, y = 2},
+    pos = {x = 2, y = 2},
 
-    cost = 6,
+    cost = 5,
     rarity = 2,
     blueprint_compat = false,
     eternal_compat = true,

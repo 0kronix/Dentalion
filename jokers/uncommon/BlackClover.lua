@@ -3,7 +3,7 @@ SMODS.Joker {
     atlas = 'uncommon-jokers',
     pos = {x = 4, y = 0},
 
-    cost = 6,
+    cost = 7,
     rarity = 2,
     blueprint_compat = false,
     eternal_compat = true,
@@ -20,33 +20,18 @@ SMODS.Joker {
     calculate = function(self, card, context)
 		if context.after and not context.blueprint and context.cardarea == G.jokers then
 			for i = 1, #context.scoring_hand do
-                if context.scoring_hand[i].ability.name ~= 'Wild Card' then
-					if context.scoring_hand[i]:is_suit('Clubs', true) then
-						if context.scoring_hand[i].set_ability then
-							G.E_MANAGER:add_event(Event({
-								trigger = 'before',
-								func = function()
-									context.scoring_hand[i]:juice_up()
-									context.scoring_hand[i]:set_ability(G.P_CENTERS.m_lucky)
-									return true
-								end
-							}))
-						end
+				if context.scoring_hand[i]:is_suit('Clubs', true) then
+					if context.scoring_hand[i].set_ability then
+						G.E_MANAGER:add_event(Event({
+							trigger = 'before',
+							func = function()
+								context.scoring_hand[i]:juice_up()
+								context.scoring_hand[i]:set_ability(G.P_CENTERS.m_lucky)
+								return true
+							end
+						}))
 					end
-				elseif context.scoring_hand[i].ability.name == 'Wild Card' then
-					if context.scoring_hand[i]:is_suit('Clubs', true) then
-						if context.scoring_hand[i].set_ability then
-							G.E_MANAGER:add_event(Event({
-								trigger = 'before',
-								func = function()
-									context.scoring_hand[i]:juice_up()
-									context.scoring_hand[i]:set_ability(G.P_CENTERS.m_lucky)
-									return true
-								end
-							}))
-						end
-					end
-                end
+				end
             end
 		end
 	end

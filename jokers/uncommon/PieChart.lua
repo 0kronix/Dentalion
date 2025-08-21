@@ -3,7 +3,7 @@ SMODS.Joker {
     atlas = 'uncommon-jokers',
     pos = {x = 0, y = 1},
 
-    cost = 6,
+    cost = 5,
     rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
@@ -23,6 +23,10 @@ SMODS.Joker {
           	if G.GAME.blind and G.GAME.blind.boss then
           		ease_dollars(-ease)
           		card.ability.extra.cur_mult = card.ability.extra.cur_mult + ease
+                return {
+                    message = localize('k_upgrade_ex'),
+                    colour = G.C.MULT
+                }
           	end
         end
         if context.joker_main then
