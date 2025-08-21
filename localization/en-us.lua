@@ -410,6 +410,14 @@ return {
                     "{C:inactive}(Currently: {X:mult,C:white}X#3#{C:inactive})"
                 },
             },
+
+            j_dentalion_blackcat={
+                name = "Black Cat",
+                text = {
+                    "{C:attention}Lucky Cards{} are {X:black,C:white}1.5{} times",
+                    "more effective"
+                },
+            },
         },
 
 
