@@ -52,8 +52,7 @@ return {
                 name = "Trinket",
                 text = {
                     "Gives {X:mult,C:white}X#1#{} Mult if all",
-					"consumable slots are filled",
-                    "{C:inactive}#2#"
+					"consumable slots are filled"
                 },
             },
 			

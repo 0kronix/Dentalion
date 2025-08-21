@@ -11,27 +11,15 @@ SMODS.Joker {
     unlocked = true,
     discovered = true,
 	
-    config = { extra = { xmult = 3, active = false } },
+    config = { extra = { xmult = 3 } },
 
     loc_vars = function(self, info_queue, card)
-    	if card.ability.extra.active then
-			return { vars = { card.ability.extra.xmult, "Active!" } }
-		else
-			return { vars = { card.ability.extra.xmult, "Inactive" } }
-		end
-	end,
-
-	update = function(self, card, dt)
-		if #G.consumeables.cards + G.GAME.consumeable_buffer >= G.consumeables.config.card_limit then
-			card.ability.extra.active = true
-		else
-			card.ability.extra.active = false
-		end
+		return { vars = { card.ability.extra.xmult } }
 	end,
 
     calculate = function(self, card, context)
 		if context.joker_main then
-			if card.ability.extra.active then
+			if #G.consumeables.cards + G.GAME.consumeable_buffer >= G.consumeables.config.card_limit then
 				return {
 					xmult = card.ability.extra.xmult,
 				}
