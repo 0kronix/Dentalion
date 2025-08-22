@@ -9,6 +9,13 @@ SMODS.Atlas {
   path = 'icon.png'
 }
 
+SMODS.Atlas {
+    key = "decks",
+    path = "decks.png",
+    px = 71,
+    py = 95
+}
+
 -- Jokers Atlases
 -- Common
 SMODS.Atlas{
@@ -40,6 +47,31 @@ SMODS.Atlas{
     path = 'legendary-jokers.png',
     px = 71,
     py = 95
+}
+
+
+-- Load Decks
+SMODS.Back {
+    key = "fashion",
+    atlas = "decks",
+    pos = { x = 0, y = 0},
+    config = {
+        joker_slot = -2,
+        dollars = 6
+    },
+    apply = function(self)
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                if G.jokers then
+                    local card = create_card("Joker", G.jokers, true, 4, nil, nil, nil, "")
+                    card:add_to_deck()
+                    card:start_materialize()
+                    G.jokers:emplace(card)
+                    return true
+                end
+            end,
+        }))
+    end
 }
 
 -- Load Jimbos
@@ -83,6 +115,7 @@ assert(SMODS.load_file("jokers/uncommon/LapizOre.lua"))()
 assert(SMODS.load_file("jokers/uncommon/Sight.lua"))()
 assert(SMODS.load_file("jokers/uncommon/Virus.lua"))()
 assert(SMODS.load_file("jokers/uncommon/BlackCat.lua"))()
+assert(SMODS.load_file("jokers/uncommon/FreakJoker.lua"))()
 
 -- Rare
 assert(SMODS.load_file("jokers/rare/CrystalJoker.lua"))()
@@ -95,6 +128,7 @@ assert(SMODS.load_file("jokers/rare/Pegasus.lua"))()
 assert(SMODS.load_file("jokers/rare/Cyclops.lua"))()
 assert(SMODS.load_file("jokers/rare/Phone.lua"))()
 assert(SMODS.load_file("jokers/rare/Bugs.lua"))()
+assert(SMODS.load_file("jokers/rare/DarkPeasant.lua"))()
 
 -- Legendary
 assert(SMODS.load_file("jokers/legendary/Marbas.lua"))()

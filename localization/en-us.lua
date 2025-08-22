@@ -1,7 +1,18 @@
 return {
     descriptions = {
+        Back = {
+            b_dentalion_fashion = {
+                name = "Fashion Deck",
+                text = {
+                    "Starts with random",
+                    "{C:legendary}Legendary{} Joker",
+                    "and extra {C:money}$6",
+                    "{C:attention}-2{} Joker Slot"
+                },
+            },
+        },
+
         Joker = {
-			
 			j_dentalion_coloredbag={
                 name = "Colored Bag",
                 text = {
@@ -455,6 +466,25 @@ return {
                     "the current {C:attention}Blind{} by {C:attention}#1#%{}",
                     "{C:inactive}Up to #2#%. (Currently {C:attention}#3#%{C:inactive})",
                     "{C:inactive}#4#"
+                },
+            },
+
+            j_dentalion_darkpeasant={
+                name = "Dark Peasant",
+                text = {
+                    "{C:attention}+1{} hand size for each",
+                    "{C:green}reroll{} in the shop (up to +#2#)",
+                    "{C:inactive}Resets each round",
+                    "{C:inactive}(Currently {C:attention}+#1#{}{C:inactive})"
+                },
+            },
+
+            j_dentalion_freakjoker={
+                name = "Freak Joker",
+                text = {
+                    "Using {C:planet}Planet{} gives",
+                    "{C:attention}#1#{} free {C:green}Reroll{} in the shop",
+                    "{C:inactive}(Currently {C:green}#2#{}{C:inactive})"
                 },
             },
         },
