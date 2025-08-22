@@ -487,6 +487,24 @@ return {
                     "{C:inactive}(Currently {C:green}#2#{}{C:inactive})"
                 },
             },
+
+            j_dentalion_paranoidjoker={
+                name = "Paranoid Joker",
+                text = {
+                    "{C:red}Discard{} {C:inactive}[#2#]{} cards to {C:green}decrease{}",
+                    "score requirement of the current",
+                    "{C:attention}Blind{} by {C:attention}#1#%{}"
+                },
+            },
+
+            j_dentalion_disneyjoker={
+                name = "Disney Joker",
+                text = {
+                    "Gains {X:green,C:white}^0.1{} for every",
+                    "{C:attention}Voucher{} owned",
+                    "{C:inactive}(Currently {X:green,C:white}#1#{}{C:inactive})"
+                },
+            },
         },
 
 
