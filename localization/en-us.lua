@@ -119,16 +119,6 @@ return {
                 },
             },
 			
-			j_dentalion_laststair={
-                name = "Last Stair",
-                text = {
-                    "If played hand",
-					"contain a {C:attention}Straight{},",
-					"{C:red}destroy{} all cards",
-					"after scoring",
-                },
-            },
-			
 			j_dentalion_bodyguard={
                 name = "Bodyguard",
                 text = {
