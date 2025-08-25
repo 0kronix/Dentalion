@@ -78,7 +78,7 @@ SMODS.Back {
 -- Common
 assert(SMODS.load_file("jokers/common/DreamCatcher.lua"))()
 assert(SMODS.load_file("jokers/common/Firefly.lua"))()
-assert(SMODS.load_file("jokers/common/LastStair.lua"))()
+
 assert(SMODS.load_file("jokers/common/Bodyguard.lua"))()
 assert(SMODS.load_file("jokers/common/StarterKit.lua"))()
 assert(SMODS.load_file("jokers/common/Decay.lua"))()
