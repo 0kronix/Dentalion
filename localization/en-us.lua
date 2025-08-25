@@ -63,7 +63,7 @@ return {
                 name = "Trinket",
                 text = {
                     "Gives {X:mult,C:white}X#1#{} Mult if all",
-					"consumable slots are filled"
+					"consumeable slots are filled"
                 },
             },
 			
@@ -71,7 +71,7 @@ return {
                 name = "The Goddess",
                 text = {
                     "Gives {X:mult,C:white}X#1#{} Mult if",
-					"at least {C:attention}3 Aces{} stains in hand"
+					"at least {C:attention}3 Aces{} held in hand"
                 },
             },
 			
@@ -115,7 +115,7 @@ return {
                 text = {
                     "Turn all {C:attention}scoring{}",
 					"{C:clubs}Clubs{} cards into",
-					"{C:attention}Lucky{} cards"
+					"{C:attention}Lucky Cards"
                 },
             },
 			
@@ -125,15 +125,6 @@ return {
                     "{C:mult}+#1#{} Mult",
 					"{C:red}-$#2#{} every {C:attention}5{} rounds",
 					"{C:inactive}(Currently #3#/5)"
-                },
-            },
-			
-			j_dentalion_log={
-                name = "Log",
-                text = {
-                    "Gives {X:mult,C:white}X#1#{} Mult if",
-					"{C:attention}previous{} hand contain",
-					"a {C:attention}Three of a Kind{}"
                 },
             },
 			
@@ -174,7 +165,7 @@ return {
 			j_dentalion_candywrapper={
                 name = "Candy Wrapper",
                 text = {
-                    "Cards with editions",
+                    "Cards with {C:dark_edition}Editions{}",
 					"give {C:money}$#1#{}"
                 },
             },
@@ -182,8 +173,8 @@ return {
 			j_dentalion_mutantjoker={
                 name = "Mutant Joker",
                 text = {
-                    "{C:green}#1# in #2#{} chance to",
-					"increase played card rank",
+                    "{C:green}#1# in #2#{} chance to increase",
+					"rank of played {C:attention}non-face{} card",
 					"by {C:attention}1{} after hand scoring"
                 },
             },
@@ -201,7 +192,7 @@ return {
                 name = "Chalks",
                 text = {
 					"{C:green}#1# in #2#{} chance to",
-                    "turn {C:attention}played{} card",
+                    "turn played card",
                     "into {C:attention}Wild Card{}"
                 },
             },
@@ -211,7 +202,7 @@ return {
                 text = {
                     "Divide {C:money}dollars{} by {C:attention}4{} after",
                     "selecting {C:attention}Boss Blind{}. This joker gains",
-                    "{C:mult}+1 Mult{} for each {C:money}dollar{} lost",
+                    "{C:mult}+1{} Mult for each {C:money}dollar{} lost",
                     "{C:inactive}(No more than 20 at once)",
                     "{C:inactive}(Currently {C:mult}+#1#{}{C:inactive})"
                 },
@@ -368,7 +359,7 @@ return {
             j_dentalion_cryinggoblin={
                 name = "Crying Goblin",
                 text = {
-                    "{C:attention}Lucky Cards{} gives {C:chips}+#1#{}",
+                    "{C:attention}Lucky Cards{} gives {C:chips}+#1#{} Chips",
                     "when failed to trigger"
                 },
             },
@@ -482,8 +473,8 @@ return {
                 name = "Paranoid Joker",
                 text = {
                     "{C:red}Discard{} {C:inactive}[#2#]{} cards to {C:green}decrease{}",
-                    "score requirement of the current",
-                    "{C:attention}Blind{} by {C:attention}#1#%{}"
+                    "score requirement of the",
+                    "current {C:attention}Blind{} by {C:attention}#1#%{}"
                 },
             },
 
