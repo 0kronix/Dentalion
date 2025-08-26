@@ -390,7 +390,7 @@ return {
                 text = {
                     "Skip {C:attention}#1#/#2#{} Booster Packs to create",
                     "a random {C:spectral}Spectral{} card",
-                    "{S:1.1,C:red,E:2}self destructs{}"
+                    "{S:1.1,C:red,E:2}self destructs afterwards{}"
                 },
             },
 
@@ -486,6 +486,53 @@ return {
                     "{C:inactive}(Currently {X:green,C:white}#1#{}{C:inactive})"
                 },
             },
+
+            j_dentalion_plantsvsjokers={
+                name = "Plants VS Jokers",
+                text = {
+                    "{X:chips,C:white}X#2#{} for each card",
+                    "slot in the shop",
+                    "{C:inactive}(Currently {X:chips,C:white}X#1#{}{C:inactive})"
+                },
+            },
+
+            j_dentalion_leprechaun={
+                name = "Leprechaun",
+                text = {
+                    "Gives {C:green}+1{} to all {C:attention}listed",
+                    "{C:green}probabilities{} for every",
+                    "{C:money}$#1#{} you have {C:inactive}(+#2# max)",
+                    "{C:inactive}(Currently {C:green}+#3#{}{C:inactive})"
+                },
+            },
+
+            j_dentalion_beatsaber={
+                name = "Beat Saber",
+                text = {
+                    "{C:green}#2# in #3#{} chance to give {C:mult}+#1#{}.",
+                    "Halves {C:mult}Mult{} and {C:green}Odds{} then",
+                    "triggered. {C:inactive}(Resets after +1 Mult)"
+                },
+            },
+
+            j_dentalion_puzzle={
+                name = "Puzzle",
+                text = {
+                    "Using {C:tarot}Suit Change Tarot{} card",
+                    "creates random {C:tarot}Suit Change Tarot{} card",
+                    "{C:inactive}(Once per round), #1#"
+                },
+            },
+
+            j_dentalion_blueplanet={
+                name = "Blue Planet",
+                text = {
+                    "Use the same {C:planet}Planet{} card {C:attention}#1#{} times in",
+                    "a row to create a random {C:spectral}Spectral{} card",
+                    "{C:red}self destructs afterwards{}",
+                    "{C:inactive}(#2#/#1#, #3#)"
+                },
+            },
         },
 
 
@@ -518,6 +565,14 @@ return {
                 text = {
                     "{C:hearts}Hearts{} into {C:spades}Spades{}",
                     "{C:diamonds}Diamonds{} into {C:clubs}Clubs{}"
+                }
+            },
+
+            suit_change_tarot = {
+                name = "Suit Change Tarot",
+                text = {
+                    "{C:tarot}The Sun{}, {C:tarot}The Star{},",
+                    "{C:tarot}The Moon{} and {C:tarot}The World"
                 }
             },
 		}

@@ -78,7 +78,7 @@ SMODS.Back {
 -- Common
 assert(SMODS.load_file("jokers/common/DreamCatcher.lua"))()
 assert(SMODS.load_file("jokers/common/Firefly.lua"))()
-
+assert(SMODS.load_file("jokers/common/BeatSaber.lua"))()
 assert(SMODS.load_file("jokers/common/Bodyguard.lua"))()
 assert(SMODS.load_file("jokers/common/StarterKit.lua"))()
 assert(SMODS.load_file("jokers/common/Decay.lua"))()
@@ -97,6 +97,8 @@ assert(SMODS.load_file("jokers/common/SparklingWater.lua"))()
 assert(SMODS.load_file("jokers/common/NahIdWin.lua"))()
 assert(SMODS.load_file("jokers/common/Oracle.lua"))()
 assert(SMODS.load_file("jokers/common/ParanoidJoker.lua"))()
+assert(SMODS.load_file("jokers/common/Puzzle.lua"))()
+assert(SMODS.load_file("jokers/common/BluePlanet.lua"))()
 
 -- Uncommon
 assert(SMODS.load_file("jokers/uncommon/ColoredBag.lua"))()
@@ -117,6 +119,8 @@ assert(SMODS.load_file("jokers/uncommon/Sight.lua"))()
 assert(SMODS.load_file("jokers/uncommon/Virus.lua"))()
 assert(SMODS.load_file("jokers/uncommon/BlackCat.lua"))()
 assert(SMODS.load_file("jokers/uncommon/FreakJoker.lua"))()
+assert(SMODS.load_file("jokers/uncommon/PlantsVSJokers.lua"))()
+assert(SMODS.load_file("jokers/uncommon/Leprechaun.lua"))()
 
 -- Rare
 assert(SMODS.load_file("jokers/rare/CrystalJoker.lua"))()

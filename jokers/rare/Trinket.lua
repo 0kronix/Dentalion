@@ -3,6 +3,8 @@ SMODS.Joker {
     atlas = 'rare-jokers',
     pos = {x = 1, y = 0},
 
+    pixel_size = { w = 52, h = 79 },
+
     cost = 9,
     rarity = 3,
     blueprint_compat = true,
