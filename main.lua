@@ -16,6 +16,13 @@ SMODS.Atlas {
     py = 95
 }
 
+SMODS.Atlas {
+    key = "consumables",
+    path = "consumables.png",
+    px = 71,
+    py = 95
+}
+
 -- Jokers Atlases
 -- Common
 SMODS.Atlas{
@@ -73,6 +80,10 @@ SMODS.Back {
         }))
     end
 }
+
+-- Consumables
+-- Spectrals
+assert(SMODS.load_file("src/consumables/spectral/fehu.lua"))()
 
 -- Load Jimbos
 -- Common

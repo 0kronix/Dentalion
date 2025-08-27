@@ -530,7 +530,7 @@ return {
                     "Use the same {C:planet}Planet{} card {C:attention}#1#{} times in",
                     "a row to create a random {C:spectral}Spectral{} card",
                     "{C:red}self destructs afterwards{}",
-                    "{C:inactive}(#2#/#1#, #3#)"
+                    "{C:inactive}(#2#/#1#, #3#)pseudorandom_element(G.GAME.used_vouchers, )"
                 },
             },
         },
