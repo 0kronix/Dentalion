@@ -6,6 +6,10 @@ SMODS.Consumable {
         x = 3,
         y = 0
     },
+    soul_pos = { 
+        x = 3,
+        y = 1
+    },
 
     cost = 4,
     unlocked = true,

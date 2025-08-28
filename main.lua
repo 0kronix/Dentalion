@@ -23,6 +23,20 @@ SMODS.Atlas {
     py = 95
 }
 
+SMODS.Atlas {
+    key = "enhancements",
+    path = "enhancements.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Atlas {
+    key = "seals",
+    path = "seals.png",
+    px = 71,
+    py = 95
+}
+
 -- Jokers Atlases
 -- Common
 SMODS.Atlas{
@@ -81,6 +95,9 @@ SMODS.Back {
     end
 }
 
+-- Enhancements
+assert(SMODS.load_file("src/enhancements/frozen.lua"))()
+
 -- Consumables
 -- Spectrals
 assert(SMODS.load_file("src/consumables/spectral/fehu.lua"))()
@@ -88,6 +105,12 @@ assert(SMODS.load_file("src/consumables/spectral/gebu.lua"))()
 assert(SMODS.load_file("src/consumables/spectral/sowilu.lua"))()
 assert(SMODS.load_file("src/consumables/spectral/raidu.lua"))()
 assert(SMODS.load_file("src/consumables/spectral/hagalaz.lua"))()
+assert(SMODS.load_file("src/consumables/spectral/wunjo.lua"))()
+assert(SMODS.load_file("src/consumables/spectral/naudiz.lua"))()
+assert(SMODS.load_file("src/consumables/spectral/algiz.lua"))()
+assert(SMODS.load_file("src/consumables/spectral/ehwaz.lua"))()
+assert(SMODS.load_file("src/consumables/spectral/mannaz.lua"))()
+assert(SMODS.load_file("src/consumables/spectral/isaz.lua"))()
 
 -- Load Jimbos
 -- Common

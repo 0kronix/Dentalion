@@ -6,6 +6,10 @@ SMODS.Consumable {
         x = 2,
         y = 0
     },
+    soul_pos = { 
+        x = 2,
+        y = 1
+    },
 
     cost = 4,
     unlocked = true,
@@ -24,7 +28,7 @@ SMODS.Consumable {
     end,
 
     can_use = function(self, card)
-        return #G.consumeables.cards < G.consumeables.config.card_limit
+        return #G.consumeables.cards < G.consumeables.config.card_limit or card.area == G.consumeables
     end,
 
     use = function(self, card, area, copier)
@@ -39,8 +43,20 @@ SMODS.Consumable {
                     local _card = create_card(nil, G.consumeables, nil, nil, nil, nil, "c_soul", nil)
                     _card:add_to_deck()
                     G.consumeables:emplace(_card)
+                else
+                    G.hand:change_size(-card.ability.extra.hand_size)
+                    attention_text({
+                        text = localize('k_nope_ex'),
+                        scale = 1.3,
+                        hold = 1.4,
+                        major = card,
+                        backdrop_colour = G.C.SECONDARY_SET.Tarot,
+                        align = (G.STATE == G.STATES.TAROT_PACK or G.STATE == G.STATES.SPECTRAL_PACK or G.STATE == G.STATES.SMODS_BOOSTER_OPENED) and
+                            'tm' or 'cm',
+                        offset = { x = 0, y = (G.STATE == G.STATES.TAROT_PACK or G.STATE == G.STATES.SPECTRAL_PACK or G.STATE == G.STATES.SMODS_BOOSTER_OPENED) and -0.2 or 0 },
+                        silent = true
+                    })
                 end
-                G.hand:change_size(-card.ability.extra.hand_size)
                 return true
             end)
         }))

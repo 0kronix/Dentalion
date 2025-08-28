@@ -535,6 +535,17 @@ return {
             },
         },
 
+        Enhanced = {
+            m_dentalion_frozen = {
+                name = 'Frozen Card',
+                text = {
+                    "Gains {X:chips,C:white}X#1#{} Chips",
+                    "for each another",
+                    "scored {C:attention}Frozen Card"
+                }
+            },
+        },
+
         Spectral = {
             c_dentalion_fehu = {
                 name = 'Fehu',
@@ -558,7 +569,7 @@ return {
                 text = {
                     "{C:green}#1# in #2#{} chance to",
                     "create {C:spectral}The Soul{},",
-                    "{C:red}-#3#{} hand size"
+                    "{C:red}-#3#{} hand size if not"
                 }
             },
 
@@ -576,6 +587,61 @@ return {
                     "Destroys all {C:attention}non-selected{} cards,",
                     "Halves your {C:money}dollars",
                     "{C:inactive}(At least #1# card must be selected)"
+                }
+            },
+
+            c_dentalion_wunjo = {
+                name = 'Wunjo',
+                text = {
+                    "Give a random {C:attention}enhancement",
+                    "to random cards in hand",
+                    "{C:inactive}(from 2 to 7 cards)"
+                }
+            },
+
+            c_dentalion_naudiz = {
+                name = 'Naudiz',
+                text = {
+                    "Increases rank of up to {C:attention}#1#",
+                    "selected cards by {C:attention}number",
+                    "of the selected cards",
+                    "{C:inactive}(ex: 2 3 6 -> 5 6 9)"
+                }
+            },
+
+            c_dentalion_algiz = {
+                name = 'Algiz',
+                text = {
+                    "Make selected {C:attention}Joker{} eternal",
+                    "{C:red}-#1#{} consumable slot",
+                }
+            },
+
+            c_dentalion_ehwaz = {
+                name = 'Ehwaz',
+                text = {
+                    "Fills all {C:attention}empty{} consumable slots",
+                    "with random {C:attention}consumables{},",
+                    "Lose {C:money}$2{} for each",
+                    "created {C:attention}consumable{}"
+                }
+            },
+
+            c_dentalion_mannaz = {
+                name = 'Mannaz',
+                text = {
+                    "Converts up all {C:attention}numbered{} cards in",
+                    "hand to random {C:attention}Face{} cards",
+                    "{C:red}-#1#{} discard every round"
+                }
+            },
+
+            c_dentalion_isaz = {
+                name = 'Isaz',
+                text = {
+                    "Enhances {C:attention}#1#",
+                    "selected cards to",
+                    "{C:attention}#2#s",
                 }
             },
         },

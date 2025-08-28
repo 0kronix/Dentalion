@@ -1,13 +1,13 @@
 SMODS.Consumable {
-    key = 'fehu',
+    key = 'wunjo',
     set = 'Spectral',
     atlas = "consumables",
     pos = {
-        x = 0,
+        x = 5,
         y = 0
     },
     soul_pos = { 
-        x = 0,
+        x = 5,
         y = 1
     },
 
@@ -17,20 +17,17 @@ SMODS.Consumable {
 
     config = {
         extra = {
-            money = 3
+            min_enh = 2,
+            max_enh = 7
         }
     },
 
     loc_vars = function(self, info_queue, card)
-        if G.jokers then
-            return { vars = { card.ability.extra.money, #G.jokers.cards * card.ability.extra.money } }
-        else
-            return { vars = { card.ability.extra.money, 0 } }
-        end
+        return { vars = { card.ability.extra.min_enh, card.ability.extra.max_enh } }
     end,
 
     can_use = function(self, card)
-        return #G.jokers.cards > 0
+        return #G.hand.cards > 0
     end,
     
     use = function(self, card, area, copier)
@@ -41,7 +38,15 @@ SMODS.Consumable {
             trigger = 'after',
             delay = 0.4,
             func = function()
-                ease_dollars(#G.jokers.cards * card.ability.extra.money)
+                for i = 1, math.random(card.ability.extra.min_enh, card.ability.extra.max_enh) do
+                    local c = pseudorandom_element(G.hand.cards, "wunjo")
+                    local enhancement = SMODS.poll_enhancement {
+                        type_key = 'wunjo',
+                        guaranteed = true
+                    }
+                    c:juice_up(0.3, 0.5)
+                    c:set_ability(G.P_CENTERS[enhancement])
+                end
                 play_sound('tarot1')
                 card:juice_up(0.3, 0.5)
                 return true
