@@ -1,9 +1,9 @@
 SMODS.Consumable {
-    key = 'fehu',
+    key = 'gebu',
     set = 'Spectral',
     atlas = "consumables",
     pos = {
-        x = 0,
+        x = 1,
         y = 0
     },
 
@@ -13,20 +13,16 @@ SMODS.Consumable {
 
     config = {
         extra = {
-            money = 3
+            chips = 50
         }
     },
 
     loc_vars = function(self, info_queue, card)
-        if G.jokers then
-            return { vars = { card.ability.extra.money, #G.jokers.cards * card.ability.extra.money } }
-        else
-            return { vars = { card.ability.extra.money, 0 } }
-        end
+        return { vars = { card.ability.extra.chips } }
     end,
 
     can_use = function(self, card)
-        return #G.jokers.cards > 0
+        return #G.hand.cards > 0
     end,
     
     use = function(self, card, area, copier)
@@ -37,12 +33,22 @@ SMODS.Consumable {
             trigger = 'after',
             delay = 0.4,
             func = function()
-                ease_dollars(#G.jokers.cards * card.ability.extra.money)
                 play_sound('tarot1')
                 card:juice_up(0.3, 0.5)
                 return true
             end
         }))
+        -- Stolen from Aikoyori's Rock
+        for _,_c in ipairs(G.hand.cards) do
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    _c.ability.perma_bonus = _c.ability.perma_bonus + card.ability.extra.chips
+                    _c:juice_up(0.3, 0.3)
+                    play_sound("tarot1")
+                    return true
+                end
+            }))
+        end
         delay(0.3)
     end
 }

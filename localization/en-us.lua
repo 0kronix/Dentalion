@@ -530,11 +530,55 @@ return {
                     "Use the same {C:planet}Planet{} card {C:attention}#1#{} times in",
                     "a row to create a random {C:spectral}Spectral{} card",
                     "{C:red}self destructs afterwards{}",
-                    "{C:inactive}(#2#/#1#, #3#)pseudorandom_element(G.GAME.used_vouchers, )"
+                    "{C:inactive}(#2#/#1#, #3#)"
                 },
             },
         },
 
+        Spectral = {
+            c_dentalion_fehu = {
+                name = 'Fehu',
+                text = {
+                    "Earn {C:money}$#1#{} for each",
+                    "{C:attention}Joker{} you have",
+                    "{C:inactive}(Will give {C:money}$#2#{}{C:inactive})"
+                }
+            },
+
+            c_dentalion_gebu = {
+                name = 'Gebu',
+                text = {
+                    "Give {C:attention}permanent{} bonus of {C:chips}+#1#{} Chips",
+                    "to {C:attention}all cards{} in hand",
+                }
+            },
+
+            c_dentalion_sowilu = {
+                name = 'Sowilu',
+                text = {
+                    "{C:green}#1# in #2#{} chance to",
+                    "create {C:spectral}The Soul{},",
+                    "{C:red}-#3#{} hand size"
+                }
+            },
+
+            c_dentalion_raidu = {
+                name = 'Raidu',
+                text = {
+                    "Gain {C:attention}#1#{} free {C:green}Rerolls{}",
+                    "in the shop"
+                }
+            },
+
+            c_dentalion_hagalaz = {
+                name = 'Hagalaz',
+                text = {
+                    "Destroys all {C:attention}non-selected{} cards,",
+                    "Halves your {C:money}dollars",
+                    "{C:inactive}(At least #1# card must be selected)"
+                }
+            },
+        },
 
 		Other = {
 			palindrome = {

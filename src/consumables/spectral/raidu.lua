@@ -1,9 +1,9 @@
 SMODS.Consumable {
-    key = 'fehu',
+    key = 'raidu',
     set = 'Spectral',
     atlas = "consumables",
     pos = {
-        x = 0,
+        x = 3,
         y = 0
     },
 
@@ -13,20 +13,16 @@ SMODS.Consumable {
 
     config = {
         extra = {
-            money = 3
+            rerolls = 5
         }
     },
 
     loc_vars = function(self, info_queue, card)
-        if G.jokers then
-            return { vars = { card.ability.extra.money, #G.jokers.cards * card.ability.extra.money } }
-        else
-            return { vars = { card.ability.extra.money, 0 } }
-        end
+        return { vars = { card.ability.extra.rerolls } }
     end,
 
     can_use = function(self, card)
-        return #G.jokers.cards > 0
+        return true
     end,
     
     use = function(self, card, area, copier)
@@ -37,7 +33,7 @@ SMODS.Consumable {
             trigger = 'after',
             delay = 0.4,
             func = function()
-                ease_dollars(#G.jokers.cards * card.ability.extra.money)
+                SMODS.change_free_rerolls(card.ability.extra.rerolls)
                 play_sound('tarot1')
                 card:juice_up(0.3, 0.5)
                 return true

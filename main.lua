@@ -84,6 +84,10 @@ SMODS.Back {
 -- Consumables
 -- Spectrals
 assert(SMODS.load_file("src/consumables/spectral/fehu.lua"))()
+assert(SMODS.load_file("src/consumables/spectral/gebu.lua"))()
+assert(SMODS.load_file("src/consumables/spectral/sowilu.lua"))()
+assert(SMODS.load_file("src/consumables/spectral/raidu.lua"))()
+assert(SMODS.load_file("src/consumables/spectral/hagalaz.lua"))()
 
 -- Load Jimbos
 -- Common
