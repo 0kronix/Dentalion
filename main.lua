@@ -95,6 +95,9 @@ SMODS.Back {
     end
 }
 
+-- Seals
+assert(SMODS.load_file("src/seals/lightgreen.lua"))()
+
 -- Enhancements
 assert(SMODS.load_file("src/enhancements/frozen.lua"))()
 
@@ -108,9 +111,14 @@ assert(SMODS.load_file("src/consumables/spectral/hagalaz.lua"))()
 assert(SMODS.load_file("src/consumables/spectral/wunjo.lua"))()
 assert(SMODS.load_file("src/consumables/spectral/naudiz.lua"))()
 assert(SMODS.load_file("src/consumables/spectral/algiz.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/ehwaz.lua"))()
+assert(SMODS.load_file("src/consumables/spectral/eihwaz.lua"))()
 assert(SMODS.load_file("src/consumables/spectral/mannaz.lua"))()
 assert(SMODS.load_file("src/consumables/spectral/isaz.lua"))()
+assert(SMODS.load_file("src/consumables/spectral/uruz.lua"))()
+assert(SMODS.load_file("src/consumables/spectral/turiaz.lua"))()
+assert(SMODS.load_file("src/consumables/spectral/kaunan.lua"))()
+assert(SMODS.load_file("src/consumables/spectral/jera.lua"))()
+assert(SMODS.load_file("src/consumables/spectral/laguz.lua"))()
 
 -- Load Jimbos
 -- Common

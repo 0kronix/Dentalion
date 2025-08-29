@@ -17,7 +17,7 @@ SMODS.Consumable {
 
     config = {
         extra = {
-            rerolls = 5
+            rerolls = 1
         }
     },
 

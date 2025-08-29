@@ -19,21 +19,21 @@ SMODS.Joker {
 				card.ability.extra.chips,
 				card.ability.extra.mult,
 				card.ability.extra.money,
-				"chips"
+				"Chips", colours = { G.C.CHIPS }
 			} }
 		elseif card.ability.extra.mod == 2 then
 			return { vars = { 
 				card.ability.extra.chips,
 				card.ability.extra.mult,
 				card.ability.extra.money,
-				"mult"
+				"Mult", colours = { G.C.MULT }
 			} }
 		else
 			return { vars = { 
 				card.ability.extra.chips,
 				card.ability.extra.mult,
 				card.ability.extra.money,
-				"money"
+				"Dollars", colours = { G.C.MONEY }
 			} }
 		end
 	end,

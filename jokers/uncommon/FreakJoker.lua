@@ -35,6 +35,7 @@ SMODS.Joker {
         end
         if context.reroll_shop and card.ability.extra.all > 0 and not context.blueprint then
             card.ability.extra.all = card.ability.extra.all - 1
+            SMODS.change_free_rerolls(-card.ability.extra.rerolls)
             return {
                 message = tostring(card.ability.extra.all),
                 colour = G.C.GREEN

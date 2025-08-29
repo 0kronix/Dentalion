@@ -1,5 +1,5 @@
 SMODS.Consumable {
-    key = 'ehwaz',
+    key = 'eihwaz',
     set = 'Spectral',
     atlas = "consumables",
     pos = {

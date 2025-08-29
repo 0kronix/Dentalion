@@ -1,4 +1,9 @@
 return {
+    misc = {
+        labels = {
+            dentalion_lightgreen_seal = "Light Green Seal",
+        }
+    },
     descriptions = {
         Back = {
             b_dentalion_fashion = {
@@ -344,7 +349,7 @@ return {
                 text = {
                     "Change mod each round: {C:chips}+#1#{} Chips,",
                     "{C:mult}+#2#{} Mult or {C:money}$#3#{} at end of round",
-                    "{C:inactive}(Currently {}#4#{C:inactive})"
+                    "{C:inactive}(Currently: {V:1}#4#{C:inactive})"
                 },
             },
 
@@ -576,8 +581,8 @@ return {
             c_dentalion_raidu = {
                 name = 'Raidu',
                 text = {
-                    "Gain {C:attention}#1#{} free {C:green}Rerolls{}",
-                    "in the shop"
+                    "Gain {C:attention}#1#{} free {C:green}Reroll{}",
+                    "in every shop shop"
                 }
             },
 
@@ -617,8 +622,8 @@ return {
                 }
             },
 
-            c_dentalion_ehwaz = {
-                name = 'Ehwaz',
+            c_dentalion_eihwaz = {
+                name = 'Eihwaz',
                 text = {
                     "Fills all {C:attention}empty{} consumable slots",
                     "with random {C:attention}consumables{},",
@@ -644,9 +649,61 @@ return {
                     "{C:attention}#2#s",
                 }
             },
+
+            c_dentalion_uruz = {
+                name = 'Uruz',
+                text = {
+                    "Add a {C:green}Light Green Seal{}",
+                    "to {C:attention}1{} selected",
+                    "card in your hand",
+                }
+            },
+
+            c_dentalion_turiaz = {
+                name = 'Turiaz',
+                text = {
+                    "Converts up to {C:attention}#1#{} selected",
+                    "cards to {V:1}#2#{}",
+                    "{C:inactive}(Most popular suit in deck)",
+                }
+            },
+
+            c_dentalion_kaunan = {
+                name = 'Kaunan',
+                text = {
+                    "Level up your {C:attention}most played",
+                    "hand {C:attention}#1#{} times",
+                    "{C:inactive}(Now: #2#)"
+                }
+            },
+
+            c_dentalion_jera = {
+                name = 'Jera',
+                text = {
+                    "Create {C:attention}#1#{} copies of a",
+                    "random {C:attention}Consumable{},",
+                    "{C:red}destroy{} all other consumables",
+                }
+            },
+
+            c_dentalion_laguz = {
+                name = 'Laguz',
+                text = {
+                    "{C:green}#1# in #2#{} chance to gain",
+                    "{C:green}+1{} to all {C:attention}listed {C:green}probabilities{},",
+                    "Makes random {C:attention}Joker{} {C:red}perishable"
+                }
+            },
         },
 
 		Other = {
+            dentalion_lightgreen_seal = {
+                name = 'Light Green Seal',
+                text = {
+                    "{X:green,C:white}#1#{} Mult",
+                }
+            },
+
 			palindrome = {
                 name = "Palindrome",
                 text = {

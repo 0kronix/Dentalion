@@ -38,7 +38,7 @@ SMODS.Joker {
         if context.after and card.ability.extra.active and not context.blueprint then
             if context.full_hand[1]:is_face() then
                 card.ability.extra.faces_kills = card.ability.extra.faces_kills + 1
-                if card.ability.extra.faces_kills >= 1 then
+                if card.ability.extra.faces_kills >= 3 then
                     card.ability.extra.cur_xmult = card.ability.extra.cur_xmult + card.ability.extra.mod_xmult
                     card.ability.extra.faces_kills = 0
                     SMODS.destroy_cards(context.full_hand[1])
