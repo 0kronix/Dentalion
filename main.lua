@@ -119,6 +119,7 @@ assert(SMODS.load_file("src/consumables/spectral/turiaz.lua"))()
 assert(SMODS.load_file("src/consumables/spectral/kaunan.lua"))()
 assert(SMODS.load_file("src/consumables/spectral/jera.lua"))()
 assert(SMODS.load_file("src/consumables/spectral/laguz.lua"))()
+assert(SMODS.load_file("src/consumables/spectral/dagaz.lua"))()
 
 -- Load Jimbos
 -- Common

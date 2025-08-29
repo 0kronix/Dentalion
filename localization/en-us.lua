@@ -694,6 +694,16 @@ return {
                     "Makes random {C:attention}Joker{} {C:red}perishable"
                 }
             },
+
+            c_dentalion_dagaz = {
+                name = 'Dagaz',
+                text = {
+                    "Add {C:dark_edition}Negative{} to a",
+                    "selected {C:attention}Joker{} with {C:dark_edition}Edition{},",
+                    "{C:red}Destroy{} adjacent {C:attention}Jokers{}",
+                    "{C:inactive}(both Jokers might be destroyed)"
+                }
+            },
         },
 
 		Other = {

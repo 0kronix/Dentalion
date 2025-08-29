@@ -55,9 +55,9 @@ SMODS.Consumable {
             func = function()
                 if pseudorandom("laguz") < G.GAME.probabilities.normal / card.ability.extra.odds then
                     G.GAME.probabilities.normal = G.GAME.probabilities.normal + 1
-                    rnd_joker:add_sticker("perishable", true)
-                    rnd_joker:juice_up(0.3, 0.5)
                 end
+                rnd_joker:add_sticker("perishable", true)
+                rnd_joker:juice_up(0.3, 0.5)
                 play_sound('tarot1')
                 card:juice_up(0.3, 0.5)
                 return true
