@@ -3,7 +3,7 @@ SMODS.Joker {
     atlas = 'common-jokers',
     pos = {x = 0, y = 2},
 
-    cost = 4,
+    cost = 2,
     rarity = 1,
     blueprint_compat = false,
     eternal_compat = true,
@@ -19,7 +19,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
 		if context.end_of_round and context.cardarea == G.jokers and not context.blueprint then
-			card.ability.extra_value = math.random(card.ability.extra.min_money, card.ability.extra.max_money)
+			card.ability.extra_value = pseudorandom("banknote", card.ability.extra.min_money, card.ability.extra.max_money)
 			card:set_cost()
 			return {
 				message = localize('k_val_up'),
