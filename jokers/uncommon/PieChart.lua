@@ -19,7 +19,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
     	local ease = math.min(20, math.floor(3 * (G.GAME.dollars / 4)))
-		if context.setting_blind then
+		if context.setting_blind and not context.blueprint then
           	if G.GAME.blind and G.GAME.blind.boss then
           		ease_dollars(-ease)
           		card.ability.extra.cur_mult = card.ability.extra.cur_mult + ease

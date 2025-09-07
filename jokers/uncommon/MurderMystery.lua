@@ -14,20 +14,37 @@ SMODS.Joker {
     config = { extra = { cur_xmult = 1, mod_xmult = 0.5, faces_kills = 0, active = true } },
 
     loc_vars = function(self, info_queue, card)
-        if card.ability.extra.active then
-            return { vars = { 
-                card.ability.extra.cur_xmult,
-                card.ability.extra.mod_xmult,
-                card.ability.extra.faces_kills,
-                "Active!"
-            } }
+        main_end = {
+            {
+                n = G.UIT.C,
+                config = { align = "bm", minh = 0.4 },
+                nodes = {
+                    {
+                        n = G.UIT.C,
+                        config = { ref_table = card, align = "m", colour = card.ability.extra.active and mix_colours(G.C.GREEN, G.C.JOKER_GREY, 0.8) or mix_colours(G.C.RED, G.C.JOKER_GREY, 0.8), r = 0.05, padding = 0.06 },
+                        nodes = {
+                            { n = G.UIT.T, config = { text = ' ' .. (card.ability.extra.active and 'active' or 'inactive') .. ' ', colour = G.C.UI.TEXT_LIGHT, scale = 0.32 * 0.8 } },
+                        }
+                    }
+                }
+            }
+        }
+        if card.area and card.area == G.jokers then
+            return { main_end = main_end, 
+                vars = { 
+                    card.ability.extra.cur_xmult,
+                    card.ability.extra.mod_xmult,
+                    card.ability.extra.faces_kills 
+                } 
+            }
         else
-            return { vars = { 
-                card.ability.extra.cur_xmult,
-                card.ability.extra.mod_xmult,
-                card.ability.extra.faces_kills,
-                "Inactive"
-            } }
+            return { 
+                vars = { 
+                    card.ability.extra.cur_xmult,
+                    card.ability.extra.mod_xmult,
+                    card.ability.extra.faces_kills 
+                } 
+            }
         end
 	end,
 
@@ -41,9 +58,8 @@ SMODS.Joker {
                 if card.ability.extra.faces_kills >= 3 then
                     card.ability.extra.cur_xmult = card.ability.extra.cur_xmult + card.ability.extra.mod_xmult
                     card.ability.extra.faces_kills = 0
-                    SMODS.destroy_cards(context.full_hand[1])
                     card.ability.extra.active = false
-                    delay(1)
+                    SMODS.destroy_cards(context.full_hand[1])
                     return {
                         extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT },
                         card = card
@@ -54,7 +70,6 @@ SMODS.Joker {
             end
             SMODS.destroy_cards(context.full_hand[1])
             card.ability.extra.active = false
-            delay(1)
         end
         if context.joker_main then
             return {

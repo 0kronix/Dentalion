@@ -2,6 +2,10 @@
 
 Dentalion = SMODS.current_mod
 
+loc_colour()
+G.ARGS.LOC_COLOURS.GREY = HEX('ADD8E6')
+G.ARGS.LOC_COLOURS.INDIGO = HEX('4B0082')
+
 -- Special thanks for AIJ Mod
 SMODS.Gradient {
     key = 'plasma',
@@ -11,6 +15,15 @@ SMODS.Gradient {
     cycle = 5,
     interpolation = 'trig'
 }
+
+function tablefind(tbl, val)
+    for i, v in ipairs(tbl) do
+        if v == val then
+            return true
+        end
+    end
+    return false
+end
 
 SMODS.Atlas {
   key = 'modicon',
@@ -174,12 +187,12 @@ assert(SMODS.load_file("jokers/common/EggsPack.lua"))()
 -- Uncommon
 assert(SMODS.load_file("jokers/uncommon/ColoredBag.lua"))()
 assert(SMODS.load_file("jokers/uncommon/AtomicCola.lua"))()
-assert(SMODS.load_file("jokers/uncommon/HexagonForce.lua"))()
+
 assert(SMODS.load_file("jokers/uncommon/Dinosaur.lua"))()
 assert(SMODS.load_file("jokers/uncommon/BlackClover.lua"))()
 assert(SMODS.load_file("jokers/uncommon/PieChart.lua"))()
 assert(SMODS.load_file("jokers/uncommon/SnakesNLadders.lua"))()
-assert(SMODS.load_file("jokers/uncommon/Devilish.lua"))()
+
 assert(SMODS.load_file("jokers/uncommon/AlephZero.lua"))()
 assert(SMODS.load_file("jokers/uncommon/FareJoker.lua"))()
 assert(SMODS.load_file("jokers/uncommon/MurderMystery.lua"))()
@@ -201,8 +214,8 @@ assert(SMODS.load_file("jokers/uncommon/Comics.lua"))()
 -- Rare
 assert(SMODS.load_file("jokers/rare/CrystalJoker.lua"))()
 assert(SMODS.load_file("jokers/rare/Trinket.lua"))()
-assert(SMODS.load_file("jokers/rare/TheGoddess.lua"))()
-assert(SMODS.load_file("jokers/rare/Pocket.lua"))()
+
+
 assert(SMODS.load_file("jokers/rare/PlanetsParade.lua"))()
 assert(SMODS.load_file("jokers/rare/Obsidian.lua"))()
 assert(SMODS.load_file("jokers/rare/Pegasus.lua"))()

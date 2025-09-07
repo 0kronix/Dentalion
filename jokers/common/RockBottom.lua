@@ -18,7 +18,7 @@ SMODS.Joker {
 	end,
 
     calculate = function(self, card, context)
-        if context.after and context.cardarea == G.jokers and not context.blueprint then
+        if context.after and context.cardarea == G.jokers then
             if G.GAME.hands[context.scoring_name].level == 1 then
                 return {
                     dollars = card.ability.extra.money

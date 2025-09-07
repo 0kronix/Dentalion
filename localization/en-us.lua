@@ -31,7 +31,7 @@ return {
 			j_dentalion_crystaljoker={
                 name = "Crystal Joker",
                 text = {
-                    "Retrigger all played {C:attention}Glass Card",
+                    "Retrigger all played {C:attention}Glass{} Cards",
                     "{C:attention}#1#{} additional times"
                 },
             },
@@ -55,28 +55,11 @@ return {
                 },
             },
 			
-			j_dentalion_hexagonforce={
-                name = "Hexagon Force",
-                text = {
-                    "Gives {X:mult,C:white}X#1#{} Mult if",
-					"played hand contains only {C:attention}6s{}",
-					"and at least {C:attention}3{} cards"
-                },
-            },
-			
 			j_dentalion_trinket={
                 name = "Trinket",
                 text = {
-                    "Gives {X:mult,C:white}X#1#{} Mult if all",
+                    "Gives {X:mult,C:white}X#1#{} Mult, if all",
 					"consumeable slots are filled"
-                },
-            },
-			
-			j_dentalion_thegoddess={
-                name = "The Goddess",
-                text = {
-                    "Gives {X:mult,C:white}X#1#{} Mult if",
-					"at least {C:attention}3 Aces{} held in hand"
                 },
             },
 			
@@ -86,15 +69,6 @@ return {
                     "Sell this card to",
                     "create a free",
                     "{C:attention}#1#",
-                },
-            },
-			
-			j_dentalion_pocket={
-                name = "Pocket",
-                text = {
-                    "{C:attention}+#1#{} hand size if it",
-					"less than {C:attention}#2#{} when",
-					"first hand drawn"
                 },
             },
 			
@@ -118,19 +92,21 @@ return {
 			j_dentalion_blackclover={
                 name = "Black Clover",
                 text = {
-                    "Turn all {C:attention}scoring{}",
+                    "Turn all {C:attention}scored{}",
 					"{C:clubs}Clubs{} cards into",
-					"{C:attention}Lucky Cards"
+					"{C:attention}Lucky{} Cards"
                 },
             },
 			
 			j_dentalion_bodyguard={
                 name = "Bodyguard",
-                text = {
-                    "{C:mult}+#1#{} Mult",
-					"{C:red}-$#2#{} every {C:attention}5{} rounds",
-					"{C:inactive}(Currently #3#/5)"
+                text = { {
+                    "{C:mult}+#1#{} Mult"
                 },
+                {
+                    "{C:red}-$#2#{} every {C:attention}5{} rounds",
+                    "{C:inactive}(Currently #3#/5)"
+                } },
             },
 			
 			j_dentalion_firstaidkit={
@@ -145,7 +121,8 @@ return {
                 name = "Decay",
                 text = {
                     "{C:green}#1# in #2#{} chance to",
-					"destroy scored card"
+					"destroy scored card or",
+                    "card in hand"
                 },
             },
 			
@@ -163,7 +140,8 @@ return {
                 text = {
                     "Gives {C:money}$#1#{} at end",
 					"of round for each",
-					"empty joker slot"
+					"empty joker slot",
+                    "{C:inactive}(Will give {C:money}$#2#{}{C:inactive})"
                 },
             },
 			
@@ -198,19 +176,22 @@ return {
                 text = {
 					"{C:green}#1# in #2#{} chance to",
                     "turn played card",
-                    "into {C:attention}Wild Card{}"
+                    "into {C:attention}Wild{} Card"
                 },
             },
 
             j_dentalion_piechart={
                 name = "Pie Chart",
-                text = {
+                text = { {
                     "Divide {C:money}dollars{} by {C:attention}4{} after",
-                    "selecting {C:attention}Boss Blind{}. This joker gains",
-                    "{C:mult}+1{} Mult for each {C:money}dollar{} lost",
-                    "{C:inactive}(No more than 20 at once)",
-                    "{C:inactive}(Currently {C:mult}+#1#{}{C:inactive})"
+                    "selecting {C:attention}Boss Blind{}"
                 },
+                {
+                    "This joker gains {C:mult}+Mult{} equals",
+                    "to {C:money}dollars{} lost",
+                    "{C:inactive}(Less than 20 at once)",
+                    "{C:inactive}(Currently {C:mult}+#1#{}{C:inactive} Mult)"
+                } },
             },
 
             j_dentalion_snakesnladders={
@@ -220,14 +201,6 @@ return {
                     "contain a {C:attention}Straight{}, if it",
                     "contains scored cards with",
                     "a difference in ranks of {C:attention}5{}",
-                },
-            },
-
-            j_dentalion_devilish={
-                name = "Devilish",
-                text = {
-                    "Using {C:tarot}Death{} {C:red}destroy{} {C:attention}2{}",
-                    "random cards in {C:attention}full deck",
                 },
             },
 
@@ -245,30 +218,33 @@ return {
                 name = "Fare Joker",
                 text = {
                     "At end of the round, this joker gets",
-                    "{C:mult}+Mult{} equal to half of its {C:money}selling value",
-                    "{C:inactive}(Currently {C:mult}+#1#{}{C:inactive})"
+                    "{C:mult}+Mult{} equal to its {C:money}selling value",
+                    "{C:inactive}(Currently {C:mult}+#1#{}{C:inactive} Mult)"
                 },
             },
 
             j_dentalion_murdermystery={
                 name = "Murder Mystery",
-                text = {
-                    "{C:red}Destroys{} first played card each round.",
+                text = { {
+                    "{C:red}Destroys{} first played card each round"
+                },
+                {
                     "If a {C:attention}face{} card has been {C:red}destroyed{} three",
                     "times in a row, this joker gains {X:mult,C:white}X#2#{} Mult",
-                    "{C:inactive}(Currently {X:mult,C:white}X#1#{}{C:inactive}, #3#/3)",
-                    "{C:inactive}#4#"
-                },
+                    "{C:inactive}(Currently {X:mult,C:white}X#1#{}{C:inactive} Mult, #3#/3)"
+                } },
             },
 
             j_dentalion_door={
                 name = "Door",
-                text = {
-                    "Gains {X:chips,C:white}X#2#{} Chips each round.",
-                    "Loses {X:chips,C:white}X#3#{} each {C:green}reroll{} in the {C:attention}Shop{}",
-                    "{C:inactive}(cannot be less than {X:chips,C:white}X0.5{}{C:inactive})",
-                    "{C:inactive}(Currently {X:chips,C:white}X#1#{}{C:inactive})"
+                text = { {
+                    "Gains {X:chips,C:white}X#2#{} Chips each round"
                 },
+                {
+                    "Loses {X:chips,C:white}X#3#{} each {C:green}reroll{} in the {C:attention}Shop{}",
+                    "{C:inactive}(Cannot be less than {X:chips,C:white}X0.5{}{C:inactive})",
+                    "{C:inactive}(Currently {X:chips,C:white}X#1#{}{C:inactive} Chips)"
+                } },
             },
 
             j_dentalion_bipolarjoker={
@@ -300,38 +276,42 @@ return {
             j_dentalion_milkyway={
                 name = "Milky Way",
                 text = {
-                    "Once per round, used {C:planet}Planet{} card",
-                    "gives permanent {C:chips}+#1#{} Chips",
+                    "{C:planet}Planet{} cards, used during",
+                    "round, gives permanent {C:chips}+#1#{} Chips",
                     "to {C:attention}random{} card in hand",
-                    "{C:inactive}#2#"
                 },
             },
 
             j_dentalion_obsidian={
                 name = "Obsidian",
-                text = {
-                    "Gains {C:chips}+#2#{} Chips for each {C:attention}dark suit{}",
-                    "card scored. Every {C:attention}light suit{} scored",
-                    "card turns into {C:attention}dark suit{} after scoring",
-                    "{C:inactive}(Currently {C:chips}+#1#{}{C:inactive})"
+                text = { {
+                    "Gains {C:chips}+#2#{} Chips for each",
+                    "{C:attention}dark suit{} card scored"
                 },
+                {
+                    "Every {C:attention}light suit{} scored card",
+                    "turns into {C:attention}dark suit{} after scoring",
+                    "{C:inactive}(Currently {C:chips}+#1#{}{C:inactive} Chips)"
+                } },
             },
 
             j_dentalion_pegasus={
                 name = "Pegasus",
-                text = {
-                    "Gives {X:mult,C:white}X#1#{} Mult.",
+                text = { {
+                    "Gives {X:mult,C:white}X#1#{} Mult"
+                },
+                {
                     "{C:attention}#2#{}, {C:attention}#3#{}, {C:attention}#4#{} and",
                     "{C:attention}#5#{} are debuffed"
-                },
+                } },
             },
 
             j_dentalion_partner={
                 name = "Partner",
                 text = {
-                    "This joker gains {C:chips}+#1#{} and {C:mult}+#2#{}",
-                    "then {C:attention}#3#{} is discarded",
-                    "{C:inactive}(Currently {C:chips}+#4#{}{C:inactive} and {C:mult}+#5#{}{C:inactive})"
+                    "This joker gains {C:mult}+#2#{} and {C:chips}+#1#{}",
+                    "when {C:attention}Pair{} is discarded",
+                    "{C:inactive}(Currently {C:mult}+#4#{} Mult and {C:chips}+#3#{}{C:inactive} Chips)"
                 },
             },
 
@@ -340,7 +320,7 @@ return {
                 text = {
                     "This joker gains {X:mult,C:white}X#2#{} Mult",
                     "every {C:money}$20{} of solded cards",
-                    "{C:inactive}(Currently {X:mult,C:white}X#1#{}{C:inactive}, {C:money}$#3#/$20{}{C:inactive})"
+                    "{C:inactive}(Currently {X:mult,C:white}X#1#{}{C:inactive} Mult, #3#/$20)"
                 },
             },
 
@@ -348,17 +328,19 @@ return {
                 name = "Traffic Lights",
                 text = {
                     "Change mod each round: {C:chips}+#1#{} Chips,",
-                    "{C:mult}+#2#{} Mult or {C:money}$#3#{} at end of round",
-                    "{C:inactive}(Currently: {V:1}#4#{C:inactive})"
+                    "{C:mult}+#2#{} Mult or {C:money}$#3#{} at end of round"
                 },
             },
 
             j_dentalion_ouroboros={
                 name = "Ouroboros",
-                text = {
-                    "Gives {C:chips}+#1#{} Chips. Rettriger",
-                    "random amount of times"
+                text = { {
+                    "{C:chips}+#1#{} Chips"
                 },
+                {
+                    "Rettriger {C:attention}random{} amount",
+                    "of times"
+                } },
             },
 
             j_dentalion_cryinggoblin={
@@ -371,13 +353,15 @@ return {
 
             j_dentalion_cyclops={
                 name = "Cyclops",
-                text = {
-                    "Set number of hands to {C:red}1{} at start",
-                    "of round. If more than {C:attention}5{} hands are",
-                    "removed, gives {C:attention}+1{} Joker Slot",
-                    "{C:inactive}(Once per Ante), #2#",
-                    "{C:inactive}(Currently {}+#1#{C:inactive})"
+                text = { {
+                    "Set number of {C:chips}hands{} to {C:attention}1{}",
+                    "at start of round"
                 },
+                {
+                    "If more than {C:attention}5{} {C:chips}hands{} are",
+                    "removed, gives {C:INDIGO}+1 Joker Slot",
+                    "{C:inactive}(Once per Ante)"
+                } },
             },
 
             j_dentalion_sight={
@@ -385,27 +369,28 @@ return {
                 text = {
                     "Open {C:attention}#2#{} Booster Packs to",
                     "create {C:attention}#3#{} random tags",
-                    "{C:inactive}(Once per Ante)",
-                    "{C:inactive}#4#, (#1#/#2#)"
+                    "{C:inactive}(Once per Ante, #1#/#2#)"
                 },
             },
 
             j_dentalion_sparklingwater={
                 name = "Sparkling Water",
-                text = {
-                    "Skip {C:attention}#1#/#2#{} Booster Packs to create",
+                text = { {
+                    "Skip {C:attention}#2#{} Booster Packs to create",
                     "a random {C:spectral}Spectral{} card",
-                    "{S:1.1,C:red,E:2}self destructs afterwards{}"
+                    "{C:inactive}(Currently #1#/#2#)"
                 },
+                {
+                    "{C:red,E:2}self destructs"
+                } },
             },
 
             j_dentalion_virus={
                 name = "Virus",
                 text = {
-                    "{C:green}#1# in #2#{} chance to {C:red}self destructs{}",
-                    "at end of round. Gains {X:mult,C:white}X1{} Mult and {C:green}+1",
-                    "{C:green}chance{} for each copy of themself you have",
-                    "{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive})"
+                    "Gains {X:mult,C:white}X#2#{} Mult for each",
+                    "copy of themself you have",
+                    "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)"
                 },
             },
 
@@ -421,7 +406,7 @@ return {
                 name = "Phone",
                 text = {
                     "Scored cards gives {C:chips}+Chips{}",
-                    "equal to the number of cards in",
+                    "equals to the number of cards in",
                     "{C:attention}full deck{} with the same suit"
                 },
             },
@@ -431,7 +416,7 @@ return {
                 text = {
                     "Gains {C:chips}+#1#{} Chips if {C:attention}Blind{}",
                     "is beaten in exactly {C:attention}2 hands{}",
-                    "{C:inactive}(Currently {C:chips}+#2#{}{C:inactive})"
+                    "{C:inactive}(Currently {C:chips}+#2#{}{C:inactive} Chips)"
                 },
             },
 
@@ -440,7 +425,7 @@ return {
                 text = {
                     "Gains {X:mult,C:white}X#1#{} at end of",
                     "round, if you have {C:money}$10{} or less",
-                    "{C:inactive}(Currently {X:mult,C:white}X#2#{}{C:inactive})"
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)"
                 },
             },
 
@@ -450,8 +435,7 @@ return {
                     "Using {C:attention}consumable{} {C:green}decrease{}",
                     "score requirement of",
                     "the current {C:attention}Blind{} by {C:attention}#1#%{}",
-                    "{C:inactive}Up to #2#%. (Currently {C:attention}#3#%{C:inactive})",
-                    "{C:inactive}#4#"
+                    "{C:inactive}(Currently #3#/#2#%)"
                 },
             },
 
@@ -459,9 +443,9 @@ return {
                 name = "Dark Peasant",
                 text = {
                     "{C:attention}+1{} hand size for each",
-                    "{C:green}reroll{} in the shop (up to +#2#)",
-                    "{C:inactive}Resets each round",
-                    "{C:inactive}(Currently {C:attention}+#1#{}{C:inactive})"
+                    "{C:green}reroll{} in the shop",
+                    "{C:inactive}(Resets each round, +#2# max)",
+                    "{C:inactive}(Currently +#1# hand size)"
                 },
             },
 
@@ -470,16 +454,16 @@ return {
                 text = {
                     "Using {C:planet}Planet{} gives",
                     "{C:attention}#1#{} free {C:green}Reroll{} in the shop",
-                    "{C:inactive}(Currently {C:green}#2#{}{C:inactive})"
+                    "{C:inactive}(Currently +#2#{C:inactive} rerolls)"
                 },
             },
 
             j_dentalion_paranoidjoker={
                 name = "Paranoid Joker",
                 text = {
-                    "{C:red}Discard{} {C:inactive}[#2#]{} cards to {C:green}decrease{}",
-                    "score requirement of the",
-                    "current {C:attention}Blind{} by {C:attention}#1#%{}"
+                    "{C:green}Decrease{} the score requirement",
+                    "of the current {C:attention}Blind{} by {C:attention}#1#%{} for",
+                    "every {C:attention}#3# {C:inactive}[#2#]{} cards {C:red}discarded"
                 },
             },
 
@@ -487,8 +471,8 @@ return {
                 name = "Disney Joker",
                 text = {
                     "Gains {X:green,C:white}^0.1{} for every",
-                    "{C:attention}Voucher{} owned",
-                    "{C:inactive}(Currently {X:green,C:white}#1#{}{C:inactive})"
+                    "{C:attention}Voucher{} you have",
+                    "{C:inactive}(Currently {X:green,C:white}#1#{}{C:inactive} Mult)"
                 },
             },
 
@@ -497,7 +481,7 @@ return {
                 text = {
                     "{X:chips,C:white}X#2#{} for each card",
                     "slot in the shop",
-                    "{C:inactive}(Currently {X:chips,C:white}X#1#{}{C:inactive})"
+                    "{C:inactive}(Currently {X:chips,C:white}X#1#{}{C:inactive} Chips)"
                 },
             },
 
@@ -513,11 +497,15 @@ return {
 
             j_dentalion_beatsaber={
                 name = "Beat Saber",
-                text = {
-                    "{C:green}#2# in #3#{} chance to give {C:mult}+#1#{}.",
-                    "Halves {C:mult}Mult{} and {C:green}Odds{} then",
-                    "triggered. {C:inactive}(Resets after +1 Mult)"
+                text = { {
+                    "{C:green}#1# in #2#{} chance to",
+                    "give {C:mult}+#2#{} Mult"
                 },
+                {
+                    "Halves {C:mult}Mult{} and {C:green}Odds{}",
+                    "if {C:red}doesn't{} trigger",
+                    "{C:inactive}(Reset on +1 Mult)"
+                } },
             },
 
             j_dentalion_puzzle={
@@ -525,27 +513,31 @@ return {
                 text = {
                     "Using {C:tarot}Suit Change Tarot{} card",
                     "creates random {C:tarot}Suit Change Tarot{} card",
-                    "{C:inactive}(Once per round), #1#"
+                    "{C:inactive}(Once per round)"
                 },
             },
 
             j_dentalion_blueplanet={
                 name = "Blue Planet",
-                text = {
+                text = { {
                     "Use the same {C:planet}Planet{} card {C:attention}#1#{} times in",
                     "a row to create a random {C:spectral}Spectral{} card",
-                    "{C:red}self destructs afterwards{}",
-                    "{C:inactive}(#2#/#1#, #3#)"
+                    "{C:inactive}(Currently #2#/#1#)"
                 },
+                {
+                    "{C:red}self destructs{}"
+                } },
             },
 
             j_dentalion_anxiety={
                 name = "Anxiety",
-                text = {
-                    "{C:dentalion_plasma}Balances{} {C:attention}#1#%{} of {C:mult}Mult{} and {C:chips}Chips{}.",
+                text = { {
+                    "{C:dentalion_plasma}Balances{} {C:attention}#1#%{} of {C:mult}Mult{} and {C:chips}Chips{}"
+                },
+                {
                     "{C:attention}+2%{} for each card below {C:attention}52{}",
                     "in your full deck"
-                },
+                } },
             },
 
             j_dentalion_sleepparalysis={
@@ -590,7 +582,7 @@ return {
                 text = {
                     "Gains {X:green,C:white}#2#{} Mult for each",
                     "{C:legendary}Legendary{} Joker you have",
-                    "{C:inactive}(Currently: {X:green,C:white}#1#{}{C:inactive})"
+                    "{C:inactive}(Currently: {X:green,C:white}#1#{}{C:inactive} Mult)"
                 },
             },
 
@@ -620,11 +612,13 @@ return {
 
             j_dentalion_comics={
                 name = "Comics",
-                text = {
-                    "{X:chips,C:white}X#1#{} Chips. If no",
-                    "{C:attention}face{} cards played,",
-                    "{C:red}self destructs"
+                text = { {
+                    "{X:chips,C:white}X#1#{} Chips"
                 },
+                {
+                    "{C:red}self destructs{},",
+                    "if no {C:attention}face{} cards played",
+                } },
             },
 
             j_dentalion_hourglasses={
@@ -678,13 +672,6 @@ return {
                     "{C:inactive}(Currently #1#/6)"
                 },
             },
-
-            j_dentalion_album={
-                name = "Album",
-                text = {
-                    "#2#"
-                },
-            },
         },
 
         Enhanced = {
@@ -711,35 +698,40 @@ return {
             c_dentalion_gebu = {
                 name = 'Gebu',
                 text = {
-                    "Give {C:attention}permanent{} bonus of {C:chips}+#1#{} Chips",
-                    "to {C:attention}all cards{} in hand",
+                    "Give {C:attention}permanent{} bonus",
+                    "of {C:chips}+#1#{} Chips to",
+                    "{C:attention}all cards{} in hand",
                 }
             },
 
             c_dentalion_sowilu = {
                 name = 'Sowilu',
-                text = {
+                text = { {
                     "{C:green}#1# in #2#{} chance to",
-                    "create {C:spectral}The Soul{},",
+                    "create {C:spectral}The Soul{}"
+                },
+                {
                     "{C:red}-#3#{} hand size if not"
-                }
+                } },
             },
 
             c_dentalion_raidu = {
                 name = 'Raidu',
                 text = {
                     "Gain {C:attention}#1#{} free {C:green}Reroll{}",
-                    "in every shop shop"
+                    "in every shop"
                 }
             },
 
             c_dentalion_hagalaz = {
                 name = 'Hagalaz',
-                text = {
-                    "Destroys all {C:attention}non-selected{} cards,",
-                    "Halves your {C:money}dollars",
+                text = { {
+                    "{C:red}Destroys{} all {C:attention}non-selected{} cards",
                     "{C:inactive}(At least #1# card must be selected)"
-                }
+                },
+                {
+                    "Halves your {C:money}dollars"
+                } },
             },
 
             c_dentalion_wunjo = {
@@ -763,35 +755,41 @@ return {
 
             c_dentalion_algiz = {
                 name = 'Algiz',
-                text = {
-                    "Make selected {C:attention}Joker{} eternal",
-                    "{C:red}-#1#{} consumable slot",
-                }
+                text = { {
+                    "Make selected {C:attention}Joker{} eternal"
+                },
+                {
+                    "{C:red}-#1#{} consumable slot"
+                } },
             },
 
             c_dentalion_eihwaz = {
                 name = 'Eihwaz',
-                text = {
+                text = { {
                     "Fills all {C:attention}empty{} consumable slots",
-                    "with random {C:attention}consumables{},",
-                    "Lose {C:money}$2{} for each",
+                    "with random {C:attention}consumables{}"
+                },
+                {
+                    "Lose {C:money}$4{} for each",
                     "created {C:attention}consumable{}"
-                }
+                } },
             },
 
             c_dentalion_mannaz = {
                 name = 'Mannaz',
-                text = {
+                text = { {
                     "Converts up all {C:attention}numbered{} cards in",
-                    "hand to random {C:attention}Face{} cards",
+                    "hand to random {C:attention}Face{} cards"
+                },
+                {
                     "{C:red}-#1#{} discard every round"
-                }
+                } },
             },
 
             c_dentalion_isaz = {
                 name = 'Isaz',
                 text = {
-                    "Enhances {C:attention}#1#",
+                    "Enhances up to {C:attention}#1#",
                     "selected cards to",
                     "{C:attention}#2#s",
                 }
@@ -826,51 +824,61 @@ return {
 
             c_dentalion_jera = {
                 name = 'Jera',
-                text = {
-                    "Create {C:attention}#1#{} copies of a",
-                    "random {C:attention}Consumable{},",
-                    "{C:red}destroy{} all other consumables",
-                }
+                text = { {
+                    "Create {C:attention}#1#{} {C:dark_edition}negative{} copies",
+                    "of a random {C:attention}Consumable{}"
+                },
+                {
+                    "{C:red}Destroy{} all other consumables"
+                } },
             },
 
             c_dentalion_laguz = {
                 name = 'Laguz',
-                text = {
+                text = { {
                     "{C:green}#1# in #2#{} chance to gain",
-                    "{C:green}+1{} to all {C:attention}listed {C:green}probabilities{},",
-                    "Makes random {C:attention}Joker{} {C:red}perishable"
-                }
+                    "{C:green}+1{} to all {C:attention}listed {C:green}probabilities{}"
+                },
+                {
+                    "Makes random Joker {C:red}perishable"
+                } },
             },
 
             c_dentalion_dagaz = {
                 name = 'Dagaz',
-                text = {
+                text = { {
                     "Add {C:dark_edition}Negative{} to a",
-                    "selected {C:attention}Joker{} with {C:dark_edition}Edition{},",
-                    "{C:red}Destroy{} adjacent {C:attention}Jokers{}",
+                    "selected {C:attention}Joker{} with {C:dark_edition}Edition{}"
+                },
+                {
+                    "{C:red}Destroy{} adjacent Jokers",
                     "{C:inactive}(both Jokers must be destroyed)"
-                }
+                } },
             },
 
             c_dentalion_ansuz = {
                 name = 'Ansuz',
-                text = {
+                text = { {
                     "Add random {C:dark_edition}Edition{} to",
-                    "up to {C:attention}#1#{} selected cards,",
-                    "Each joker has {C:green}#2# in #3#{} chance to",
-                    "be {C:red}destroyed{}. {C:green}+1{} chance",
-                    "for each selected card"
-                }
+                    "up to {C:attention}#1#{} selected cards",
+                },
+                {
+                    "Each joker has {C:green}#2# in #3#{} chance",
+                    "to be {C:red}destroyed{}",
+                    "{C:inactive}(+1 chance for each selected card)"
+                } },
             },
 
             c_dentalion_tiwaz = {
                 name = 'Tiwaz',
-                text = {
+                text = { {
                     "{C:red}Destroy{} all cards with the",
-                    "same {C:attention}suit{} as selected card,",
-                    "create a {C:tarot}Tarot{} card if {C:attention}#2#{} or more",
+                    "same {C:attention}suit{} as selected card"
+                },
+                {
+                    "Create a {C:tarot}Tarot{} card if {C:attention}#2#{} or more",
                     "cards have been destroyed"
-                }
+                } },
             },
 
             c_dentalion_berkana = {
@@ -891,29 +899,38 @@ return {
 
             c_dentalion_ehwaz = {
                 name = 'Ehwaz',
-                text = {
-                    "{C:attention}-1{} Ante, {C:red}Destroy{} all consumables",
-                    "{C:inactive}(At least 1 consumable must be destroyed)"
-                }
+                text = { {
+                    "{C:attention}-1{} Ante"
+                },
+                {
+                    "{C:red}Destroy{} all consumables",
+                    "{C:inactive}(At least 2 consumables must be destroyed)"
+                } },
             },
 
             c_dentalion_inguz = {
                 name = 'Inguz',
-                text = {
-                    "{C:red}Delete{} seal from up to {C:attention}#1#{}",
-                    "selected cards, create random",
-                    "{C:spectral}Spectral Seal{} card",
+                text = { {
+                    "{C:red}Delete{} seal from up",
+                    "to {C:attention}#1#{} selected cards"
+                },
+                {
+                    "Create random {C:spectral}Spectral Seal{}",
+                    "card for each",
                     "{C:inactive}(Must have room)"
-                }
+                } },
             },
 
             c_dentalion_othala = {
                 name = 'Othala',
-                text = {
+                text = { {
                     "Create {C:attention}#1#{} random {C:dark_edition}Negative",
-                    "{C:planet}Planet{} cards, Level {C:red}down",
-                    "{C:attention}#2#{} random poker hands"
-                }
+                    "{C:planet}Planet{} cards"
+                },
+                {
+                    "Level {C:red}down{} {C:attention}#2#{} random",
+                    "poker hands"
+                } },
             },
         },
 

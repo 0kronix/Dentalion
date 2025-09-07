@@ -5,13 +5,13 @@ SMODS.Joker {
 
     cost = 3,
     rarity = 1,
-    blueprint_compat = true,
+    blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
     discovered = true,
 	
-    config = { extra = { money = 15 } },
+    config = { extra = { money = 20 } },
 
     loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue+1] = {set = 'Other', key = 'palindrome'}

@@ -7,7 +7,7 @@ SMODS.Joker {
 
     cost = 3,
     rarity = 1,
-    blueprint_compat = true,
+    blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
@@ -16,7 +16,7 @@ SMODS.Joker {
     config = { extra = { money = 1 } },
 
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.money } }
+        return { vars = { card.ability.extra.money, G.jokers and (card.ability.extra.money * (G.jokers.config.card_limit - #G.jokers.cards)) or 0 } }
     end,
     
     calc_dollar_bonus = function(self, card)

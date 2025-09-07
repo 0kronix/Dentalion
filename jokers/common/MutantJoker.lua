@@ -11,7 +11,7 @@ SMODS.Joker {
     unlocked = true,
     discovered = true,
 	
-    config = { extra = { odds = 1 } },
+    config = { extra = { odds = 8 } },
 
     loc_vars = function(self, info_queue, card)
 		return { vars = { G.GAME.probabilities.normal, card.ability.extra.odds } }

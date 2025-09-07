@@ -29,12 +29,17 @@ SMODS.Joker {
 					if played_card.ability.name ~= 'Wild Card' and pseudorandom("chalks") < G.GAME.probabilities.normal / card.ability.extra.odds then
 						G.E_MANAGER:add_event(Event({
 							trigger = 'before',
+							delay = 0.5,
 							func = function()
 								played_card:juice_up()
 								played_card:set_ability(G.P_CENTERS.m_wild)
 								return true
 							end
 						}))
+						delay(0.5)
+						return {
+							message = "Wild"
+						}
 					end
 				end
 			end

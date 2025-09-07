@@ -52,7 +52,7 @@ SMODS.Consumable {
                     _card:add_to_deck()
                     G.consumeables:emplace(_card)
                 end
-                ease_dollars(-(empty_slots * 2))
+                ease_dollars(-(empty_slots * 4))
                 play_sound('tarot1')
                 card:juice_up(0.3, 0.5)
                 return true

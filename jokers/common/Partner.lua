@@ -17,7 +17,6 @@ SMODS.Joker {
 		return { vars = { 
 			card.ability.extra.mod_chips, 
 			card.ability.extra.mod_mult, 
-			localize('Pair', 'poker_hands'),  
 			card.ability.extra.cur_chips, 
 			card.ability.extra.cur_mult
 		} }

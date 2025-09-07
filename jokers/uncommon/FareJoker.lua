@@ -19,7 +19,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
     	if context.end_of_round and not context.blueprint and context.cardarea == G.jokers then
-            card.ability.extra.cur_mult = card.ability.extra.cur_mult + math.floor(card.sell_cost / 2)
+            card.ability.extra.cur_mult = card.ability.extra.cur_mult + math.floor(card.sell_cost)
             return {
                 extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT },
                 card = card

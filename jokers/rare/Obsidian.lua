@@ -29,10 +29,12 @@ SMODS.Joker {
                 end
             end
             card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.mod_chips * count
-            return {
-        		extra = { message = localize('k_upgrade_ex'), colour = G.C.CHIPS },
-                card = card
-        	}
+            if count > 0 then
+	            return {
+	        		extra = { message = localize('k_upgrade_ex'), colour = G.C.CHIPS },
+	                card = card
+	        	}
+        	end
         end
         if context.joker_main then
         	return {

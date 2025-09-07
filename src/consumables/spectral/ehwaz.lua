@@ -24,7 +24,7 @@ SMODS.Consumable {
     end,
 
     can_use = function(self, card)
-        return #G.consumeables.cards > 0
+        return #G.consumeables.cards > 1
     end,
 
     use = function(self, card, area, copier)

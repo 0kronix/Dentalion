@@ -14,18 +14,35 @@ SMODS.Joker {
 	config = { extra = { planets = 5, cur_p = 0, cur_planet = nil } },
 
     loc_vars = function(self, info_queue, card)
-        if card.ability.extra.cur_planet == nil then
-    		return { vars = { 
-                card.ability.extra.planets,
-                card.ability.extra.cur_p,
-                "None"
-            } }
+        main_end = {
+            {
+                n = G.UIT.C,
+                config = { align = "bm", minh = 0.4 },
+                nodes = {
+                    {
+                        n = G.UIT.C,
+                        config = { ref_table = card, align = "m", colour = card.ability.extra.cur_planet == nil and mix_colours(G.C.GREY, G.C.JOKER_GREY, 0.8) or mix_colours(G.C.SECONDARY_SET.Planet, G.C.JOKER_GREY, 0.8), r = 0.05, padding = 0.06 },
+                        nodes = {
+                            { n = G.UIT.T, config = { text = ' ' .. (card.ability.extra.cur_planet == nil and 'None' or localize { type = "name_text", set = "Planet", key = card.ability.extra.cur_planet }) .. ' ', colour = G.C.UI.TEXT_LIGHT, scale = 0.32 * 0.8 } },
+                        }
+                    }
+                }
+            }
+        }
+        if card.area and card.area == G.jokers then
+            return { main_end = main_end, 
+                vars = { 
+                    card.ability.extra.planets,
+                    card.ability.extra.cur_p 
+                } 
+            }
         else
-            return { vars = { 
-                card.ability.extra.planets,
-                card.ability.extra.cur_p,
-                localize { type = "name_text", set = "Planet", key = card.ability.extra.cur_planet } 
-            } }
+            return {
+                vars = { 
+                    card.ability.extra.planets,
+                    card.ability.extra.cur_p 
+                } 
+            }
         end
 	end,
 
@@ -36,16 +53,14 @@ SMODS.Joker {
             end
             if card.ability.extra.cur_planet == context.consumeable.config.center.key then
                 card.ability.extra.cur_p = card.ability.extra.cur_p + 1
-                if card.ability.extra.cur_p >= 4 then
+                if card.ability.extra.cur_p >= 5 then
                     if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                         G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                         G.E_MANAGER:add_event(Event({
                             trigger = 'before',
                             delay = 0.0,
                             func = (function()
-                                local s_card = create_card('Spectral',G.consumeables, nil, nil, nil, nil, nil, 'sea')
-                                s_card:add_to_deck()
-                                G.consumeables:emplace(s_card)
+                                SMODS.add_card{ set = "Spectral" }
                                 G.GAME.consumeable_buffer = 0
                                 return true
                             end

@@ -11,10 +11,11 @@ SMODS.Joker {
     unlocked = true,
     discovered = true,
 	
-    config = { extra = { repetitions = 1 } },
+    config = { extra = { rep = 2 } },
 
     loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_glass
+        return { vars = { card.ability.extra.rep } }
 	end,
 
     calculate = function(self, card, context)
@@ -22,7 +23,7 @@ SMODS.Joker {
 			if context.other_card.ability.name == 'Glass Card' then
 				return {
 					message = localize('k_again_ex'),
-                    repetitions = 1,
+                    repetitions = card.ability.extra.rep,
                     card = card
 				}
 			end

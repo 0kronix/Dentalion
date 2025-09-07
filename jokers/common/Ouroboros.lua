@@ -5,7 +5,7 @@ SMODS.Joker {
 
     cost = 5,
     rarity = 1,
-    blueprint_compat = true,
+    blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
@@ -21,7 +21,7 @@ SMODS.Joker {
 	end,
 
     calculate = function(self, card, context)
-		if context.repetition_only or (context.retrigger_joker_check) then
+		if (context.repetition_only or (context.retrigger_joker_check)) and not context.blueprint then
         	local ret = pseudorandom('ouroboros', card.ability.extra.min_ret, card.ability.extra.max_ret)
 	        if context.other_card == card then
 	            return {
@@ -31,7 +31,7 @@ SMODS.Joker {
 	            }  
 	        end
       	end
-      	if context.joker_main then
+      	if context.joker_main and not context.blueprint then
         	return {
             	chips = card.ability.extra.chips
         	}
