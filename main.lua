@@ -187,12 +187,12 @@ assert(SMODS.load_file("jokers/common/EggsPack.lua"))()
 -- Uncommon
 assert(SMODS.load_file("jokers/uncommon/ColoredBag.lua"))()
 assert(SMODS.load_file("jokers/uncommon/AtomicCola.lua"))()
-
+assert(SMODS.load_file("jokers/uncommon/ScariestJoker.lua"))()
 assert(SMODS.load_file("jokers/uncommon/Dinosaur.lua"))()
 assert(SMODS.load_file("jokers/uncommon/BlackClover.lua"))()
 assert(SMODS.load_file("jokers/uncommon/PieChart.lua"))()
 assert(SMODS.load_file("jokers/uncommon/SnakesNLadders.lua"))()
-
+assert(SMODS.load_file("jokers/uncommon/NoirJoker.lua"))()
 assert(SMODS.load_file("jokers/uncommon/AlephZero.lua"))()
 assert(SMODS.load_file("jokers/uncommon/FareJoker.lua"))()
 assert(SMODS.load_file("jokers/uncommon/MurderMystery.lua"))()

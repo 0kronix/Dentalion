@@ -672,6 +672,17 @@ return {
                     "{C:inactive}(Currently #1#/6)"
                 },
             },
+
+            j_dentalion_scariestjoker={
+                name = "Scariest Joker",
+                text = {
+                    "If {C:attention}last hand{} of round has",
+                    "only {C:attention}1{} card, convert scored",
+                    "card into random card in hand,",
+                    "add a permanent copy to deck",
+                    "and draw it to {C:attention}hand"
+                },
+            },
         },
 
         Enhanced = {
