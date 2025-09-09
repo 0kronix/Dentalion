@@ -683,6 +683,21 @@ return {
                     "and draw it to {C:attention}hand"
                 },
             },
+
+            j_dentalion_noirjoker={
+                name = "Noir Joker",
+                text = {
+                    "Gains {X:chips,C:white}X#1#{} for each",
+                    "{C:attention}dark suit{} card in hand"
+                },
+            },
+
+            j_dentalion_magnificent={
+                name = "Jimbo The Magnificent",
+                text = {
+                    "{X:green,C:white}#1#{} Mult"
+                },
+            },
         },
 
         Enhanced = {

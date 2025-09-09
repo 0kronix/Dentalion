@@ -16,15 +16,6 @@ SMODS.Gradient {
     interpolation = 'trig'
 }
 
-function tablefind(tbl, val)
-    for i, v in ipairs(tbl) do
-        if v == val then
-            return true
-        end
-    end
-    return false
-end
-
 SMODS.Atlas {
   key = 'modicon',
   px = 32,
@@ -61,26 +52,9 @@ SMODS.Atlas {
 }
 
 -- Jokers Atlases
--- Common
 SMODS.Atlas{
-    key = 'common-jokers',
-    path = 'common-jokers.png',
-    px = 71,
-    py = 95
-}
-
--- Uncommon
-SMODS.Atlas{
-    key = 'uncommon-jokers',
-    path = 'uncommon-jokers.png',
-    px = 71,
-    py = 95
-}
-
--- Rare
-SMODS.Atlas{
-    key = 'rare-jokers',
-    path = 'rare-jokers.png',
+    key = 'jokers',
+    path = 'jokers.png',
     px = 71,
     py = 95
 }
@@ -118,117 +92,64 @@ SMODS.Back {
     end
 }
 
+function tablefind(tbl, val)
+    for i, v in ipairs(tbl) do
+        if v == val then
+            return true
+        end
+    end
+    return false
+end
+
+function get_atlas_pos(id, atl)
+    local x_id, y_id = 0, 0
+    if id <= atl then
+        x_id = id - 1
+    else
+        if id % atl ~= 0 then
+            x_id = id % atl - 1
+        else
+            x_id = atl - 1
+        end
+    end
+    y_id = math.ceil(id / atl) - 1
+    return {x = x_id, y = y_id}
+end
+
+local mod_path = ''..SMODS.current_mod.path
+
+local function get_files_in_folder(base_fs, out)
+    for _, name in ipairs(NFS.getDirectoryItems(base_fs)) do
+        local abs = base_fs.."/"..name
+        local info = NFS.getInfo(abs)
+        if info and info.type == "file" and name:match("%.lua$") then
+            table.insert(out, name)
+        end
+    end
+end
+
+local function assert_files_from_folder(base_fs, list)
+    for _, name in ipairs(list) do
+        assert(SMODS.load_file(base_fs .. "/" .. name))()
+    end
+end
+
 -- Seals
-assert(SMODS.load_file("src/seals/lightgreen.lua"))()
+local seals = {}
+get_files_in_folder(mod_path .. "content/seals", seals)
+assert_files_from_folder("content/seals", seals)
 
 -- Enhancements
-assert(SMODS.load_file("src/enhancements/frozen.lua"))()
+local enhancements = {}
+get_files_in_folder(mod_path .. "content/enhancements", enhancements)
+assert_files_from_folder("content/enhancements", enhancements)
 
--- Consumables
 -- Spectrals
-assert(SMODS.load_file("src/consumables/spectral/fehu.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/gebu.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/sowilu.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/raidu.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/hagalaz.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/wunjo.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/naudiz.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/algiz.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/eihwaz.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/mannaz.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/isaz.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/uruz.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/turiaz.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/kaunan.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/jera.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/laguz.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/dagaz.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/ansuz.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/tiwaz.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/berkana.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/pert.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/ehwaz.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/inguz.lua"))()
-assert(SMODS.load_file("src/consumables/spectral/othala.lua"))()
+local spectrals = {}
+get_files_in_folder(mod_path .. "content/consumables/spectral", spectrals)
+assert_files_from_folder("content/consumables/spectral", spectrals)
 
 -- Load Jimbos
--- Common
-assert(SMODS.load_file("jokers/common/DreamCatcher.lua"))()
-assert(SMODS.load_file("jokers/common/Firefly.lua"))()
-assert(SMODS.load_file("jokers/common/BeatSaber.lua"))()
-assert(SMODS.load_file("jokers/common/Bodyguard.lua"))()
-assert(SMODS.load_file("jokers/common/FirstAidKit.lua"))()
-assert(SMODS.load_file("jokers/common/Decay.lua"))()
-assert(SMODS.load_file("jokers/common/DoublesidedCoin.lua"))()
-assert(SMODS.load_file("jokers/common/GivewaySign.lua"))()
-assert(SMODS.load_file("jokers/common/CandyWrapper.lua"))()
-assert(SMODS.load_file("jokers/common/MutantJoker.lua"))()
-assert(SMODS.load_file("jokers/common/CrumpledBanknote.lua"))()
-assert(SMODS.load_file("jokers/common/Chalks.lua"))()
-assert(SMODS.load_file("jokers/common/MilkyWay.lua"))()
-assert(SMODS.load_file("jokers/common/Partner.lua"))()
-assert(SMODS.load_file("jokers/common/TrafficLights.lua"))()
-assert(SMODS.load_file("jokers/common/Ouroboros.lua"))()
-assert(SMODS.load_file("jokers/common/CryingGoblin.lua"))()
-assert(SMODS.load_file("jokers/common/SparklingWater.lua"))()
-assert(SMODS.load_file("jokers/common/NahIdWin.lua"))()
-assert(SMODS.load_file("jokers/common/Oracle.lua"))()
-assert(SMODS.load_file("jokers/common/ParanoidJoker.lua"))()
-assert(SMODS.load_file("jokers/common/Puzzle.lua"))()
-assert(SMODS.load_file("jokers/common/BluePlanet.lua"))()
-assert(SMODS.load_file("jokers/common/PopUpAd.lua"))()
-assert(SMODS.load_file("jokers/common/MacTonight.lua"))()
-assert(SMODS.load_file("jokers/common/ChainingBlast.lua"))()
-assert(SMODS.load_file("jokers/common/Musician.lua"))()
-assert(SMODS.load_file("jokers/common/FallingJoker.lua"))()
-assert(SMODS.load_file("jokers/common/RockBottom.lua"))()
-assert(SMODS.load_file("jokers/common/EggsPack.lua"))()
-
--- Uncommon
-assert(SMODS.load_file("jokers/uncommon/ColoredBag.lua"))()
-assert(SMODS.load_file("jokers/uncommon/AtomicCola.lua"))()
-assert(SMODS.load_file("jokers/uncommon/ScariestJoker.lua"))()
-assert(SMODS.load_file("jokers/uncommon/Dinosaur.lua"))()
-assert(SMODS.load_file("jokers/uncommon/BlackClover.lua"))()
-assert(SMODS.load_file("jokers/uncommon/PieChart.lua"))()
-assert(SMODS.load_file("jokers/uncommon/SnakesNLadders.lua"))()
-assert(SMODS.load_file("jokers/uncommon/NoirJoker.lua"))()
-assert(SMODS.load_file("jokers/uncommon/AlephZero.lua"))()
-assert(SMODS.load_file("jokers/uncommon/FareJoker.lua"))()
-assert(SMODS.load_file("jokers/uncommon/MurderMystery.lua"))()
-assert(SMODS.load_file("jokers/uncommon/Door.lua"))()
-assert(SMODS.load_file("jokers/uncommon/BipolarJoker.lua"))()
-assert(SMODS.load_file("jokers/uncommon/LapizOre.lua"))()
-assert(SMODS.load_file("jokers/uncommon/Sight.lua"))()
-assert(SMODS.load_file("jokers/uncommon/Virus.lua"))()
-assert(SMODS.load_file("jokers/uncommon/BlackCat.lua"))()
-assert(SMODS.load_file("jokers/uncommon/FreakJoker.lua"))()
-assert(SMODS.load_file("jokers/uncommon/PlantsVSJokers.lua"))()
-assert(SMODS.load_file("jokers/uncommon/Leprechaun.lua"))()
-assert(SMODS.load_file("jokers/uncommon/Anxiety.lua"))()
-assert(SMODS.load_file("jokers/uncommon/FlyingIsland.lua"))()
-assert(SMODS.load_file("jokers/uncommon/Avatar.lua"))()
-assert(SMODS.load_file("jokers/uncommon/Replica.lua"))()
-assert(SMODS.load_file("jokers/uncommon/Comics.lua"))()
-
--- Rare
-assert(SMODS.load_file("jokers/rare/CrystalJoker.lua"))()
-assert(SMODS.load_file("jokers/rare/Trinket.lua"))()
-
-
-assert(SMODS.load_file("jokers/rare/PlanetsParade.lua"))()
-assert(SMODS.load_file("jokers/rare/Obsidian.lua"))()
-assert(SMODS.load_file("jokers/rare/Pegasus.lua"))()
-assert(SMODS.load_file("jokers/rare/Cyclops.lua"))()
-assert(SMODS.load_file("jokers/rare/Phone.lua"))()
-assert(SMODS.load_file("jokers/rare/Bugs.lua"))()
-assert(SMODS.load_file("jokers/rare/DarkPeasant.lua"))()
-assert(SMODS.load_file("jokers/rare/DisneyJoker.lua"))()
-assert(SMODS.load_file("jokers/rare/SleepParalysis.lua"))()
-assert(SMODS.load_file("jokers/rare/MatchThree.lua"))()
-assert(SMODS.load_file("jokers/rare/Plazma.lua"))()
-assert(SMODS.load_file("jokers/rare/MultiverseHourglasses.lua"))()
-
--- Legendary
-assert(SMODS.load_file("jokers/legendary/Marbas.lua"))()
-assert(SMODS.load_file("jokers/legendary/Dentalion.lua"))()
+local jokers = {}
+get_files_in_folder(mod_path .. "content/jokers", jokers)
+assert_files_from_folder("content/jokers", jokers)
