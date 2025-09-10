@@ -28,9 +28,9 @@ SMODS.Joker {
         if context.selling_card and not context.blueprint then
             local card_sell = context.card.sell_cost
             card.ability.extra.cur_sell = card.ability.extra.cur_sell + card_sell
-            if card.ability.extra.cur_sell >= 20 then
+            if card.ability.extra.cur_sell >= 15 then
                 card.ability.extra.cur_xmult = card.ability.extra.cur_xmult + card.ability.extra.mod_xmult
-                card.ability.extra.cur_sell = card.ability.extra.cur_sell - 20
+                card.ability.extra.cur_sell = card.ability.extra.cur_sell - 15
                 return {
                     extra = { message = localize('k_upgrade_ex'), colour = G.C.MONEY },
                     card = card

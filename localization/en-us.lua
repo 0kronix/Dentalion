@@ -320,7 +320,7 @@ return {
                 text = {
                     "This joker gains {X:mult,C:white}X#2#{} Mult",
                     "every {C:money}$20{} of solded cards",
-                    "{C:inactive}(Currently {X:mult,C:white}X#1#{}{C:inactive} Mult, #3#/$20)"
+                    "{C:inactive}(Currently {X:mult,C:white}X#1#{}{C:inactive} Mult, #3#/$15)"
                 },
             },
 
