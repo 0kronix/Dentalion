@@ -42,22 +42,22 @@ SMODS.Joker {
         if context.individual and context.cardarea == G.play then
         	if context.other_card:is_suit('Hearts', true) then
         		return {
-        			chips = card.ability.extra.h
+        			mult = card.ability.extra.h
         		}
         	end
         	if context.other_card:is_suit('Diamonds', true) then
         		return {
-        			chips = card.ability.extra.d
+        			mult = card.ability.extra.d
         		}
         	end
         	if context.other_card:is_suit('Spades', true) then
         		return {
-        			chips = card.ability.extra.s
+        			mult = card.ability.extra.s
         		}
         	end
         	if context.other_card:is_suit('Clubs', true) then
         		return {
-        			chips = card.ability.extra.c
+        			mult = card.ability.extra.c
         		}
         	end
         end

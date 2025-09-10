@@ -64,15 +64,7 @@ SMODS.Joker {
             copy_card:add_to_deck()
             G.deck.config.card_limit = G.deck.config.card_limit + 1
             table.insert(G.playing_cards, copy_card)
-            G.hand:emplace(copy_card)
-            copy_card.states.visible = nil
-
-            G.E_MANAGER:add_event(Event({
-                func = function()
-                    copy_card:start_materialize()
-                    return true
-                end
-            }))
+            
             return {
                 message = localize('k_copied_ex'),
                 func = function()

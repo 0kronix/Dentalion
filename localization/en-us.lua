@@ -405,7 +405,7 @@ return {
             j_dentalion_phone={
                 name = "Phone",
                 text = {
-                    "Scored cards gives {C:chips}+Chips{}",
+                    "Scored cards gives {C:mult}+Mult{}",
                     "equals to the number of cards in",
                     "{C:attention}full deck{} with the same suit"
                 },
@@ -676,11 +676,10 @@ return {
             j_dentalion_scariestjoker={
                 name = "Scariest Joker",
                 text = {
-                    "If {C:attention}last hand{} of round has",
-                    "only {C:attention}1{} card, convert scored",
-                    "card into random card in hand,",
-                    "add a permanent copy to deck",
-                    "and draw it to {C:attention}hand"
+                    "If {C:attention}played hand{} is your {C:attention}last hand",
+                    "and it has only {C:attention}1{} card, convert scored",
+                    "card into random card in hand and",
+                    "add a permanent copy to deck"
                 },
             },
 
@@ -698,7 +697,50 @@ return {
                     "{X:green,C:white}#1#{} Mult"
                 },
             },
+
+            j_dentalion_bamboo={
+                name = "Bamboo",
+                text = {
+                    "Increases rank of {C:attention}all",
+                    "cards in {C:attention}hand{} at end of round"
+                },
+            },
+
+            j_dentalion_prize={
+                name = "Prize",
+                text = {
+                    "{X:money,C:white}X2{} {C:attention}interest{} after",
+                    "defeating {C:attention}Boss Blind"
+                },
+            },
+
+            j_dentalion_jackofalltrades={
+                name = "Jack Of All Trades",
+                text = {
+                    "Gives {X:mult,C:white}XMult{} and {X:chips,C:white}XChips",
+                    "between {X:dentalion_mulps,C:white}X#1#{} and {X:dentalion_mulps,C:white}X#2#{}"
+                },
+            },
+
+            j_dentalion_doppelganger={
+                name = "Doppelganger",
+                text = {
+                    "If {C:attention}played hand{} is your {C:attention}last hand{} and it has",
+                    "only {C:attention}2{} cards with the same {C:attention}suit{} and {C:attention}rank{}, add",
+                    "a permanent copy of {C:attention}first{} card to deck",
+                    "and draw it to {C:attention}hand"
+                },
+            },
+
+            j_dentalion_seraphim={
+                name = "Seraphim",
+                text = {
+                    "Play {C:attention}Jack #1#{} {C:inactive}[#2#]{} times to",
+                    "create {C:dark_edition}negative {C:attention}Temperance"
+                },
+            },
         },
+
 
         Enhanced = {
             m_dentalion_frozen = {

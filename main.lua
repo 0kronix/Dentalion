@@ -16,6 +16,15 @@ SMODS.Gradient {
     interpolation = 'trig'
 }
 
+SMODS.Gradient {
+    key = 'mulps',
+    colours = {
+        G.C.MULT, G.C.CHIPS
+    },
+    cycle = 3,
+    interpolation = 'trig'
+}
+
 SMODS.Atlas {
   key = 'modicon',
   px = 32,
@@ -92,6 +101,41 @@ SMODS.Back {
     end
 }
 
+-- Functions
+-- Special Thanks for AIJ mod!
+
+function apply_multiplier(t, key, factor, tag)
+    t.temp_mult_val = t.temp_mult_val or {}
+    t.temp_mult_val[key] = t.temp_mult_val[key] or {}
+    t.temp_mult_val[key][tag] = factor
+    update_multiplied_value(t, key)
+end
+
+function remove_multiplier(t, key, tag)
+    if t.temp_mult_val and t.temp_mult_val[key] then
+        t.temp_mult_val[key][tag] = nil
+        update_multiplied_value(t, key)
+    end
+end
+
+function update_multiplied_value(t, key)
+    local base = t["base_"..key] or t[key]
+    t["base_"..key] = base  -- Save original if not already
+    local result = base
+    for _, mult in pairs(t.temp_mult_val[key] or {}) do
+        result = result * mult
+    end
+    t[key] = result
+end
+
+local cash_out_ref = G.FUNCS.cash_out
+G.FUNCS.cash_out = function(e)
+  SMODS.calculate_context({
+    cashing_out = true
+  })
+  cash_out_ref(e)
+end
+
 function tablefind(tbl, val)
     for i, v in ipairs(tbl) do
         if v == val then
@@ -118,38 +162,28 @@ end
 
 local mod_path = ''..SMODS.current_mod.path
 
-local function get_files_in_folder(base_fs, out)
-    for _, name in ipairs(NFS.getDirectoryItems(base_fs)) do
-        local abs = base_fs.."/"..name
+local function assert_files_from_folder(base_fs)
+    local list = {}
+    for _, name in ipairs(NFS.getDirectoryItems(mod_path .. base_fs)) do
+        local abs = mod_path .. base_fs .. "/" .. name
         local info = NFS.getInfo(abs)
         if info and info.type == "file" and name:match("%.lua$") then
-            table.insert(out, name)
+            table.insert(list, name)
         end
     end
-end
-
-local function assert_files_from_folder(base_fs, list)
     for _, name in ipairs(list) do
         assert(SMODS.load_file(base_fs .. "/" .. name))()
     end
 end
 
 -- Seals
-local seals = {}
-get_files_in_folder(mod_path .. "content/seals", seals)
-assert_files_from_folder("content/seals", seals)
+assert_files_from_folder("content/seals")
 
 -- Enhancements
-local enhancements = {}
-get_files_in_folder(mod_path .. "content/enhancements", enhancements)
-assert_files_from_folder("content/enhancements", enhancements)
+assert_files_from_folder("content/enhancements")
 
 -- Spectrals
-local spectrals = {}
-get_files_in_folder(mod_path .. "content/consumables/spectral", spectrals)
-assert_files_from_folder("content/consumables/spectral", spectrals)
+assert_files_from_folder("content/consumables/spectral")
 
 -- Load Jimbos
-local jokers = {}
-get_files_in_folder(mod_path .. "content/jokers", jokers)
-assert_files_from_folder("content/jokers", jokers)
+assert_files_from_folder("content/jokers")

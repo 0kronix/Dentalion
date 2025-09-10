@@ -32,11 +32,11 @@ SMODS.Consumable {
             return
         end
         local voucher_pool = get_current_pool('Voucher')
-        local selected_voucher = pseudorandom_element(voucher_pool, 'modprefix_seed')
+        local selected_voucher = pseudorandom_element(voucher_pool, 'pert')
         local it = 1
         while selected_voucher == 'UNAVAILABLE' do
             it = it + 1
-            selected_voucher = pseudorandom_element(voucher_pool, 'modprefix_seed' .. it)
+            selected_voucher = pseudorandom_element(voucher_pool, 'pert' .. it)
         end
         local voucher_card = SMODS.create_card({ area = G.play, key = selected_voucher })
         voucher_card:start_materialize()
