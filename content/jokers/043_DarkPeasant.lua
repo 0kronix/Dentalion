@@ -44,7 +44,7 @@ SMODS.Joker {
             G.hand:change_size(-card.ability.extra.hand_bonus)
             card.ability.extra.hand_bonus = 0
             return {
-                message = "Reset"
+                message = localize("k_reset")
             }
         end
 	end

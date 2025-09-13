@@ -38,7 +38,7 @@ SMODS.Joker {
 						}))
 						delay(0.5)
 						return {
-							message = "Wild"
+							message = localize("dentalion_wild_ex")
 						}
 					end
 				end

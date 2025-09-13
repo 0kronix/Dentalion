@@ -45,7 +45,7 @@ SMODS.Joker {
 			end
 			if card.ability.extra.activated then
 				return {
-					message = 'Stone',
+					message = localize("dentalion_stone_ex"),
 					card = card
 				}
 			end

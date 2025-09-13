@@ -24,7 +24,7 @@ SMODS.Joker {
     	card.ability.powmult = redeemed_voucher_count() * 0.1
         if context.joker_main then
             if card.ability.powmult > 0 then
-                -- Code frome AIJ mod
+                -- Code from AIJ mod
                 local xmlt = mult^card.ability.powmult
                 return {
                     remove_default_message = true,

@@ -14,7 +14,7 @@ SMODS.Joker {
 	config = { extra = { money = 6, round_money = 0 } },
 
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.money, card.ability.extra.round_money } }
+        return { vars = { card.ability.extra.money } }
 	end,
 
     calc_dollar_bonus = function(self, card)

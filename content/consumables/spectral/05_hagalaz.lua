@@ -33,14 +33,6 @@ SMODS.Consumable {
         if not self:can_use(card) then
             return
         end
-        function tablefind(tbl, val)
-            for i, v in ipairs(tbl) do
-                if v == val then
-                    return i
-                end
-            end
-            return nil
-        end
         G.E_MANAGER:add_event(Event({
             trigger = 'after',
             delay = 0.4,
@@ -50,19 +42,19 @@ SMODS.Consumable {
                 return true
             end
         }))
-        G.E_MANAGER:add_event(Event({
-            trigger = 'after',
-            delay = 0.2,
-            func = function()
-                for _, cardh in ipairs(G.hand.cards) do
+        for _, cardh in ipairs(G.hand.cards) do
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.2,
+                func = function()
                     if not tablefind(G.hand.highlighted, cardh) then
                         cardh:start_dissolve()
                     end
+                    ease_dollars(-(G.GAME.dollars / 2))
+                    return true
                 end
-                ease_dollars(-(G.GAME.dollars / 2))
-                return true
-            end
-        }))
+            }))
+        end
         G.E_MANAGER:add_event(Event({
             trigger = 'after',
             delay = 0.5,

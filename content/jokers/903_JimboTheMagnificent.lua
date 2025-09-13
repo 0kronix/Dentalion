@@ -12,7 +12,7 @@ SMODS.Joker {
     unlocked = true,
     discovered = true,
 	
-    config = { powmult = 0.8 },
+    config = { powmult = 0.7 },
 
     loc_vars = function(self, info_queue, card)
 		return { 

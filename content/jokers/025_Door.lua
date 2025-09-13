@@ -23,7 +23,7 @@ SMODS.Joker {
     	if context.setting_blind then
             card.ability.extra.cur_xchips = card.ability.extra.cur_xchips + card.ability.extra.mod_xchips
             return {
-                message = 'Upgrade!',
+                message = localize("k_upgrade_ex"),
                 card = card,
                 colour = G.C.CHIPS
             }
@@ -32,7 +32,7 @@ SMODS.Joker {
             if card.ability.extra.cur_xchips >= 0.5 then
                 card.ability.extra.cur_xchips = math.max(0.5, card.ability.extra.cur_xchips - card.ability.extra.mod_xchips * 2)
                 return {
-                    message = 'Degrade!',
+                    message = localize("dentalion_downgrade_ex"),
                     card = card,
                     colour = G.C.CHIPS
                 }

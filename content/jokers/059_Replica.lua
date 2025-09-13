@@ -35,6 +35,11 @@ SMODS.Joker {
                         return true
                     end)
                 }))
+                return {
+                    message = localize('dentalion_copy_ex'),
+                    colour = G.C.SECONDARY_SET.Spectral,
+                    card = spec_used
+                }
             end
         end
     end

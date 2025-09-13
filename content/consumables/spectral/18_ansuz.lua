@@ -20,7 +20,7 @@ SMODS.Consumable {
     loc_vars = function(self, info_queue, card)
         return { vars = { 
             card.ability.extra.max_highlighted,
-            G.GAME.probabilities.normal + (G.jokers and #G.hand.highlighted or 0),
+            G.GAME.probabilities.normal + (card.area == G.jokers and #G.hand.highlighted or 0),
             card.ability.extra.odds
         } }
     end,

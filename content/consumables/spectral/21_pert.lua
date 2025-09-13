@@ -31,25 +31,13 @@ SMODS.Consumable {
         if not self:can_use(card) then
             return
         end
-        local voucher_pool = get_current_pool('Voucher')
-        local selected_voucher = pseudorandom_element(voucher_pool, 'pert')
-        local it = 1
-        while selected_voucher == 'UNAVAILABLE' do
-            it = it + 1
-            selected_voucher = pseudorandom_element(voucher_pool, 'pert' .. it)
-        end
-        local voucher_card = SMODS.create_card({ area = G.play, key = selected_voucher })
-        voucher_card:start_materialize()
-        voucher_card.cost = voucher_card.cost * 2
-        G.play:emplace(voucher_card)
-        delay(0.8)
-        voucher_card:redeem()
-
         G.E_MANAGER:add_event(Event({
             trigger = 'after',
-            delay = 0.5,
+            delay = 0.4,
             func = function()
-                voucher_card:start_dissolve()
+                create_voucher(nil, "pert", "mult", 2)
+                play_sound('tarot1')
+                card:juice_up(0.3, 0.5)
                 return true
             end
         }))

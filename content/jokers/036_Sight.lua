@@ -61,20 +61,9 @@ SMODS.Joker {
             if card.ability.extra.cur_boosters >= card.ability.extra.boosters then
                 card.ability.extra.cur_boosters = 0
                 card.ability.extra.active = false
-                -- From Visibility
-                G.E_MANAGER:add_event(Event({
-                    func = (function()
-                        for i = 1, card.ability.extra.tags do
-                            local tag_key = get_next_tag_key()
-                            while tag_key == 'tag_orbital' do
-                                tag_key = get_next_tag_key()
-                            end
-                            add_tag(Tag(tag_key))
-                            card:juice_up(0.3, 0.5)
-                        end
-                        return true
-                    end),
-                }))
+                for i = 1, card.ability.extra.tags do
+                    create_tag(nil, "sight")
+                end
             else
                 return {
                     message = tostring(card.ability.extra.cur_boosters) .. "/" .. tostring(card.ability.extra.boosters)

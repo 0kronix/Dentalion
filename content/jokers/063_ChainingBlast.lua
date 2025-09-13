@@ -19,14 +19,6 @@ SMODS.Joker {
 	end,
 
     calculate = function(self, card, context)
-        function tablefind(tbl, val)
-            for i, v in ipairs(tbl) do
-                if v == val then
-                    return true
-                end
-            end
-            return false
-        end
         local chain_cards = {}
         if context.cardarea == G.play and context.individual then
             for i = 1, #context.full_hand do

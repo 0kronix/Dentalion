@@ -37,12 +37,10 @@ SMODS.Consumable {
         end
         G.E_MANAGER:add_event(Event({
             trigger = 'before',
-            delay = 0.0,
+            delay = 0.4,
             func = (function()
                 if pseudorandom("sowilu") < G.GAME.probabilities.normal / card.ability.extra.odds then
-                    local _card = create_card(nil, G.consumeables, nil, nil, nil, nil, "c_soul", nil)
-                    _card:add_to_deck()
-                    G.consumeables:emplace(_card)
+                    SMODS.add_card{ key = "c_soul" }
                 else
                     G.hand:change_size(-card.ability.extra.hand_size)
                     attention_text({
@@ -60,6 +58,6 @@ SMODS.Consumable {
                 return true
             end)
         }))
-        delay(0.3)
+        delay(0.5)
     end
 }

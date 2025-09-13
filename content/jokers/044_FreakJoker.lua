@@ -28,16 +28,20 @@ SMODS.Joker {
         if context.using_consumeable and context.consumeable.ability.set == "Planet" and not context.blueprint then
             SMODS.change_free_rerolls(card.ability.extra.rerolls)
             card.ability.extra.all = card.ability.extra.all + 1
+            local s = ""
+            if card.ability.extra.all > 1 then s = "s" end
             return {
-                message = tostring(card.ability.extra.all),
+                message = "+" .. tostring(card.ability.extra.all) .. " free reroll" .. s,
                 colour = G.C.GREEN
             }
         end
         if context.reroll_shop and card.ability.extra.all > 0 and not context.blueprint then
             card.ability.extra.all = card.ability.extra.all - 1
             SMODS.change_free_rerolls(-card.ability.extra.rerolls)
+            local s = ""
+            if card.ability.extra.all > 1 then s = "s" end
             return {
-                message = tostring(card.ability.extra.all),
+                message = tostring(card.ability.extra.all) .. " reroll" .. s .. " left",
                 colour = G.C.GREEN
             }
         end

@@ -23,7 +23,7 @@ SMODS.Joker {
 
     update = function(self, card, dt)
         card.ability.extra.cur_bonus = math.min(card.ability.extra.max_bonus, 
-            math.floor(((G.GAME.dollars or 0) + (G.GAME.dollar_buffer or 0)) / card.ability.extra.money))
+        math.floor(((G.GAME.dollars or 0) + (G.GAME.dollar_buffer or 0)) / card.ability.extra.money))
     end,
 
     calculate = function(self, card, context)

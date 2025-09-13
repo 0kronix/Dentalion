@@ -2,6 +2,21 @@ return {
     misc = {
         labels = {
             dentalion_lightgreen_seal = "Light Green Seal",
+        },
+
+        dictionary = {
+            dentalion_downgrade_ex = "Downgrade!",
+            dentalion_mult_ex = "Mult!",
+            dentalion_bonus_ex = "Bonus!",
+            dentalion_wild_ex = "Wild!",
+            dentalion_glass_ex = "Glass!",
+            dentalion_stone_ex = "Stone!",
+            dentalion_lucky_ex = "Lucky!",
+            dentalion_mutation_ex = "Mutation!",
+            dentalion_chips_ex = "Chips!",
+            dentalion_dollars_ex = "Dollars!",
+            dentalion_failed_ex = "Failed",
+            dentalion_copy_ex = "Copied!"
         }
     },
     descriptions = {
@@ -14,6 +29,63 @@ return {
                     "and extra {C:money}$6",
                     "{C:attention}-2{} Joker Slot"
                 },
+            },
+        },
+
+        Blind = {
+            bl_dentalion_wrath = {
+                name = 'The Wrath',
+                text = {
+                    "+#1#% of Blind requirement",
+                    "for each Tag held"
+                }
+            },
+
+            bl_dentalion_sloth = {
+                name = 'The Sloth',
+                text = {
+                    "Must play less",
+                    "than 4 cards"
+                }
+            },
+
+            bl_dentalion_lust = {
+                name = 'The Lust',
+                text = {
+                    "Hand must contain",
+                    "Hearts"
+                }
+            },
+
+            bl_dentalion_greed = {
+                name = 'The Greed',
+                text = {
+                    "Lose $1 for each level",
+                    "of played poker hand"
+                }
+            },
+
+            bl_dentalion_envy = {
+                name = 'The Envy',
+                text = {
+                    "Sell cost of the most",
+                    "expensive Joker sets to $0"
+                }
+            },
+
+            bl_dentalion_gluttony = {
+                name = 'The Gluttony',
+                text = {
+                    "Consume all your",
+                    "consumables"
+                }
+            },
+
+            bl_dentalion_pride = {
+                name = 'The Pride',
+                text = {
+                    ""
+                }
             },
         },
 
@@ -424,7 +496,7 @@ return {
                 name = "Bugs",
                 text = {
                     "Gains {X:mult,C:white}X#1#{} at end of",
-                    "round, if you have {C:money}$10{} or less",
+                    "round, if you have {C:money}$#3#{} or less",
                     "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)"
                 },
             },
@@ -554,8 +626,7 @@ return {
                 text = {
                     "Gives {C:money}$#1#{} at end of round,",
                     "if {C:money}dollars{} hasn't changed",
-                    "since start of round",
-                    "{C:inactive}(Currently: {C:money}$#2#{}{C:inactive})"
+                    "since start of round"
                 },
             },
 
@@ -952,8 +1023,8 @@ return {
             c_dentalion_berkana = {
                 name = 'Berkana',
                 text = {
-                    "Create {C:attention}#1#{} copy of",
-                    "a random {C:dark_edition}Edition{} Tag"
+                    "Create {C:attention}#1#{} random",
+                    "{C:dark_edition}Edition{} Tags"
                 }
             },
 
@@ -1026,6 +1097,30 @@ return {
                 }
             },
 
+            dark_suits_p = {
+                name = "Dark Suits",
+                text = {
+                    "{C:spades}Spades{}, {C:clubs}Clubs{},",
+                    "{C:paperback_crowns}Crowns{}"
+                }
+            },
+
+            dark_suits_b = {
+                name = "Dark Suits",
+                text = {
+                    "{C:spades}Spades{}, {C:clubs}Clubs{},",
+                    "{C:bunc_halberds}Halberds{}"
+                }
+            },
+
+            dark_suits_pb = {
+                name = "Dark Suits",
+                text = {
+                    "{C:spades}Spades{}, {C:clubs}Clubs{},",
+                    "{C:paperback_crowns}Crowns{} and {C:bunc_halberds}Halberds{}"
+                }
+            },
+
             light_suits = {
                 name = "Light Suits",
                 text = {
@@ -1033,11 +1128,27 @@ return {
                 }
             },
 
-            suits_change = {
-                name = "Change of suits",
+            light_suits_p = {
+                name = "Light Suits",
                 text = {
-                    "{C:hearts}Hearts{} into {C:spades}Spades{}",
-                    "{C:diamonds}Diamonds{} into {C:clubs}Clubs{}"
+                    "{C:hearts}Hearts{}, {C:diamonds}Diamonds{},",
+                    "{C:paperback_stars}Stars{}"
+                }
+            },
+
+            light_suits_b = {
+                name = "Light Suits",
+                text = {
+                    "{C:hearts}Hearts{}, {C:diamonds}Diamonds{},",
+                    "{C:bunc_fleurons}Fleurons{}"
+                }
+            },
+
+            light_suits_pb = {
+                name = "Light Suits",
+                text = {
+                    "{C:hearts}Hearts{}, {C:diamonds}Diamonds{},",
+                    "{C:paperback_stars}Stars{} and {C:bunc_fleurons}Fleurons{}"
                 }
             },
 

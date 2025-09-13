@@ -39,18 +39,7 @@ SMODS.Consumable {
             func = function()
                 local empty_slots = G.consumeables.config.card_limit - #G.consumeables.cards
                 for i = 1, empty_slots do
-                    local _card = create_card(
-                        "Consumeables",
-                        G.consumeables,
-                        nil,
-                        nil,
-                        nil,
-                        nil,
-                        pseudorandom_element(G.P_CENTER_POOLS.Consumeables, pseudoseed("ehwaz")).key,
-                        "ehwaz"
-                    )
-                    _card:add_to_deck()
-                    G.consumeables:emplace(_card)
+                    SMODS.add_card{ set = "Tarot" }
                 end
                 ease_dollars(-(empty_slots * 4))
                 play_sound('tarot1')

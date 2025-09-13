@@ -16,7 +16,7 @@ SMODS.Consumable {
     discovered = true,
 
     config = {
-        max_highlighted = 3, 
+        max_highlighted = 4, 
         mod_conv = 'm_dentalion_frozen'
     },
 

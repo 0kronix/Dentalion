@@ -11,19 +11,20 @@ SMODS.Joker {
     unlocked = true,
     discovered = true,
 	
-    config = { extra = { mod_xmult = 0.2, cur_xmult = 1 } },
+    config = { extra = { mod_xmult = 0.2, cur_xmult = 1, max_money = 10 } },
 
     loc_vars = function(self, info_queue, card)
     	return { vars = { 
 					card.ability.extra.mod_xmult,
-					card.ability.extra.cur_xmult
+					card.ability.extra.cur_xmult,
+                    card.ability.extra.max_money
 				}
 			}
 	end,
 
     calculate = function(self, card, context)
     	if context.end_of_round and not context.blueprint and context.cardarea == G.jokers then
-    		if G.GAME.dollars <= 10 then
+    		if G.GAME.dollars <= card.ability.extra.max_money then
     			card.ability.extra.cur_xmult = card.ability.extra.cur_xmult + card.ability.extra.mod_xmult
     			return {
                     message = localize('k_upgrade_ex'),

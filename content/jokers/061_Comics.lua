@@ -37,6 +37,9 @@ SMODS.Joker {
                             return true
                         end
                     }))
+                    return {
+                        message = localize("k_extinct_ex")
+                    }
                 end
             end
         end

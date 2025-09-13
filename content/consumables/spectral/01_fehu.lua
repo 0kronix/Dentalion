@@ -22,11 +22,12 @@ SMODS.Consumable {
     },
 
     loc_vars = function(self, info_queue, card)
-        if G.jokers then
-            return { vars = { card.ability.extra.money, #G.jokers.cards * card.ability.extra.money } }
-        else
-            return { vars = { card.ability.extra.money, 0 } }
-        end
+        return { 
+            vars = { 
+                card.ability.extra.money, 
+                (card.area == G.jokers and (#G.jokers.cards * card.ability.extra.money)) or 0 
+            }
+        }
     end,
 
     can_use = function(self, card)

@@ -50,13 +50,12 @@ SMODS.Consumable {
         if next(SMODS.find_mod("paperback")) then
             table.insert(tag_pool, "tag_paperback_dichrome")
         end
-        local selected_tag = pseudorandom_element(tag_pool, 'berkana')
         G.E_MANAGER:add_event(Event({
             trigger = 'after',
             delay = 0.4,
             func = function()
                 for i = 1, card.ability.extra.tags do
-                    add_tag(Tag(selected_tag, false, 'Small'))
+                    create_tag(pseudorandom_element(tag_pool, "berkana"), nil)
                 end
                 play_sound('tarot1')
                 card:juice_up(0.3, 0.5)

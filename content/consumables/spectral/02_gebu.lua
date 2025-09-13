@@ -42,8 +42,7 @@ SMODS.Consumable {
                 return true
             end
         }))
-        -- Stolen from Aikoyori's Rock
-        for _,_c in ipairs(G.hand.cards) do
+        for _, _c in ipairs(G.hand.cards) do
             G.E_MANAGER:add_event(Event({
                 func = function()
                     _c.ability.perma_bonus = _c.ability.perma_bonus + card.ability.extra.chips

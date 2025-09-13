@@ -22,7 +22,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         card.ability.extra.percent = 2 * math.max(0, 52 - #G.playing_cards)
         if context.final_scoring_step then
-            balance_percent(card, (card.ability.extra.percent*0.01))
+            balance_percent(card, (card.ability.extra.percent * 0.01))
         end
     end
 }

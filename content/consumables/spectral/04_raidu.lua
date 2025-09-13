@@ -43,6 +43,6 @@ SMODS.Consumable {
                 return true
             end
         }))
-        delay(0.3)
+        delay(0.5)
     end
 }

@@ -14,9 +14,19 @@ SMODS.Joker {
     config = { extra = { chips = 0, mod_chips = 2 } },
 
     loc_vars = function(self, info_queue, card)
-    	info_queue[#info_queue+1] = {set = 'Other', key = 'dark_suits'}
-    	info_queue[#info_queue+1] = {set = 'Other', key = 'light_suits'}
-    	info_queue[#info_queue+1] = {set = 'Other', key = 'suits_change'}
+    	if next(SMODS.find_mod("paperback")) and next(SMODS.find_mod("Bunco")) then
+            info_queue[#info_queue + 1] = {set = 'Other', key = 'dark_suits_pb'}
+            info_queue[#info_queue + 1] = {set = 'Other', key = 'light_suits_pb'}
+        elseif next(SMODS.find_mod("paperback")) and not next(SMODS.find_mod("Bunco")) then
+            info_queue[#info_queue + 1] = {set = 'Other', key = 'dark_suits_p'}
+            info_queue[#info_queue + 1] = {set = 'Other', key = 'light_suits_p'}
+        elseif not next(SMODS.find_mod("paperback")) and next(SMODS.find_mod("Bunco")) then
+            info_queue[#info_queue + 1] = {set = 'Other', key = 'dark_suits_b'}
+            info_queue[#info_queue + 1] = {set = 'Other', key = 'light_suits_b'}
+        else
+            info_queue[#info_queue + 1] = {set = 'Other', key = 'dark_suits'}
+            info_queue[#info_queue + 1] = {set = 'Other', key = 'light_suits'}
+        end
 		return { vars = { card.ability.extra.chips, card.ability.extra.mod_chips } }
 	end,
 
@@ -24,7 +34,7 @@ SMODS.Joker {
     	local count = 0
 		if context.before and not context.blueprint then
 			for _, played_card in ipairs(context.scoring_hand) do
-                if played_card:is_suit('Spades', true) or played_card:is_suit('Clubs', true) then
+                if is_dark_suit(played_card) then
                 	count = count + 1
                 end
             end
@@ -44,48 +54,8 @@ SMODS.Joker {
         if context.after and not context.blueprint and context.cardarea == G.jokers then
 			if context.scoring_hand and context.full_hand and #context.scoring_hand > 0 and #context.full_hand > 0 then
 				for _, played_card in ipairs(context.scoring_hand) do
-					if played_card:is_suit('Hearts', true) or played_card:is_suit('Diamonds', true) then
-						G.E_MANAGER:add_event(Event({
-			                trigger = 'after',
-			                delay = 0.15,
-			                func = function()
-			                    played_card:flip()
-			                    play_sound('card1')
-			                    played_card:juice_up(0.3, 0.3)
-			                    return true
-			                end
-			            }))
-			            delay(0.2)
-			            if played_card:is_suit('Hearts', true) then
-				            G.E_MANAGER:add_event(Event({
-				                trigger = 'after',
-				                delay = 0.1,
-				                func = function()
-				                    SMODS.change_base(played_card, "Spades")
-				                    return true
-				                end
-				            }))
-				        elseif played_card:is_suit('Diamonds', true) then
-				            G.E_MANAGER:add_event(Event({
-				                trigger = 'after',
-				                delay = 0.1,
-				                func = function()
-				                    SMODS.change_base(played_card, "Clubs")
-				                    return true
-				                end
-				            }))
-				        end
-				        G.E_MANAGER:add_event(Event({
-			                trigger = 'after',
-			                delay = 0.15,
-			                func = function()
-			                    played_card:flip()
-			                    play_sound('card1')
-			                    played_card:juice_up(0.3, 0.3)
-			                    return true
-			                end
-			            }))
-			            delay(0.5)
+					if is_light_suit(played_card) then
+						convert_to(played_card, "dark", "obsidian")
 			        end
 			    end
 			end

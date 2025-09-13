@@ -32,7 +32,7 @@ SMODS.Joker {
 			                end
 			            }))
 						return {
-							message = "Mutation!",
+							message = localize("dentalion_mutation_ex"),
 							card = card,
 							colour = G.C.GREEN
 						}
