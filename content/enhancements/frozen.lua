@@ -27,6 +27,7 @@ SMODS.Enhancement {
                     frozen_count = frozen_count + 1
                 end
             end
+            frozen_count = frozen_count + #SMODS.find_card('j_dentalion_frozenjoker') * 3
             return {
                 xchips = 1 + (frozen_count - 1) * card.ability.extra.xchips
             }

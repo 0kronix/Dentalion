@@ -26,21 +26,25 @@ SMODS.Joker {
             }
         end
         if context.after and context.cardarea == G.jokers and not context.blueprint then
+            local faces = 0
             for _, cards in ipairs(context.scoring_hand) do
-                if not cards:is_face() then
-                    G.E_MANAGER:add_event(Event({
-                        trigger = 'after',
-                        delay = 0.4,
-                        func = function()
-                            card:start_dissolve()
-                            card:juice_up(0.3, 0.5)
-                            return true
-                        end
-                    }))
-                    return {
-                        message = localize("k_extinct_ex")
-                    }
+                if cards:is_face() then
+                    faces = faces + 1
                 end
+            end
+            if faces < 1 then
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.4,
+                    func = function()
+                        card:start_dissolve()
+                        card:juice_up(0.3, 0.5)
+                        return true
+                    end
+                }))
+                return {
+                    message = localize("k_extinct_ex")
+                }
             end
         end
     end

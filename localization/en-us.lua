@@ -12,11 +12,13 @@ return {
             dentalion_glass_ex = "Glass!",
             dentalion_stone_ex = "Stone!",
             dentalion_lucky_ex = "Lucky!",
+            dentalion_frozen_ex = "Frozen!",
             dentalion_mutation_ex = "Mutation!",
             dentalion_chips_ex = "Chips!",
             dentalion_dollars_ex = "Dollars!",
             dentalion_failed_ex = "Failed",
-            dentalion_copy_ex = "Copied!"
+            dentalion_copy_ex = "Copied!",
+            dentalion_plus_planet_ex = "+1 Planet",
         }
     },
     descriptions = {
@@ -84,7 +86,9 @@ return {
             bl_dentalion_pride = {
                 name = 'The Pride',
                 text = {
-                    ""
+                    "Debuff all cards in full",
+                    "deck if it has less then",
+                    "4 different suits"
                 }
             },
         },
@@ -809,6 +813,87 @@ return {
                     "Play {C:attention}Jack #1#{} {C:inactive}[#2#]{} times to",
                     "create {C:dark_edition}negative {C:attention}Temperance"
                 },
+            },
+
+            j_dentalion_stickyhand={
+                name = "Sticky Hand",
+                text = { {
+                    "{C:red}Discards{} {C:attention}#3#{} random cards",
+                    "per hand {C:attention}played"
+                },
+                {
+                    "Gains {C:chips}+#1#{} Chips for each",
+                    "card {C:red}discarded{} this way",
+                    "{C:inactive}(Currently {C:chips}+#2#{}{C:inactive} Chips)"
+                } },
+            },
+
+            j_dentalion_snowman={
+                name = "Snowman",
+                text = {
+                    "Enhances random card in hand",
+                    "to {C:attention}Frozen Card{} if {C:attention}scored hand",
+                    "contain only one {C:attention}Frozen Card"
+                },
+            },
+
+            j_dentalion_frozenjoker={
+                name = "Frozen Joker",
+                text = { {
+                    "{C:attention}Rettriger{} all {C:attention}Frozen Cards"
+                },
+                {
+                    "{C:attention}Frozen Cards{} count this joker",
+                    "as {C:attention}3 Frozen Cards"
+                } },
+            },
+
+            j_dentalion_blizzard={
+                name = "Blizzard",
+                text = {
+                    "Gains {X:chips,C:white}X#1#{} Chips for",
+                    "each {C:attention}Frozen Card",
+                    "in your {C:attention}full deck",
+                    "{C:inactive}(Currently {X:chips,C:white}X#2#{C:inactive} Chips)",
+                },
+            },
+
+            j_dentalion_mojito={
+                name = "Mojito",
+                text = {
+                    "{C:green}#1# in #2#{} chance to change {C:attention}seal",
+                    "on played card to {C:attention}Light Green Seal"
+                },
+            },
+
+            j_dentalion_outlinemap={
+                name = "Outline Map",
+                text = {
+                    "Create random {C:planet}Planet{} card if card",
+                    "with {C:attention}Light Green Seal{} is {C:red}discarded",
+                    "{C:inactive}(Must have room)"
+                },
+            },
+
+            j_dentalion_parallax={
+                name = "Parallax",
+                text = {
+                    "Gives {X:mult,C:white}X#1#{} Mult, if number",
+                    "of {C:attention}played cards{} equals",
+                    "number of {C:attention}joker cards"
+                },
+            },
+
+            j_dentalion_bomb={
+                name = "Bomb",
+                text = { {
+                    "Cards {C:attention}without{} enhancement",
+                    "gives {X:mult,C:white}X#1#{} Mult"
+                },
+                {
+                    "{C:red}Destroy{} self and adjacent",
+                    "jokers, if hand is {C:dentalion_onfire}on fire"
+                } },
             },
         },
 

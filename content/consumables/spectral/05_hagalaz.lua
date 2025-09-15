@@ -42,19 +42,19 @@ SMODS.Consumable {
                 return true
             end
         }))
-        for _, cardh in ipairs(G.hand.cards) do
-            G.E_MANAGER:add_event(Event({
-                trigger = 'after',
-                delay = 0.2,
-                func = function()
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.2,
+            func = function()
+                for _, cardh in ipairs(G.hand.cards) do
                     if not tablefind(G.hand.highlighted, cardh) then
                         cardh:start_dissolve()
                     end
-                    ease_dollars(-(G.GAME.dollars / 2))
-                    return true
                 end
-            }))
-        end
+                ease_dollars(-(G.GAME.dollars / 2))
+                return true
+            end
+        }))
         G.E_MANAGER:add_event(Event({
             trigger = 'after',
             delay = 0.5,
