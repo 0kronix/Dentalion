@@ -895,6 +895,25 @@ return {
                     "jokers, if hand is {C:dentalion_onfire}on fire"
                 } },
             },
+
+            j_dentalion_stickman={
+                name = "Stickman",
+                text = {
+                    "Gains {C:mult}+#1#{} Mult, if played",
+                    "hand contain scoring",
+                    "{C:attention}Jack{}, {C:attention}Queen{} and {C:attention}King",
+                    "{C:inactive}(Currently {C:mult}+#2#{}{C:inactive} Mult)"
+                },
+            },
+
+            j_dentalion_999jokers={
+                name = "999 Jokers",
+                text = {
+                    "{C:green}#1# in #2#{} chance to {C:attention}level up",
+                    "played poker hand, if it",
+                    "contain scoring {C:attention}9"
+                },
+            },
         },
 
 
