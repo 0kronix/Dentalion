@@ -19,7 +19,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
         if context.joker_main and context.cardarea == G.jokers and not context.blueprint then
-            if pseudorandom("beatsaber") < G.GAME.probabilities.normal / card.ability.extra.mult_odds then
+            if prob_check(G.GAME.probabilities.normal, card.ability.extra.mult_odds, "beatsaber") then
                 return {
                     mult = card.ability.extra.mult_odds
                 }

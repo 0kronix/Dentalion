@@ -11,7 +11,7 @@ SMODS.Joker {
     unlocked = true,
     discovered = true,
 	
-    config = { extra = { bonus = 10, active = false } },
+    config = { extra = { bonus = 35, active = false } },
 
     loc_vars = function(self, info_queue, card)
         main_end = {
@@ -54,10 +54,14 @@ SMODS.Joker {
                 func = function()
                     random_card.ability.perma_bonus = random_card.ability.perma_bonus or 0
                     random_card.ability.perma_bonus = random_card.ability.perma_bonus + card.ability.extra.bonus
-                    random_card:juice_up(0.3, 0.5)
                     return true
                 end
             }))
+            return {
+                message = localize("k_upgrade_ex"),
+                message_card = random_card,
+                colour = G.C.CHIPS
+            }
         end
 	end
 }

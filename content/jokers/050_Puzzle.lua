@@ -49,9 +49,7 @@ SMODS.Joker {
                         trigger = 'before',
                         delay = 0.0,
                         func = (function()
-                            local _card = create_card(nil, G.consumeables, nil, nil, nil, nil, rnd_tarot, nil)
-                            _card:add_to_deck()
-                            G.consumeables:emplace(_card)
+                            SMODS.add_card{ key = rnd_tarot }
                             G.GAME.consumeable_buffer = 0
                             return true
                         end)
@@ -62,8 +60,7 @@ SMODS.Joker {
                     end
 
                     return {
-                        message = localize('k_plus_tarot'),
-                        card = card
+                        message = localize('k_plus_tarot')
                     }
                 end
             end

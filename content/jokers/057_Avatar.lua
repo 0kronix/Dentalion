@@ -30,7 +30,7 @@ SMODS.Joker {
         card.ability.powmult = leg_joks * card.ability.mod_powmult
         if context.joker_main then
             if card.ability.powmult > 0 then
-                -- Code frome AIJ mod
+                -- Code from AIJ mod
                 local xmlt = mult^card.ability.powmult
                 return {
                     remove_default_message = true,

@@ -1,5 +1,12 @@
 -- Special Thanks for AIJ mod!
 
+function prob_check(chance, odds, key)
+    if pseudorandom(key) < chance / odds then
+        return true
+    end
+    return false
+end
+
 local dark_suits = {"Spades", "Clubs"}
 local light_suits = {"Hearts", "Diamonds"}
 if next(SMODS.find_mod("paperback")) then
@@ -56,16 +63,16 @@ function convert_to(card, suit, key)
 end
 
 function is_light_suit(card)
-    if not SMODS.has_no_suit(card) and (card:is_suit("Hearts") or card:is_suit("Diamonds") or 
-        card:is_suit("paperback_Stars") or card:is_suit("bunc_Fleurons")) then
+    if card:is_suit("Hearts") or card:is_suit("Diamonds") or 
+        card:is_suit("paperback_Stars") or card:is_suit("bunc_Fleurons") then
         return true
     end
     return false
 end
 
 function is_dark_suit(card)
-    if not SMODS.has_no_suit(card) and (card:is_suit("Spades") or card:is_suit("Clubs") or 
-        card:is_suit("paperback_Crowns") or card:is_suit("bunc_Halberds")) then
+    if card:is_suit("Spades") or card:is_suit("Clubs") or 
+        card:is_suit("paperback_Crowns") or card:is_suit("bunc_Halberds") then
         return true
     end
     return false

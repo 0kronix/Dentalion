@@ -21,7 +21,7 @@ SMODS.Joker {
 		if context.after and not context.blueprint then
 			if context.full_hand and #context.full_hand > 0 then
 				for _, i in ipairs(context.full_hand) do
-					if pseudorandom("mutantjoker") < G.GAME.probabilities.normal / card.ability.extra.odds and not i:is_face() then
+					if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "mutantjoker") and not i:is_face() then
 			            G.E_MANAGER:add_event(Event({
 			                trigger = 'after',
 			                delay = 0.1,
@@ -33,7 +33,7 @@ SMODS.Joker {
 			            }))
 						return {
 							message = localize("dentalion_mutation_ex"),
-							card = card,
+							message_card = i,
 							colour = G.C.GREEN
 						}
 					end

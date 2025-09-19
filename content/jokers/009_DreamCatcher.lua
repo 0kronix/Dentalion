@@ -25,7 +25,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
 		if context.before then
 			if #context.full_hand == 1 and (context.full_hand[1]:get_id() == 2 or context.full_hand[1]:get_id() == 3) then
-				if pseudorandom("dreamcatcher") < G.GAME.probabilities.normal / card.ability.extra.odds and #G.consumeables.cards < G.consumeables.config.card_limit then
+				if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "dreamcatcher") and #G.consumeables.cards < G.consumeables.config.card_limit then
 					G.E_MANAGER:add_event(Event({
 						trigger = 'before',
 						delay = 0.0,
@@ -35,8 +35,7 @@ SMODS.Joker {
 						end)
 					}))
 					return {
-						message = localize('k_plus_tarot'),
-						card = card
+						message = localize('k_plus_tarot')
 					}
 				end
 			end

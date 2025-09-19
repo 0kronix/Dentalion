@@ -20,10 +20,10 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.end_of_round and not context.blueprint and context.cardarea == G.jokers then
             for i = 1, #G.hand.cards do
-            local percent = 1.15 - (i - 0.999) / (#G.hand.cards - 0.998) * 0.3
-            G.E_MANAGER:add_event(Event({
+                local percent = 1.15 - (i - 0.999) / (#G.hand.cards - 0.998) * 0.3
+                G.E_MANAGER:add_event(Event({
                     trigger = 'after',
-                    delay = 0.15,
+                    delay = 0.3,
                     func = function()
                         assert(SMODS.modify_rank(G.hand.cards[i], 1))
                         play_sound('card1', percent)

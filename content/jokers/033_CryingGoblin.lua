@@ -21,7 +21,8 @@ SMODS.Joker {
     calculate = function(self, card, context)
 		if context.individual and context.cardarea == G.play and not context.other_card.lucky_trigger and context.other_card.ability.name == 'Lucky Card' then
             return {
-                chips = card.ability.extra.chips
+                chips = card.ability.extra.chips,
+                message_card = context.other_card
             }
         end
 	end

@@ -22,11 +22,11 @@ SMODS.Joker {
 	end,
 
     calculate = function(self, card, context)
-        if context.before and context.cardarea == G.jokers then
-            if pseudorandom("bipolarjoker") < G.GAME.probabilities.normal / card.ability.extra.odds then
+        if context.before then
+            if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "bipolarjoker") then
                 local chose = pseudorandom_element({-1, 1}, "bipolarjoker" .. G.GAME.round_resets.ante)
                 G.GAME.blind.chips = G.GAME.blind.chips + chose * math.ceil(G.GAME.blind.chips * (card.ability.extra.blind_change * 0.01))
-                card:juice_up(0.3, 0.5)
+                card:juice_up(0.3, 0.3)
                 G.E_MANAGER:add_event(Event({
                     trigger = "ease",
                     delay = 0.5,

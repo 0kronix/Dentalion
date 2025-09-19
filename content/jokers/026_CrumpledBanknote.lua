@@ -18,7 +18,7 @@ SMODS.Joker {
 	end,
 
     calculate = function(self, card, context)
-		if context.end_of_round and context.cardarea == G.jokers and not context.blueprint then
+		if context.end_of_round and not context.blueprint then
 			card.ability.extra_value = pseudorandom("banknote", card.ability.extra.min_money, card.ability.extra.max_money)
 			card:set_cost()
 			return {

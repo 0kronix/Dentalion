@@ -12,13 +12,12 @@ SMODS.Joker {
     unlocked = true,
     discovered = true,
 	
-    config = { extra = { odds = 4 } },
+    config = { extra = { odds = 2 } },
 
     loc_vars = function(self, info_queue, card)
 		return {
             vars = {
-                G.GAME.probabilities.normal,
-                card.ability.extra.odds
+                G.GAME.probabilities.normal, card.ability.extra.odds
             }
         }
 	end,
@@ -26,9 +25,11 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.end_of_round and context.cardarea == G.jokers then
             if G.GAME.blind.boss and not context.blueprint then
-                if pseudorandom("marbas") < G.GAME.probabilities.normal / card.ability.extra.odds then
+                if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "marbas") then
             		local editionless_jokers = SMODS.Edition:get_edition_cards(G.jokers, true)
                     G.E_MANAGER:add_event(Event({
+                        trigger = "after",
+                        delay = 0.0,
                         func = function()
                             local eligible_card = pseudorandom_element(editionless_jokers, 'marbas')
                             eligible_card:set_edition({ negative = true })

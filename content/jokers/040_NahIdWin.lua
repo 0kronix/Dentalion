@@ -11,7 +11,7 @@ SMODS.Joker {
     unlocked = true,
     discovered = true,
 	
-	config = { extra = { mod_chips = 15, cur_chips = 0 } },
+	config = { extra = { mod_chips = 20, cur_chips = 0 } },
 
     loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.mod_chips, card.ability.extra.cur_chips } }

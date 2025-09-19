@@ -24,7 +24,7 @@ SMODS.Joker {
                 return {
                     message = localize('k_again_ex'),
                     repetitions = 1,
-                    card = card
+                    message_card = context.other_card
                 }
             end
         end

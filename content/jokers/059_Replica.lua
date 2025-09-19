@@ -23,22 +23,19 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.using_consumeable and context.consumeable.ability.set == "Spectral" and 
             #G.consumeables.cards < G.consumeables.config.card_limit then
-            if pseudorandom("replica") < G.GAME.probabilities.normal / card.ability.extra.odds then
+            if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "replica") then
                 local spec_used = context.consumeable.config.center.key
                 G.E_MANAGER:add_event(Event({
                     trigger = 'before',
-                    delay = 0.0,
+                    delay = 0.2,
                     func = (function()
-                        local _card = create_card(nil, G.consumeables, nil, nil, nil, nil, spec_used, nil)
-                        _card:add_to_deck()
-                        G.consumeables:emplace(_card)
+                        SMODS.add_card{ key = spec_used }
                         return true
                     end)
                 }))
                 return {
                     message = localize('dentalion_copy_ex'),
-                    colour = G.C.SECONDARY_SET.Spectral,
-                    card = spec_used
+                    colour = G.C.SECONDARY_SET.Spectral
                 }
             end
         end

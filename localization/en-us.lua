@@ -17,6 +17,7 @@ return {
             dentalion_chips_ex = "Chips!",
             dentalion_dollars_ex = "Dollars!",
             dentalion_failed_ex = "Failed",
+            dentalion_boom_ex = "BOOM!",
             dentalion_copy_ex = "Copied!",
             dentalion_plus_planet_ex = "+1 Planet",
         }
@@ -637,9 +638,9 @@ return {
             j_dentalion_mactonight={
                 name = "Mac Tonight",
                 text = {
-                    "Add {C:money}$#1#{} of {C:attention}sell value",
-                    "to {C:attention}leftmost{} Joker after",
-                    "Using {C:tarot}The Moon"
+                    "Add {C:money}$#1#{} to {C:attention}sell value",
+                    "of {C:attention}all{} jokers after",
+                    "using {C:tarot}The Moon"
                 },
             },
 
@@ -762,7 +763,8 @@ return {
                 name = "Noir Joker",
                 text = {
                     "Gains {X:chips,C:white}X#1#{} for each",
-                    "{C:attention}dark suit{} card in hand"
+                    "{C:attention}dark suit{} card in hand",
+                    "{C:inactive}(Will give {X:chips,C:white}X#2#{}{C:inactive} Chips)"
                 },
             },
 
@@ -914,8 +916,108 @@ return {
                     "contain scoring {C:attention}9"
                 },
             },
+
+            j_dentalion_ivbag={
+                name = "IV Bag",
+                text = { {
+                    "At start of round, joker",
+                    "with {C:attention}most sell value{} {C:red}lose",
+                    "{C:money}$#1#{} of {C:attention}sell value"
+                },
+                {
+                    "Gains {X:mult,C:white}X#2#{} Mult for each",
+                    "joker, {C:attention}sell value{} of which",
+                    "less than {C:money}$#3#{}",
+                    "{C:inactive}(Currently {X:mult,C:white}X#4#{}{C:inactive} Mult)"
+                } },
+            },
+
+            j_dentalion_samuraijoker={
+                name = "Samurai Joker",
+                text = {
+                    "If {C:red}discard{} contain only",
+                    "{C:attention}one{} card, play it",
+                    "{C:inactive}(Once per round)"
+                },
+            },
+
+            j_dentalion_simonsays={
+                name = "Simon Says",
+                text = {
+                    "Give {C:money}$#2#{} when {C:attention}event{} trigger",
+                    "{C:inactive}(Event changes every ante)",
+                    "{C:inactive}(Now - #1#)"
+                },
+            },
+
+            j_dentalion_abyss={
+                name = "Abyss",
+                text = { {
+                    "{C:red}Destroy{} {C:attention}leftmost{} consumable",
+                    "when {C:attention}ending shop"
+                },
+                {
+                    "Gains {X:mult,C:white}X#1#{} Mult for each",
+                    "consumable, {C:red}destroyed{} this way",
+                    "{C:inactive}(Resets, if no consumable was destroyed)",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)"
+                } },
+            },
+
+            j_dentalion_gear={
+                name = "Gear",
+                text = {
+                    "Reroll {C:attention}Boss Blind",
+                    "when {C:attention}skipping{} Blind"
+                },
+            },
+
+            j_dentalion_fallingstar={
+                name = "Falling Star",
+                text = { {
+                    "After defeating each",
+                    "{C:attention}Boss Blind{}, gain a",
+                    "{C:attention,T:tag_dentalion_star}#1#"
+                },
+                {
+                    "{C:attention,T:tag_dentalion_star}#1#{} twice",
+                    "as effective"
+                } },
+            },
+
+            j_dentalion_celticcross={
+                name = "Celtic Cross",
+                text = {
+                    "Gains {X:green,C:white}#1#{} Mult for",
+                    "each {C:clubs}Club{} card",
+                    "in your {C:attention}full deck",
+                    "{C:inactive}(Currently {X:green,C:white}#2#{C:inactive} Mult)",
+                },
+            },
+
+            j_dentalion_lucifer={
+                name = "Lucifer",
+                text = { {
+                    "{C:red}Destroy{} random card in your",
+                    "{C:attention}full deck{} at start of each round"
+                },
+                {
+                    'Add one random {C:attention}6{} to your hand',
+                    'with a random {C:attention}Enhancement{}, {C:dark_edition}Edition{}',
+                    'and {C:attention}Seal{} at start of each round'
+                } },
+            },
         },
 
+        Tag = {
+            tag_dentalion_star = {
+                name = "Star Tag",
+                text = {
+                    "{C:attention}Level up{} next played hand",
+                    "{C:attention}#1#{} times {C:attention}after{} scoring"
+                }
+            },
+        },
 
         Enhanced = {
             m_dentalion_frozen = {

@@ -26,6 +26,9 @@ assert_files_from_folder("content/blinds")
 -- Decks
 assert_files_from_folder("content/decks")
 
+-- Tags
+assert_files_from_folder("content/tags")
+
 -- Seals
 assert_files_from_folder("content/seals")
 

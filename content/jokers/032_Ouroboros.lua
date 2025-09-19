@@ -26,7 +26,6 @@ SMODS.Joker {
 	        if context.other_card == card then
 	            return {
 	                repetitions = ret,
-	                card = card,
 	                message = localize('k_again_ex')
 	            }  
 	        end

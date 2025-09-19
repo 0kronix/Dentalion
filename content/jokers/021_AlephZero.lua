@@ -20,20 +20,16 @@ SMODS.Joker {
     calculate = function(self, card, context)
 		if context.after and not context.blueprint then
 			if context.full_hand and #context.full_hand > 0 then
-				local crads = 0
-				for _, i in ipairs(context.full_hand) do
-					crads = crads + 1
-				end
-				if context.full_hand[1]:get_id() >= 3 * context.full_hand[crads]:get_id() then
+				if context.full_hand[1]:get_id() >= 3 * context.full_hand[#context.full_hand]:get_id() then
         			G.E_MANAGER:add_event(Event({
             			trigger = 'after',
             			delay = 0.15,
             			func = function()
             				context.full_hand[1]:flip()
-                			context.full_hand[crads]:flip()
+                			context.full_hand[#context.full_hand]:flip()
                 			play_sound('card1')
 			                context.full_hand[1]:juice_up(0.3, 0.3)
-			                context.full_hand[crads]:juice_up(0.3, 0.3)
+			                context.full_hand[#context.full_hand]:juice_up(0.3, 0.3)
 			                return true
 			            end
 			        }))
@@ -42,8 +38,8 @@ SMODS.Joker {
 			            trigger = 'after',
 			            delay = 0.1,
 			            func = function()
-			                if context.full_hand[1] ~= context.full_hand[crads] then
-			                    copy_card(context.full_hand[1], context.full_hand[crads])
+			                if context.full_hand[1] ~= context.full_hand[#context.full_hand] then
+			                    copy_card(context.full_hand[1], context.full_hand[#context.full_hand])
 			                end
 			                return true
 			            end
@@ -54,10 +50,10 @@ SMODS.Joker {
             			delay = 0.15,
             			func = function()
             				context.full_hand[1]:flip()
-                			context.full_hand[crads]:flip()
+                			context.full_hand[#context.full_hand]:flip()
                 			play_sound('card1')
 			                context.full_hand[1]:juice_up(0.3, 0.3)
-			                context.full_hand[crads]:juice_up(0.3, 0.3)
+			                context.full_hand[#context.full_hand]:juice_up(0.3, 0.3)
 			                return true
 			            end
 			        }))

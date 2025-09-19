@@ -1,4 +1,4 @@
--- Special Thenks to AIJ mod!
+-- Special Thanks to AIJ mod!
 SMODS.Joker {
     key = "prize",
     atlas = 'jokers',

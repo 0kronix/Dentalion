@@ -22,7 +22,7 @@ SMODS.Joker {
             if context.other_card.edition then
                 return {
                     dollars = card.ability.extra.money,
-                    card = card
+                    message_card = context.other_card
                 }
             end
         end

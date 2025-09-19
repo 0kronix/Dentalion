@@ -19,7 +19,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
         if context.after and context.cardarea == G.jokers and not context.blueprint then
-            if context.scoring_name == "Straight" and pseudorandom("fall") < G.GAME.probabilities.normal / card.ability.extra.odds then
+            if context.scoring_name == "Straight" and prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "fallingjoker") then
                 G.E_MANAGER:add_event(Event({
                     trigger = 'after',
                     delay = 0.1,

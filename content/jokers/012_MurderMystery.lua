@@ -70,6 +70,7 @@ SMODS.Joker {
             end
             SMODS.destroy_cards(context.full_hand[1])
             card.ability.extra.active = false
+            delay(0.5)
         end
         if context.joker_main then
             return {

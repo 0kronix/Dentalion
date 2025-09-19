@@ -29,8 +29,7 @@ SMODS.Joker {
 					card.ability.extra.cur_mult = card.ability.extra.cur_mult + card.ability.extra.mod_mult
 					card.ability.extra.cur_chips = card.ability.extra.cur_chips + card.ability.extra.mod_chips
 					return {
-						extra = { message = localize('k_upgrade_ex') },
-		                card = card
+						message = localize('k_upgrade_ex')
 		        	}
 		        end
 	        end

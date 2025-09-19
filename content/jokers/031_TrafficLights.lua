@@ -64,19 +64,16 @@ SMODS.Joker {
 			if card.ability.extra.mod == 1 then
 				return {
 					message = localize("dentalion_chips_ex"),
-		            card = card,
 		            colour = G.C.CHIPS
 				}
 			elseif card.ability.extra.mod == 2 then
 				return {
 					message = localize("dentalion_mult_ex"),
-		            card = card,
 		            colour = G.C.MULT
 				}
 			else
 				return {
 					message = localize("dentalion_dollars_ex"),
-		            card = card,
 		            colour = G.C.MONEY
 				}
 			end

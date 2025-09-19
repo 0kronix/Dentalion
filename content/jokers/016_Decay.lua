@@ -21,7 +21,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
         if context.destroy_card and not context.blueprint then
-            if pseudorandom("decay") < G.GAME.probabilities.normal / card.ability.extra.odds then
+            if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "decay") then
                 return { remove = true }
             end
         end

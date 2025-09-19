@@ -27,8 +27,8 @@ SMODS.Joker {
         end
         if context.after and context.cardarea == G.jokers and not context.blueprint then
             local faces = 0
-            for _, cards in ipairs(context.scoring_hand) do
-                if cards:is_face() then
+            for _, card in ipairs(context.scoring_hand) do
+                if card:is_face() then
                     faces = faces + 1
                 end
             end

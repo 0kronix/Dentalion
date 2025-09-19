@@ -41,8 +41,8 @@ SMODS.Joker {
             card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.mod_chips * count
             if count > 0 then
 	            return {
-	        		extra = { message = localize('k_upgrade_ex'), colour = G.C.CHIPS },
-	                card = card
+	        		message = localize('k_upgrade_ex'),
+                    colour = G.C.CHIPS
 	        	}
         	end
         end
@@ -55,6 +55,7 @@ SMODS.Joker {
 			if context.scoring_hand and context.full_hand and #context.scoring_hand > 0 and #context.full_hand > 0 then
 				for _, played_card in ipairs(context.scoring_hand) do
 					if is_light_suit(played_card) then
+                        card:juice_up(0.3, 0.3)
 						convert_to(played_card, "dark", "obsidian")
 			        end
 			    end

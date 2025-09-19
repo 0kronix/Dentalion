@@ -26,7 +26,7 @@ SMODS.Joker {
 		if context.after and not context.blueprint then
 			if context.full_hand and #context.full_hand > 0 then
 				for _, played_card in ipairs(context.full_hand) do
-					if played_card.ability.name ~= 'Wild Card' and pseudorandom("chalks") < G.GAME.probabilities.normal / card.ability.extra.odds then
+					if played_card.ability.name ~= 'Wild Card' and prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "chalks") then
 						G.E_MANAGER:add_event(Event({
 							trigger = 'before',
 							delay = 0.5,

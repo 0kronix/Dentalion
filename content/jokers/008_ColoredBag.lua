@@ -13,9 +13,7 @@ SMODS.Joker {
 
     loc_vars = function(self, info_queue, card)
 		return { vars = { 
-					localize('Two Pair', 'poker_hands'),
-					localize('Full House', 'poker_hands'),
-					localize('Flush House', 'poker_hands')
+					localize('Two Pair', 'poker_hands')
 				}
 		}
 	end,
@@ -44,8 +42,7 @@ SMODS.Joker {
 				)}))
                 return {
                     message = localize('k_plus_spectral'),
-                    colour = G.C.SECONDARY_SET.Spectral,
-                    card = self
+                    colour = G.C.SECONDARY_SET.Spectral
                 }
             end
 		end

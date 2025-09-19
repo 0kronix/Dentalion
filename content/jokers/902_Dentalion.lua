@@ -32,13 +32,13 @@ SMODS.Joker {
                 card.ability.extra.cur_xmult = card.ability.extra.cur_xmult + card.ability.extra.mod_xmult
                 card.ability.extra.cur_sell = card.ability.extra.cur_sell - 15
                 return {
-                    extra = { message = localize('k_upgrade_ex'), colour = G.C.MONEY },
-                    card = card
+                    message = localize('k_upgrade_ex'),
+                    colour = G.C.MONEY
                 }
             else
                 return {
-                    extra = { message = "+$" .. tostring(card_sell), colour = G.C.MONEY },
-                    card = card
+                    message = "+$" .. tostring(card_sell),
+                    colour = G.C.MONEY
                 }
             end
         end

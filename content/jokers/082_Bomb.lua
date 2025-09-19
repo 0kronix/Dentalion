@@ -43,7 +43,10 @@ SMODS.Joker {
                     return true
                 end
             }))
-            delay(0.5)
+            return {
+                message = localize("dentalion_boom_ex"),
+                colour = G.C.RED
+            } 
         end
     end,
 }

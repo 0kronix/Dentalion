@@ -31,6 +31,9 @@ SMODS.Joker {
 							return true
 						end
 					}))
+					return {
+						message = localize("dentalion_lucky_ex")
+					}
 				end
                 delay(0.5)
             end
