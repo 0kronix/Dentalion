@@ -20,6 +20,7 @@ return {
             dentalion_boom_ex = "BOOM!",
             dentalion_copy_ex = "Copied!",
             dentalion_plus_planet_ex = "+1 Planet",
+            dentalion_plus_voucher_ex = "+1 Voucher",
         }
     },
     descriptions = {
@@ -1006,6 +1007,24 @@ return {
                     'with a random {C:attention}Enhancement{}, {C:dark_edition}Edition{}',
                     'and {C:attention}Seal{} at start of each round'
                 } },
+            },
+
+            j_dentalion_d20={
+                name = "D20",
+                text = {
+                    "{C:money}Selling{} {C:green}Uncommon{} or {C:red}Rare{}",
+                    "joker create {C:attention}tag{} of",
+                    "the same {C:attention}rarity"
+                },
+            },
+
+            j_dentalion_jokerapp={
+                name = "Joker App",
+                text = {
+                    "{C:green}#1# in #2#{} chance to add",
+                    "{C:attention}voucher{} to the shop",
+                    "then {C:green}rerolling{} shop"
+                },
             },
         },
 

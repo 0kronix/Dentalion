@@ -48,7 +48,7 @@ SMODS.Consumable {
             func = function()
                 for _, cardh in ipairs(G.hand.cards) do
                     if not tablefind(G.hand.highlighted, cardh) then
-                        cardh:start_dissolve()
+                        SMODS.destroy_cards(cardh)
                     end
                 end
                 ease_dollars(-(G.GAME.dollars / 2))
