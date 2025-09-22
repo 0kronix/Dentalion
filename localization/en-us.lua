@@ -21,6 +21,7 @@ return {
             dentalion_copy_ex = "Copied!",
             dentalion_plus_planet_ex = "+1 Planet",
             dentalion_plus_voucher_ex = "+1 Voucher",
+            dentalion_plus_discard_ex = "+1 Discard",
         }
     },
     descriptions = {
@@ -1024,6 +1025,26 @@ return {
                     "{C:green}#1# in #2#{} chance to add",
                     "{C:attention}voucher{} to the shop",
                     "then {C:green}rerolling{} shop"
+                },
+            },
+
+            j_dentalion_octahedron={
+                name = "Octahedron",
+                text = {
+                    "Each {C:attention}played{} card gives",
+                    "{C:money}$#1#{} for each {C:diamonds}Diamond",
+                    "card held in hand",
+                    "{C:inactive}(Will give {C:money}$#2#{C:inactive})"
+                },
+            },
+
+            j_dentalion_fnaj={
+                name = "Five Nights At Jombos",
+                text = {
+                    "{C:green}#1# in #2#{} chance to give {C:red}+1 Discard{},",
+                    "if number of {C:attention}discarded{} cards {C:attention}equals{}",
+                    "to {C:red}discards{} left",
+                    "{C:inactive}(Resets each round)"
                 },
             },
         },
