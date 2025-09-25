@@ -11,7 +11,7 @@ SMODS.Joker {
     unlocked = true,
     discovered = true,
 	
-    config = { extra = { mod_xmult = 0.25, cur_xmult = 1 } },
+    config = { extra = { mod_xmult = 0.15, cur_xmult = 1 } },
 
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.mod_xmult, card.ability.extra.cur_xmult } }
