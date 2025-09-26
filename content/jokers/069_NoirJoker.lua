@@ -15,9 +15,11 @@ SMODS.Joker {
 
     loc_vars = function(self, info_queue, card)
         local black = 0
-        for _, hcard in ipairs(G.hand.cards) do
-            if not tablefind(G.hand.highlighted, hcard) and is_dark_suit(hcard) then
-                black = black + 1
+        if G.hand then
+            for _, hcard in ipairs(G.hand.cards) do
+                if not tablefind(G.hand.highlighted, hcard) and is_dark_suit(hcard) then
+                    black = black + 1
+                end
             end
         end
         if next(SMODS.find_mod("paperback")) and next(SMODS.find_mod("Bunco")) then

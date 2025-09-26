@@ -11,7 +11,7 @@ SMODS.Blind {
 
     calculate = function(self, blind, context)
         if not blind.disabled then
-            if context.setting_blind then
+            if context.setting_blind and max_sell_joker() ~= nil then
                 local ms_joker = max_sell_joker()
                 blind.triggered = true
                 G.E_MANAGER:add_event(Event({

@@ -13,6 +13,15 @@ SMODS.Gradient {
 }
 
 SMODS.Gradient {
+    key = 'random',
+    colours = {
+        G.C.MULT, G.C.CHIPS, G.C.PURPLE, G.C.MONEY, G.C.FILTER, G.C.GREEN, G.C.ORANGE, G.C.YELLOW, G.C.BLACK, G.C.JOKER_GREY
+    },
+    cycle = 3,
+    interpolation = 'trig'
+}
+
+SMODS.Gradient {
     key = 'mulps',
     colours = {
         G.C.MULT, G.C.CHIPS

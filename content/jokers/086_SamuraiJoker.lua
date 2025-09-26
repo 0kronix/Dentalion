@@ -51,7 +51,7 @@ SMODS.Joker {
                 G.E_MANAGER:add_event(Event({
                     trigger = 'immediate',
                     func = function()
-                        G.hand.highlighted[1].ability.played_this_ante = true
+                        card_played.ability.played_this_ante = true
                         G.GAME.round_scores.cards_played.amt = G.GAME.round_scores.cards_played.amt + 1
                         draw_card(G.discard, G.play, 100/#G.hand.highlighted, 'up', nil, card_played)
                         G.E_MANAGER:add_event(Event({

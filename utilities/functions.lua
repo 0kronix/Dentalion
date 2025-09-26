@@ -1,5 +1,68 @@
 -- Special Thanks for AIJ mod!
 
+function randomize_hand(args)
+    args = args or {}
+    local list = args.list or G.hand.cards
+    local key = args.key or "rnd_hand"
+    if type(args.guaranteed_seal) == "number" then
+        local g_seal = false
+        local seal_mod = args.guaranteed_seal
+    else
+        local g_seal = true
+    end
+    if type(args.guaranteed_enh) == "number" then
+        local g_enh = false
+        local enh_mod = args.guaranteed_enh
+    else
+        local g_enh = true
+    end
+    if type(args.guaranteed_ed) == "number" then
+        local g_ed = false
+        local ed_mod = args.guaranteed_ed
+    else
+        local g_ed = true
+    end
+
+    local i = 0
+    for card_index, playing_card in ipairs(list) do
+        local seal_seed = key .. 'seal_' .. card_index .. '_' .. G.GAME.round_resets.ante
+        local enhancement_seed = key .. 'enh_' .. card_index .. '_' .. G.GAME.round_resets.ante
+        local edition_seed = key .. 'edition_' .. card_index .. '_' .. G.GAME.round_resets.ante
+        local suit_seed = key .. 'suit_' .. card_index .. '_' .. G.GAME.round_resets.ante
+        local rank_seed = key .. 'rank_' .. card_index .. '_' .. G.GAME.round_resets.ante
+        
+        local new_seal = SMODS.poll_seal({guaranteed = g_seal, key = seal_seed, mod = seal_mod or 1})
+        local new_enhancement = SMODS.poll_enhancement({guaranteed = g_enh, key = enhancement_seed, mod = enh_mod or 1})
+        local new_edition = poll_edition(edition_seed, ed_mod or 1, false, g_ed)
+        local new_suit = pseudorandom_element(SMODS.Suits, pseudoseed(suit_seed)).key
+        local new_rank = pseudorandom_element(SMODS.Ranks, pseudoseed(rank_seed)).key
+
+        G.E_MANAGER:add_event(Event({
+            delay = 0.2 + (i * 0.1),
+            trigger = 'before', 
+            func = function()
+                i = i + 1
+                play_sound('card1', 0.85 + (i * 0.05))
+                playing_card:juice_up(0.3, 0.4)
+
+                if new_seal then
+                    playing_card:set_seal(new_seal, true, true)
+                end
+                if new_enhancement then
+                    playing_card:set_ability(G.P_CENTERS[new_enhancement])
+                end
+                if new_edition then
+                    playing_card:set_edition(new_edition, true)
+                end
+
+                SMODS.change_base(playing_card, new_suit, new_rank)
+
+                return true 
+            end
+        }))
+    end
+end
+
 function prob_check(chance, odds, key)
     if pseudorandom(key) < chance / odds then
         return true

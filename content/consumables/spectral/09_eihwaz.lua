@@ -17,12 +17,12 @@ SMODS.Consumable {
 
     config = {
         extra = {
-            
+            cost = 4
         }
     },
 
     loc_vars = function(self, info_queue, card)
-        return { vars = {  } }
+        return { vars = { card.ability.extra.cost } }
     end,
 
     can_use = function(self, card)
@@ -33,20 +33,19 @@ SMODS.Consumable {
         if not self:can_use(card) then
             return
         end
-        G.E_MANAGER:add_event(Event({
-            trigger = 'after',
-            delay = 0.4,
-            func = function()
-                local empty_slots = G.consumeables.config.card_limit - #G.consumeables.cards
-                for i = 1, empty_slots do
-                    SMODS.add_card{ set = "Tarot" }
+        for i = 1, (G.consumeables.config.card_limit - #G.consumeables.cards) do
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.4,
+                func = function()
+                    SMODS.add_card{ set = "Consumeables", area = G.consumeables }
+                    ease_dollars(-card.ability.extra.cost)
+                    play_sound('tarot1')
+                    card:juice_up(0.3, 0.5)
+                    return true
                 end
-                ease_dollars(-(empty_slots * 4))
-                play_sound('tarot1')
-                card:juice_up(0.3, 0.5)
-                return true
-            end
-        }))
+            }))
+        end
         delay(0.5)
     end
 }

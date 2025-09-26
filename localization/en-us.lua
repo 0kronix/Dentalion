@@ -19,9 +19,12 @@ return {
             dentalion_failed_ex = "Failed",
             dentalion_boom_ex = "BOOM!",
             dentalion_copy_ex = "Copied!",
+            dentalion_negative_ex = "Negative!",
+            dentalion_reverse_ex = "Reverse!",
             dentalion_plus_planet_ex = "+1 Planet",
             dentalion_plus_voucher_ex = "+1 Voucher",
             dentalion_plus_discard_ex = "+1 Discard",
+            dentalion_plus_consumeable_ex = "+1 Consumeable",
         }
     },
     descriptions = {
@@ -1047,6 +1050,72 @@ return {
                     "{C:inactive}(Resets each round)"
                 },
             },
+
+            j_dentalion_kinderjoke={
+                name = "Kinder Joke",
+                text = { {
+                    "After {C:attention}#1#{} rounds, {C:attention}sell{} this card to",
+                    "apply {C:dark_edition}Negative{} to a random {C:chips}Common",
+                    "Joker without {C:dark_edition}Edition",
+                    "{C:inactive}(Currently #2#/#1#)"
+                },
+                {
+                    "Create random {C:chips}Common{} Joker",
+                    "when {C:attention}added to deck",
+                    "{C:inactive}(Must have room)"
+                } },
+            },
+
+            j_dentalion_punchcard={
+                name = "Punch Card",
+                text = { {
+                    "{C:red}Destroy{} all played cards",
+                    "without {C:attention}suit{} or/and {C:attention}rank"
+                },
+                {
+                    "Create random {C:attention}Consumeable",
+                    "every {C:attention}#1#{} cards {C:red}destroyed{} this way",
+                    "{C:inactive}(Must have room)"
+                } },
+            },
+
+            j_dentalion_shopkeeper={
+                name = "Shopkeeper",
+                text = {
+                    "Buying {C:attention}Booster packs",
+                    "{C:green}Rerolls{} the shop"
+                },
+            },
+
+            j_dentalion_missingno={
+                name = "Missing No",
+                text = {
+                    "{C:{C:dentalion_random}Randomize{} all cards in",
+                    "{C:attention}first{} hand of round"
+                },
+            },
+
+            j_dentalion_bumbo={
+                name = "Bumbo",
+                text = { {
+                    "{C:green}#1# in #2#{} chance to create",
+                    "random {C:attention}Consumeable{} at",
+                    "start of round"
+                },
+                {
+                    "Lose {C:red}$#3#{} at end",
+                    "of {C:attention}each{} round"
+                } },
+            },
+
+            j_dentalion_antigravity={
+                name = "Anti-gravity",
+                text = {
+                    "After {C:attention}#1#{} rounds, {C:attention}sell{} this",
+                    "card to {C:attention}reverse{} your {C:money}dollars",
+                    "{C:inactive}(Max of $#3#, Currently #2#/#1#)"
+                },
+            },
         },
 
         Tag = {
@@ -1155,7 +1224,7 @@ return {
                     "with random {C:attention}consumables{}"
                 },
                 {
-                    "Lose {C:money}$4{} for each",
+                    "Lose {C:money}$#1#{} for each",
                     "created {C:attention}consumable{}"
                 } },
             },
@@ -1324,6 +1393,15 @@ return {
                 name = 'Light Green Seal',
                 text = {
                     "{X:green,C:white}#1#{} Mult",
+                }
+            },
+
+            randomize = {
+                name = "Randomize Card",
+                text = {
+                    "Give card new {C:attention}rank{} and {C:attention}suit",
+                    "and non-guaranteed {C:attention}Seal{},",
+                    "{C:attention}Enhancement{} or {C:dark_edition}Edition"
                 }
             },
 
