@@ -1,6 +1,7 @@
 loc_colour()
 G.ARGS.LOC_COLOURS.GREY = HEX('ADD8E6')
 G.ARGS.LOC_COLOURS.INDIGO = HEX('4B0082')
+G.ARGS.LOC_COLOURS.TRINKET = HEX('755C48')
 
 -- Special thanks for AIJ Mod
 SMODS.Gradient {

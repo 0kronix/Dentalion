@@ -1,0 +1,1 @@
+SMODS.Sound({key = 'glitch', path = 'glitch.ogg'})

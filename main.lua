@@ -1,5 +1,6 @@
 ------------ MOD CODE -------------------------
 
+Dentalion_API = Dentalion_API or {}
 Dentalion = SMODS.current_mod
 local mod_path = ''..SMODS.current_mod.path
 
@@ -19,6 +20,11 @@ end
 
 -- Misc
 assert_files_from_folder("utilities")
+assert_files_from_folder("Lovely")
+
+-- Trinkets
+assert_files_from_folder("content/trinkets")
+assert_files_from_folder("content/trinkets/trinkets")
 
 -- Blinds
 assert_files_from_folder("content/blinds")

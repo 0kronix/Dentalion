@@ -4,7 +4,7 @@ SMODS.Seal {
 
     pos = { x = 0, y = 0 },
 
-    config = { extra = { powmult = 0.5 } },
+    config = { extra = { powmult = 0.2 } },
 
     badge_colour = HEX('00c200'),
 

@@ -5,6 +5,17 @@ return {
         },
 
         dictionary = {
+            k_dentalion_trinket = "Trinket",
+            k_dentalion_trinkets = "Trinkets",
+            k_dentaliontrinket = "Trinket",
+            k_DentalionTrinketInfo = { 
+                "Only one Trinket may be equipped at a time.",
+                "Purchasing a new Trinket replaces an old one." 
+            },
+            b_dentalion_equip = "EQUIP",
+
+            ph_dentalion_missing_poster = "Saved by Missing Poster",
+
             dentalion_downgrade_ex = "Downgrade!",
             dentalion_mult_ex = "Mult!",
             dentalion_bonus_ex = "Bonus!",
@@ -21,6 +32,7 @@ return {
             dentalion_copy_ex = "Copied!",
             dentalion_negative_ex = "Negative!",
             dentalion_reverse_ex = "Reverse!",
+            dentalion_glitch_ex = "GLITCH",
             dentalion_plus_planet_ex = "+1 Planet",
             dentalion_plus_voucher_ex = "+1 Voucher",
             dentalion_plus_discard_ex = "+1 Discard",
@@ -182,13 +194,11 @@ return {
 			
 			j_dentalion_bodyguard={
                 name = "Bodyguard",
-                text = { {
-                    "{C:mult}+#1#{} Mult"
-                },
-                {
+                text = {
+                    "{C:mult}+#1#{} Mult.",
                     "{C:red}-$#2#{} every {C:attention}5{} rounds",
                     "{C:inactive}(Currently #3#/5)"
-                } },
+                }
             },
 			
 			j_dentalion_firstaidkit={
@@ -307,26 +317,22 @@ return {
 
             j_dentalion_murdermystery={
                 name = "Murder Mystery",
-                text = { {
-                    "{C:red}Destroys{} first played card each round"
-                },
-                {
+                text = {
+                    "{C:red}Destroys{} first played card each round.",
                     "If a {C:attention}face{} card has been {C:red}destroyed{} three",
                     "times in a row, this joker gains {X:mult,C:white}X#2#{} Mult",
                     "{C:inactive}(Currently {X:mult,C:white}X#1#{}{C:inactive} Mult, #3#/3)"
-                } },
+                },
             },
 
             j_dentalion_door={
                 name = "Door",
-                text = { {
-                    "Gains {X:chips,C:white}X#2#{} Chips each round"
-                },
-                {
+                text = {
+                    "Gains {X:chips,C:white}X#2#{} Chips each round.",
                     "Loses {X:chips,C:white}X#3#{} each {C:green}reroll{} in the {C:attention}Shop{}",
                     "{C:inactive}(Cannot be less than {X:chips,C:white}X0.5{}{C:inactive})",
                     "{C:inactive}(Currently {X:chips,C:white}X#1#{}{C:inactive} Chips)"
-                } },
+                },
             },
 
             j_dentalion_bipolarjoker={
@@ -379,13 +385,11 @@ return {
 
             j_dentalion_pegasus={
                 name = "Pegasus",
-                text = { {
-                    "Gives {X:mult,C:white}X#1#{} Mult"
-                },
-                {
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult.",
                     "{C:attention}#2#{}, {C:attention}#3#{}, {C:attention}#4#{} and",
                     "{C:attention}#5#{} are debuffed"
-                } },
+                },
             },
 
             j_dentalion_partner={
@@ -416,13 +420,11 @@ return {
 
             j_dentalion_ouroboros={
                 name = "Ouroboros",
-                text = { {
-                    "{C:chips}+#1#{} Chips"
-                },
-                {
+                text = {
+                    "{C:chips}+#1#{} Chips.",
                     "Rettriger {C:attention}random{} amount",
                     "of times"
-                } },
+                },
             },
 
             j_dentalion_cryinggoblin={
@@ -457,14 +459,12 @@ return {
 
             j_dentalion_sparklingwater={
                 name = "Sparkling Water",
-                text = { {
+                text = {
                     "Skip {C:attention}#2#{} Booster Packs to create",
                     "a random {C:spectral}Spectral{} card",
-                    "{C:inactive}(Currently #1#/#2#)"
-                },
-                {
+                    "{C:inactive}(Currently #1#/#2#)",
                     "{C:red,E:2}self destructs"
-                } },
+                },
             },
 
             j_dentalion_virus={
@@ -497,7 +497,7 @@ return {
                 name = "Nah I'd Win",
                 text = {
                     "Gains {C:chips}+#1#{} Chips if {C:attention}Blind{}",
-                    "is beaten in exactly {C:attention}2 hands{}",
+                    "is beaten in exactly {C:blue}2{} hands",
                     "{C:inactive}(Currently {C:chips}+#2#{}{C:inactive} Chips)"
                 },
             },
@@ -601,25 +601,21 @@ return {
 
             j_dentalion_blueplanet={
                 name = "Blue Planet",
-                text = { {
+                text = {
                     "Use the same {C:planet}Planet{} card {C:attention}#1#{} times in",
                     "a row to create a random {C:spectral}Spectral{} card",
-                    "{C:inactive}(Currently #2#/#1#)"
-                },
-                {
+                    "{C:inactive}(Currently #2#/#1#)",
                     "{C:red}self destructs{}"
-                } },
+                },
             },
 
             j_dentalion_anxiety={
                 name = "Anxiety",
-                text = { {
-                    "{C:dentalion_plasma}Balances{} {C:attention}#1#%{} of {C:mult}Mult{} and {C:chips}Chips{}"
-                },
-                {
+                text = {
+                    "{C:dentalion_plasma}Balances{} {C:attention}#1#%{} of {C:mult}Mult{} and {C:chips}Chips{}.",
                     "{C:attention}+2%{} for each card below {C:attention}52{}",
                     "in your full deck"
-                } },
+                },
             },
 
             j_dentalion_sleepparalysis={
@@ -693,13 +689,11 @@ return {
 
             j_dentalion_comics={
                 name = "Comics",
-                text = { {
-                    "{X:chips,C:white}X#1#{} Chips"
-                },
-                {
-                    "{C:red}self destructs{},",
+                text = {
+                    "{X:chips,C:white}X#1#{} Chips.",
                     "if no {C:attention}face{} cards played",
-                } },
+                    "{C:red}self destructs{},",
+                },
             },
 
             j_dentalion_hourglasses={
@@ -818,7 +812,7 @@ return {
                 name = "Seraphim",
                 text = {
                     "Play {C:attention}Jack #1#{} {C:inactive}[#2#]{} times to",
-                    "create {C:dark_edition}negative {C:attention}Temperance"
+                    "create {C:dark_edition}Negative {C:attention}Temperance"
                 },
             },
 
@@ -846,13 +840,11 @@ return {
 
             j_dentalion_frozenjoker={
                 name = "Frozen Joker",
-                text = { {
-                    "{C:attention}Rettriger{} all {C:attention}Frozen Cards"
-                },
-                {
+                text = {
+                    "{C:attention}Rettriger{} all {C:attention}Frozen Cards.",
                     "{C:attention}Frozen Cards{} count this joker",
                     "as {C:attention}3 Frozen Cards"
-                } },
+                },
             },
 
             j_dentalion_blizzard={
@@ -982,7 +974,7 @@ return {
                 text = { {
                     "After defeating each",
                     "{C:attention}Boss Blind{}, gain a",
-                    "{C:attention,T:tag_dentalion_star}#1#"
+                    "{C:attention,T:tag_dentalion_star}#1#{}",
                 },
                 {
                     "{C:attention,T:tag_dentalion_star}#1#{} twice",
@@ -1115,6 +1107,84 @@ return {
                     "card to {C:attention}reverse{} your {C:money}dollars",
                     "{C:inactive}(Max of $#3#, Currently #2#/#1#)"
                 },
+            },
+
+            j_dentalion_bffs={
+                name = "BFFS!",
+                text = {
+                    "non-{C:dark_edition}Negative{} Jokers and",
+                    "Consumables give {X:mult,C:white}X#1#{} Mult" 
+                },
+            },
+
+            j_dentalion_paytoplay={
+                name = "Pay To Play",
+                text = { {
+                    "{C:attention}+#2#{} card slot",
+                    "available in shop",
+                },
+                {
+                    "Lose {C:red}$#1#{} at end",
+                    "of {C:attention}each{} round"
+                } },
+            },
+
+            j_dentalion_brokenmodem={
+                name = "Broken Modem",
+                text = {
+                    "fixed {C:green}50%{} chance to create",
+                    "a copy of {C:money}selled{} card"
+                },
+            },
+
+            j_dentalion_consolationprize={
+                name = "Consolation Prize",
+                text = {
+                    "Gains {C:mult}+#1#{} Mult and give {C:money}$#3#{},",
+                    "if {C:attention}nothing{} was bought",
+                    "in the shop"
+                },
+            },
+
+            j_dentalion_twistedpair={
+                name = "Twisted Pair",
+                text = {
+                    "Copy the {C:attention}abilities{} of both",
+                    "adjacent {C:attention}Jokers{}, if {C:attention}poker",
+                    "{C:attention}hand{} is a {C:attention}Pair"
+                },
+            },
+
+            j_dentalion_recall={
+                name = "Recall",
+                text = {
+                    "After {C:attention}2{} rounds, create {C:dark_edition}Negative",
+                    "{C:attention}copy{} of the last {C:money}sold{} joker,",
+                    "{C:red}self destructs afterwards"
+                },
+            },
+
+            j_dentalion_tick={
+                name = "Tick",
+                text = {
+                    "{C:attention}-#1#%{} score requirement",
+                    "to all {C:attention}Blinds,",
+                    "always contain {C:attention}Eternal"
+                },
+            },
+
+            j_dentalion_blindrage={
+                name = "Blind Rage",
+                text = { {
+                    "{X:mult,C:white}X#1#{} Mult.",
+                    "{C:red}self destructs",
+                    "after {C:attention}#2#{} rounds"
+                },
+                {
+                    "{C:attention}+1{} round, if {C:attention}Blind{}",
+                    "is beaten in {C:blue}1{} hand",
+                    "{C:inactive}(Max of #3# rounds)"
+                } }
             },
         },
 
@@ -1388,7 +1458,263 @@ return {
             },
         },
 
+        DentalionTrinket = {
+            DentalionTrinket_dentalion_walnut = {
+                name = "Walnut",
+                text = { 
+                    "{C:attention}+#1#{} hand size" 
+                }
+            },
+
+            DentalionTrinket_dentalion_swallowedpenny = {
+                name = "Swallowed Penny",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to give {C:money}$#3#",
+                    "when {C:money}selling{} a card"
+                }
+            },
+
+            DentalionTrinket_dentalion_callus = {
+                name = "Callus",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to",
+                    "disable {C:attention}Boss Blind"
+                }
+            },
+
+            DentalionTrinket_dentalion_storecredit = {
+                name = "Store Credit",
+                text = { {
+                    "All initial {C:attention}cards{} in",
+                    "the {C:money}shop{} are free"
+                },
+                {
+                    "{C:red}Self destructs{}",
+                    "after {C:money}buying{} card"
+                } }
+            },
+
+            DentalionTrinket_dentalion_luckyrock = {
+                name = "Lucky Rock",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to give {C:money}$#3#{},",
+                    "when {C:attention}non-playing{} card",
+                    "is {C:red}destroyed"
+                }
+            },
+
+            DentalionTrinket_dentalion_missingposter = {
+                name = "Missing Poster",
+                text = { 
+                    "Prevents Death, {C:red}destroy",
+                    "all {C:attention}Jokers{} and {C:attention}Consumeables{},",
+                    "set {C:money}dollars{} to {C:red}$0"
+                }
+            },
+
+            DentalionTrinket_dentalion_pushpin = {
+                name = "Push Pin",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to {C:red}destroy",
+                    "{C:attention}last{} scored card"
+                }
+            },
+
+            DentalionTrinket_dentalion_curvedhorn = {
+                name = "Curved Horn",
+                text = { 
+                    "{X:mult,C:white}X#1#{} Mult"
+                }
+            },
+
+            DentalionTrinket_dentalion_canser = {
+                name = "Canser",
+                text = { 
+                    "{X:chips,C:white}X#1#{} Chips"
+                }
+            },
+
+            DentalionTrinket_dentalion_momspearl = {
+                name = "Mom's Pearl",
+                text = { 
+                    "{C:planet}Planet{} cards appear",
+                    "{C:attention}#1#X{} more frequently",
+                    "in the {C:attention}shop"
+                }
+            },
+
+            DentalionTrinket_dentalion_fragmentedcard = {
+                name = "Fragmented Card",
+                text = { 
+                    "{C:tarot}Tarot{} cards appear",
+                    "{C:attention}#1#X{} more frequently",
+                    "in the {C:attention}shop"
+                }
+            },
+
+            DentalionTrinket_dentalion_matchstick = {
+                name = "Match Stick",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to create",
+                    "{C:tarot}Tarot{} card, if hand is {C:dentalion_onfire}on fire.",
+                    "Remove {C:attention}Eternal{} from {C:attention}Tick"
+                }
+            },
+
+            DentalionTrinket_dentalion_bloodpenny = {
+                name = "Blood Penny",
+                text = { 
+                    "{C:green}#1# in #2#{} chance for played",
+                    "card with {C:hearts}#4#{} suit",
+                    "to give {C:money}$#3#"
+                }
+            },
+
+            DentalionTrinket_dentalion_burntpenny = {
+                name = "Burnt Penny",
+                text = { 
+                    "{C:green}#1# in #2#{} chance for played",
+                    "card with {C:clubs}#4#{} suit",
+                    "to give {C:money}$#3#"
+                }
+            },
+
+            DentalionTrinket_dentalion_flatpenny = {
+                name = "Flat Penny",
+                text = { 
+                    "{C:green}#1# in #2#{} chance for played",
+                    "card with {C:spades}#4#{} suit",
+                    "to give {C:money}$#3#"
+                }
+            },
+
+            DentalionTrinket_dentalion_counterfaitpenny = {
+                name = "Counterfait Penny",
+                text = { 
+                    "{C:green}#1# in #2#{} chance for played",
+                    "card with {C:diamonds}#4#{} suit",
+                    "to give {C:money}$#3#"
+                }
+            },
+
+            DentalionTrinket_dentalion_safetyscissors = {
+                name = "Safety Scissors",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to",
+                    "remove {C:attention}enhancement{} from",
+                    "{C:attention}scored{} card"
+                }
+            },
+
+            DentalionTrinket_dentalion_pulseworm = {
+                name = "Pulse Worm",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to {C:attention}level up",
+                    "played {C:attention}#3#"
+                }
+            },
+
+            DentalionTrinket_dentalion_wiggleworm = {
+                name = "Wiggle Worm",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to {C:attention}level up",
+                    "played {C:attention}#3#"
+                }
+            },
+
+            DentalionTrinket_dentalion_ringworm = {
+                name = "Ring Worm",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to {C:attention}level up",
+                    "played {C:attention}#3#"
+                }
+            },
+
+            DentalionTrinket_dentalion_flatworm = {
+                name = "Flat Worm",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to {C:attention}level up",
+                    "played {C:attention}#3#"
+                }
+            },
+
+            DentalionTrinket_dentalion_hookworm = {
+                name = "Hook Worm",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to {C:attention}level up",
+                    "played {C:attention}#3#"
+                }
+            },
+
+            DentalionTrinket_dentalion_whipworm = {
+                name = "Whip Worm",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to {C:attention}level up",
+                    "played {C:attention}#3#"
+                }
+            },
+
+            DentalionTrinket_dentalion_rainbowworm = {
+                name = "Rainbow Worm",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to {C:attention}level up",
+                    "played {C:attention}#3#{} or {C:attention}#4#{}"
+                }
+            },
+
+            DentalionTrinket_dentalion_tapeworm = {
+                name = "Tape Worm",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to {C:attention}level up",
+                    "played {C:attention}#3#{} or {C:attention}#4#{}"
+                }
+            },
+
+            DentalionTrinket_dentalion_lazyworm = {
+                name = "Lazy Worm",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to {C:attention}level up",
+                    "played {C:attention}#3#"
+                }
+            },
+
+            DentalionTrinket_dentalion_ouroborosworm = {
+                name = "Ouroboros Worm",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to {C:attention}level up",
+                    "played {C:attention}#3#"
+                }
+            },
+
+            DentalionTrinket_dentalion_brainworm = {
+                name = "Brain Worm",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to {C:attention}level up",
+                    "played {C:attention}#3#"
+                }
+            },
+
+            DentalionTrinket_dentalion_crackeddice = {
+                name = "Cracked Dice",
+                text = { 
+                    "{C:green}X#1#{} to all {C:attention}listed",
+                    "{C:green}probabilities",
+                    "{C:inactive}(ex: {C:green}1 in 3{C:inactive} -> {C:green}1.5 in 3{C:inactive})"
+                }
+            },
+        },
+
 		Other = {
+            dentalion_trinket = {
+                name = "Trinket",
+                text = { 
+                    "Only one Trinket may", 
+                    "be equipped at a time,", 
+                    "purchasing a new Trinket", 
+                    "replaces an old one"
+                }
+            },
+
             dentalion_lightgreen_seal = {
                 name = 'Light Green Seal',
                 text = {

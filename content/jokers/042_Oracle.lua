@@ -74,7 +74,7 @@ SMODS.Joker {
             }))
             return {
                 message = tostring(card.ability.extra.all) .. "/" .. tostring(card.ability.extra.blind_max) .. "%",
-                card = context.consumeable
+                messege_card = context.consumeable
             }
         end
         if context.end_of_round and not context.blueprint then

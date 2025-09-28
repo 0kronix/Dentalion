@@ -14,6 +14,7 @@ SMODS.Joker {
     config = { extra = { tag = "tag_dentalion_star" } },
 
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = card.ability.extra.tag, set = 'Tag' }
         return { vars = { localize { type = 'name_text', key = card.ability.extra.tag, set = 'Tag' } } }
     end,
 

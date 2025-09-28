@@ -7,7 +7,8 @@ SMODS.Tag {
     config = { levels = 2 },
 
     loc_vars = function(self, info_queue)
-        return { vars = { self.config.levels * (#SMODS.find_card('j_dentalion_fallingstar') > 0 and (#SMODS.find_card('j_dentalion_fallingstar') * 2) or 1) } }
+        local levels = self.config.levels * (1 + #SMODS.find_card('j_dentalion_fallingstar'))
+        return { vars = { levels } }
     end,
 
     apply = function(self, tag, context)
@@ -19,8 +20,9 @@ SMODS.Tag {
             G.E_MANAGER:add_event(Event {
                 trigger = 'immediate',
                 func = function()
+                    local levels = self.config.levels * (1 + #SMODS.find_card('j_dentalion_fallingstar'))
                     local hand,_,_,_,_ = G.FUNCS.get_poker_hand_info(G.play.cards)
-                    SMODS.smart_level_up_hand(nil, hand, nil, self.config.levels * (#SMODS.find_card('j_dentalion_fallingstar') > 0 and (#SMODS.find_card('j_dentalion_fallingstar') * 2) or 1))
+                    SMODS.smart_level_up_hand(nil, hand, nil, levels)
                     return true
                 end
             })
