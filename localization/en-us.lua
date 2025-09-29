@@ -1702,6 +1702,24 @@ return {
                     "{C:inactive}(ex: {C:green}1 in 3{C:inactive} -> {C:green}1.5 in 3{C:inactive})"
                 }
             },
+
+            DentalionTrinket_dentalion_blister = {
+                name = "Blister",
+                text = { 
+                    "{C:green}#1# in #2#{} chance that",
+                    "every {C:attention}played card{} will be",
+                    "counts in scoring"
+                }
+            },
+
+            DentalionTrinket_dentalion_endlessnameless = {
+                name = "Endless Nameless",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to",
+                    "create a {C:attention}copy{} of",
+                    "used {C:attention}Consumeable"
+                }
+            },
         },
 
 		Other = {

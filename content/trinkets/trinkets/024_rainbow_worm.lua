@@ -18,7 +18,7 @@ Dentalion_API.Trinket {
     end,
 
     calculate = function(self, card, context)
-        if context.before and context.scoring_name == card.ability.extra.type1 or context.scoring_name == card.ability.extra.type2 then
+        if context.before and (context.scoring_name == card.ability.extra.type1 or context.scoring_name == card.ability.extra.type2) then
             if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "rainbowworm") then
                 return {
                     card = card,

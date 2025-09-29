@@ -2,7 +2,7 @@ Dentalion_API.Trinket {
     key = "matchstick",
     pos = get_atlas_pos(12, 10),
 
-    config = { extra = { odds = 1 } },
+    config = { extra = { odds = 8 } },
 
     atlas = 'trinkets',
     unlocked = true,
