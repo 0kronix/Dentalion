@@ -1508,7 +1508,8 @@ return {
                 text = { 
                     "Prevents Death, {C:red}destroy",
                     "all {C:attention}Jokers{} and {C:attention}Consumeables{},",
-                    "set {C:money}dollars{} to {C:red}$0"
+                    "set {C:money}dollars{} to {C:red}$0",
+                    "{C:red}self destructs"
                 }
             },
 
@@ -1717,7 +1718,105 @@ return {
                 text = { 
                     "{C:green}#1# in #2#{} chance to",
                     "create a {C:attention}copy{} of",
-                    "used {C:attention}Consumeable"
+                    "used {C:attention}Consumeable",
+                    "{C:inactive}(Must have room)"
+                }
+            },
+
+            DentalionTrinket_dentalion_goldenhorseshoe = {
+                name = "Golden Horse Shoe",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to",
+                    "retrigger {C:attention}Gold Card",
+                    "in {C:attention}hand"
+                }
+            },
+
+            DentalionTrinket_dentalion_no = {
+                name = "NO!",
+                text = { 
+                    "{C:attention}Jokers{} do not",
+                    "appear in the {C:attention}shop"
+                }
+            },
+
+            DentalionTrinket_dentalion_superball = {
+                name = "Super Ball",
+                text = {
+                    "{C:green}#1# in #2#{} chance to",
+                    "retrigger {C:attention}first{} played",
+                    "card used in scoring",
+                }
+            },
+
+            DentalionTrinket_dentalion_vibrantbulb = {
+                name = "Vibrant Bulb",
+                text = {
+                    "{C:mult}+#1#{} flat Mult, if all",
+                    "jokers slots are {C:attention}filled"
+                }
+            },
+
+            DentalionTrinket_dentalion_dimbulb = {
+                name = "Dim Bulb",
+                text = {
+                    "{C:mult}+#1#{} flat Mult, if you",
+                    "have {C:attention}empty{} jokers slots"
+                }
+            },
+
+            DentalionTrinket_dentalion_equality = {
+                name = "Equality",
+                text = {
+                    "{C:chips}+#1#{} flat Chips, if you",
+                    "have {C:attention}same{} number of",
+                    "{C:red}discards{} and {C:blue}hands"
+                }
+            },
+
+            DentalionTrinket_dentalion_wishbone = {
+                name = "Wish Bone",
+                text = {
+                    "{C:green}#1# in #2#{} chance to create",
+                    "random {C:attention}Joker{} at the end",
+                    "of the {C:attention}shop",
+                    "{C:inactive}(Must have room)"
+                }
+            },
+
+            DentalionTrinket_dentalion_crowheart = {
+                name = "Crow Heart",
+                text = {
+                    "{C:green}#1# in #2#{} chance to {C:attention}convert",
+                    "scored {C:hearts}#3#{} suit card",
+                    "to {C:spades}#4#{} suit"
+                }
+            },
+
+            DentalionTrinket_dentalion_paytowin = {
+                name = "Pay to Win",
+                text = {
+                    "{C:green}#1# in #2#{} chance to {C:attention}give",
+                    "free {C:green}reroll{} in shop"
+                }
+            },
+
+            DentalionTrinket_dentalion_stemcell = {
+                name = "Stem Cell",
+                text = {
+                    "{C:green}#1# in #2#{} chance to add a",
+                    "permanent {C:attention}copy{} of random",
+                    "card in {C:attention}played hand{} to {C:attention}deck",
+                    "{C:inactive}(hand must have >2 cards)",
+                }
+            },
+
+            DentalionTrinket_dentalion_woodencross = {
+                name = "Wooden Cross",
+                text = {
+                    "{C:green}#1# in #2#{} chance to",
+                    "add {C:dark_edition}Negative{} to",
+                    "scored {C:clubs}#3#{} card"
                 }
             },
         },

@@ -26,8 +26,8 @@ Dentalion_API.Trinket {
 
     calculate = function(self, card, context)
         if context.after and SMODS.last_hand_oneshot then
-            if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "matchstick") and #G.consumeables.cards + G.consumeables.buffer < G.consumeables.config.card_limit then
-                G.consumeables.buffer = G.consumeables.buffer + 1
+            if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "matchstick") and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+                G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                 G.E_MANAGER:add_event(Event({
                     trigger = 'after',
                     delay = 0.2,
@@ -35,7 +35,7 @@ Dentalion_API.Trinket {
                         SMODS.add_card{ set = "Tarot", area = G.consumeables }
                         play_sound('tarot1')
                         card:juice_up()
-                        G.consumeables.buffer = 0
+                        G.GAME.consumeable_buffer = 0
                         return true
                     end
                 }))

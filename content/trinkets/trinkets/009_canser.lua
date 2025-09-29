@@ -16,7 +16,7 @@ Dentalion_API.Trinket {
     calculate = function(self, card, context)
         if context.joker_main then
             return {
-                xmult = card.ability.extra.xchips
+                xchips = card.ability.extra.xchips
             }
         end
     end
