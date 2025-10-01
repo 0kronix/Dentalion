@@ -2,7 +2,7 @@ Dentalion_API.Trinket {
     key = "paytowin",
     pos = get_atlas_pos(41, 10),
 
-    config = { extra = { odds = 1, active = false } },
+    config = { extra = { odds = 2, active = false } },
 
     atlas = 'trinkets',
     unlocked = true,

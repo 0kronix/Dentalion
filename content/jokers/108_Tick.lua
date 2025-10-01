@@ -24,18 +24,8 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        if context.setting_blind and not context.blueprint then
-            G.GAME.blind.chips = G.GAME.blind.chips - math.ceil(G.GAME.blind.chips * (card.ability.extra.blind_change * 0.01))
-            G.E_MANAGER:add_event(Event({
-                trigger = "ease",
-                delay = 0.5,
-                ref_table = G.GAME.blind,
-                ref_value = "chip_text",
-                ease_to = G.GAME.blind.chip_text - math.ceil(G.GAME.blind.chips * (card.ability.extra.blind_change * 0.01)),
-                func = (function(t)
-                    return math.floor(t)
-                end)
-            }))
+        if context.first_hand_drawn and not context.blueprint then
+            ease_blind(card.ability.extra.blind_change, -1)
             return {
                 message = "-" .. tostring(card.ability.extra.blind_change) .. "%"
             }

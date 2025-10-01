@@ -21,18 +21,8 @@ SMODS.Joker {
 		if context.discard and not context.blueprint then
             card.ability.extra.cur_disc = card.ability.extra.cur_disc - 1
             if card.ability.extra.cur_disc <= 0 then
-                G.GAME.blind.chips = G.GAME.blind.chips - math.ceil(G.GAME.blind.chips * (card.ability.extra.blind_change * 0.01))
                 card.ability.extra.cur_disc = card.ability.extra.cur_disc + card.ability.extra.need_disc
-                G.E_MANAGER:add_event(Event({
-                    trigger = "ease",
-                    delay = 0.5,
-                    ref_table = G.GAME.blind,
-                    ref_value = "chip_text",
-                    ease_to = G.GAME.blind.chip_text - math.ceil(G.GAME.blind.chips * (card.ability.extra.blind_change * 0.01)),
-                    func = (function(t)
-                        return math.floor(t)
-                    end)
-                }))
+                ease_blind(card.ability.extra.blind_change, -1)
                 return {
                     message = "-" .. card.ability.extra.blind_change .. "%",
                 }

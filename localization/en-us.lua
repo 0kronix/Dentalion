@@ -8,10 +8,6 @@ return {
             k_dentalion_trinket = "Trinket",
             k_dentalion_trinkets = "Trinkets",
             k_dentaliontrinket = "Trinket",
-            k_DentalionTrinketInfo = { 
-                "Only one Trinket may be equipped at a time.",
-                "Purchasing a new Trinket replaces an old one." 
-            },
             b_dentalion_equip = "EQUIP",
 
             ph_dentalion_missing_poster = "Saved by Missing Poster",
@@ -1817,6 +1813,111 @@ return {
                     "{C:green}#1# in #2#{} chance to",
                     "add {C:dark_edition}Negative{} to",
                     "scored {C:clubs}#3#{} card"
+                }
+            },
+
+            DentalionTrinket_dentalion_butter = {
+                name = "Butter!",
+                text = {
+                    "When a {C:attention}Arcana{}, {C:attention}Celestial{}",
+                    "or {C:attention}Spectral Pack{} is opened,",
+                    "{C:green}#1# in #2#{} chance to create",
+                    "a random card depending",
+                    "on its {C:attention}type{}",
+                    "{C:inactive}(Must have room)"
+                }
+            },
+
+            DentalionTrinket_dentalion_jawbreaker = {
+                name = "Jawbreaker",
+                text = {
+                    "{C:red}Self destructs{} after {C:attention}#1#{} round,",
+                    "create random joker afterwards",
+                    "{C:inactive}(Must have room)"
+                }
+            },
+
+            DentalionTrinket_dentalion_myosotis = {
+                name = "Myosotis",
+                text = {
+                    "When {C:attention}Boss Blind{} is defeated,",
+                    "creates the last {C:tarot}Tarot{}",
+                    "or {C:planet}Planet{} card used",
+                    "during this run",
+                }
+            },
+
+            DentalionTrinket_dentalion_perfection = {
+                name = "Perfection",
+                text = {
+                    "{C:attention}Quadriples{} all listed {C:green}probabilities{},",
+                    "{C:red}self destructs{} at end of round",
+                    "(ex: {C:green}1 in 8{} -> {C:green}4 in 8{})"
+                }
+            },
+
+            DentalionTrinket_dentalion_telescopelens = {
+                name = "Telescope Lens",
+                text = {
+                    "{C:attention}+1{} option in",
+                    "{C:attention}Spectral Packs{}"
+                }
+            },
+
+            DentalionTrinket_dentalion_tornpocket = {
+                name = "Torn Pocket",
+                text = {
+                    "{C:money}+$#1#{} to interest cap"
+                }
+            },
+
+            DentalionTrinket_dentalion_numbermagnet = {
+                name = "Number Magnet",
+                text = {
+                    "{C:red}Destroy{} all scored {C:attention}6s"
+                }
+            },
+
+            DentalionTrinket_dentalion_icecube = {
+                name = "Ice Cube",
+                text = {
+                    "{C:attention}Frozen Cards{} counts this {C:attention}Trinket",
+                    "as {C:attention}2 Frozen Cards"
+                }
+            },
+
+            DentalionTrinket_dentalion_petrifedpoop = {
+                name = "Petrifed Poop",
+                text = {
+                    "{C:green}#1# in #2#{} chance to enhance {C:attention}lowest",
+                    "card in hand into {C:attention}Stone Card",
+                    "after hand played"
+                }
+            },
+
+            DentalionTrinket_dentalion_aaabattery = {
+                name = "AAA Battery",
+                text = {
+                    "{C:green}#1# in #2#{} chance to create {C:attention}Tag{},",
+                    "if hand is {C:attention}#3#{}",
+                    "only with {C:attention}Aces"
+                }
+            },
+
+            DentalionTrinket_dentalion_brokenremote = {
+                name = "Broken Remote",
+                text = {
+                    "{C:green}#1# in #2#{} chance to",
+                    "create {C:attention}Tag{} when",
+                    "{C:attention}Joker{} is sold"
+                }
+            },
+
+            DentalionTrinket_dentalion_purpleheart = {
+                name = "Purple Heart",
+                text = {
+                    "{C:attention}X#1#{} score requirement of {C:attention}Blinds{}.",
+                    "Earn {C:money}$#2#{} at end of round"
                 }
             },
         },

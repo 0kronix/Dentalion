@@ -25,18 +25,7 @@ SMODS.Joker {
         if context.before then
             if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "bipolarjoker") then
                 local chose = pseudorandom_element({-1, 1}, "bipolarjoker" .. G.GAME.round_resets.ante)
-                G.GAME.blind.chips = G.GAME.blind.chips + chose * math.ceil(G.GAME.blind.chips * (card.ability.extra.blind_change * 0.01))
-                card:juice_up(0.3, 0.3)
-                G.E_MANAGER:add_event(Event({
-                    trigger = "ease",
-                    delay = 0.5,
-                    ref_table = G.GAME.blind,
-                    ref_value = "chip_text",
-                    ease_to = G.GAME.blind.chip_text + chose * math.ceil(G.GAME.blind.chips * (card.ability.extra.blind_change * 0.01)),
-                    func = (function(t)
-                        return math.floor(t)
-                    end)
-                }))
+                ease_blind(card.ability.extra.blind_change, chose)
             end
         end
 	end

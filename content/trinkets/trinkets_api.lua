@@ -97,9 +97,8 @@ end
 function G.FUNCS.your_collection_dentalion_trinkets()
         G.SETTINGS.paused = true
         G.FUNCS.overlay_menu {
-            definition = SMODS.card_collection_UIBox(G.P_CENTER_POOLS.DentalionTrinket, {8, 8, 8}, {
+            definition = SMODS.card_collection_UIBox(G.P_CENTER_POOLS.DentalionTrinket, {9, 9, 9, 9}, {
                 snap_back = true,
-                infotip = localize('k_DentalionTrinketInfo'),
                 hide_single_page = true,
                 collapse_single_page = true,
                 h_mod = 0.65,

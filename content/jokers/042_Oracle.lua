@@ -60,18 +60,8 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
 		if card.ability.extra.active and context.using_consumeable then
-            G.GAME.blind.chips = G.GAME.blind.chips - math.ceil(G.GAME.blind.chips * (card.ability.extra.blind_change * 0.01))
             card.ability.extra.all = card.ability.extra.all + card.ability.extra.blind_change
-            G.E_MANAGER:add_event(Event({
-                trigger = "ease",
-                delay = 0.5,
-                ref_table = G.GAME.blind,
-                ref_value = "chip_text",
-                ease_to = G.GAME.blind.chip_text - math.ceil(G.GAME.blind.chips * (card.ability.extra.blind_change * 0.01)),
-                func = (function(t)
-                    return math.floor(t)
-                end)
-            }))
+            ease_blind(card.ability.extra.blind_change, -1)
             return {
                 message = tostring(card.ability.extra.all) .. "/" .. tostring(card.ability.extra.blind_max) .. "%",
                 messege_card = context.consumeable

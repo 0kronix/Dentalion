@@ -2,11 +2,13 @@
 
 local sell_card_ref = Card.sell_card
 function Card:sell_card()
-    local ref = sell_card_ref(self)
+    local ret = sell_card_ref(self)
+
     if G.jokers and self.ability.set == 'Joker' then
         G.GAME.dentalion_last_sold_joker = self
     end
-    return ref
+
+    return ret
 end
 
 local init_game_object_ref = Game.init_game_object
@@ -16,5 +18,6 @@ function Game.init_game_object(self)
     ret.dentalion = {
         most_played_suit_this_ante = {},
     }
+
     return ret
 end
