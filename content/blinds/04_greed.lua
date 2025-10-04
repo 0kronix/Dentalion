@@ -7,7 +7,7 @@ SMODS.Blind {
     discovered = true,
 
     atlas = 'blinds',
-    pos = get_atlas_pos(4, 0), 
+    pos = Dentalion.get_atlas_pos(4, 0), 
 
     calculate = function(self, blind, context)
         if not blind.disabled then

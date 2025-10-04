@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "jawbreaker",
-    pos = get_atlas_pos(45, 10),
+    pos = Dentalion.get_atlas_pos(45, 10),
 
     config = { extra = { rounds = 4 } },
 

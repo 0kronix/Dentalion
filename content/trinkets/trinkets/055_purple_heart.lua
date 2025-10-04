@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "purpleheart",
-    pos = get_atlas_pos(55, 10),
+    pos = Dentalion.get_atlas_pos(55, 10),
 
     config = { extra = { modify = 50, money = 5 } },
 
@@ -18,7 +18,7 @@ Dentalion_API.Trinket {
 
     calculate = function(self, card, context)
         if context.first_hand_drawn then
-            ease_blind(card.ability.extra.modify, 1)
+            Dentalion.ease_blind(card.ability.extra.modify, 1)
             card:juice_up()
         end
     end,

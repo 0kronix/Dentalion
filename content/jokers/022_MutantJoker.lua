@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "mutantjoker",
     atlas = 'jokers',
-    pos = get_atlas_pos(22, 10),
+    pos = Dentalion.get_atlas_pos(22, 10),
 
     cost = 4,
     rarity = 1,
@@ -21,7 +21,7 @@ SMODS.Joker {
 		if context.after and not context.blueprint then
 			if context.full_hand and #context.full_hand > 0 then
 				for _, i in ipairs(context.full_hand) do
-					if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "mutantjoker") and not i:is_face() then
+					if Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "mutantjoker") and not i:is_face() then
 			            G.E_MANAGER:add_event(Event({
 			                trigger = 'after',
 			                delay = 0.1,

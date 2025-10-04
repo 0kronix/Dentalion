@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "bipolarjoker",
     atlas = 'jokers',
-    pos = get_atlas_pos(24, 10),
+    pos = Dentalion.get_atlas_pos(24, 10),
 
     cost = 6,
     rarity = 2,
@@ -23,9 +23,9 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
         if context.before then
-            if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "bipolarjoker") then
+            if Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "bipolarjoker") then
                 local chose = pseudorandom_element({-1, 1}, "bipolarjoker" .. G.GAME.round_resets.ante)
-                ease_blind(card.ability.extra.blind_change, chose)
+                Dentalion.ease_blind(card.ability.extra.blind_change, chose)
             end
         end
 	end

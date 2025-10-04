@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "storecredit",
-    pos = get_atlas_pos(4, 10),
+    pos = Dentalion.get_atlas_pos(4, 10),
 
     config = { extra = { active = false } },
 

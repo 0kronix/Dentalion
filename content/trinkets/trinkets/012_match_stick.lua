@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "matchstick",
-    pos = get_atlas_pos(12, 10),
+    pos = Dentalion.get_atlas_pos(12, 10),
 
     config = { extra = { odds = 8 } },
 
@@ -26,7 +26,7 @@ Dentalion_API.Trinket {
 
     calculate = function(self, card, context)
         if context.after and SMODS.last_hand_oneshot then
-            if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "matchstick") and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+            if Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "matchstick") and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                 G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                 G.E_MANAGER:add_event(Event({
                     trigger = 'after',

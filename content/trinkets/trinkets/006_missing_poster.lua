@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "missingposter",
-    pos = get_atlas_pos(6, 10),
+    pos = Dentalion.get_atlas_pos(6, 10),
 
     atlas = 'trinkets',
     unlocked = true,

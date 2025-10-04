@@ -18,43 +18,10 @@ SMODS.Consumable {
     config = { extra = { suit = 'Hearts' }, max_highlighted = 5 },
 
     loc_vars = function(self, info_queue, card)
-        local h, d, s, c = 0, 0, 0, 0
-        if G.playing_cards then
-            for k, v in ipairs(G.playing_cards) do
-                if v:is_suit('Hearts', true) then
-                    h = h + 1
-                end
-                if v:is_suit('Diamonds', true) then
-                    d = d + 1
-                end
-                if v:is_suit('Spades', true) then
-                    s = s + 1
-                end
-                if v:is_suit('Clubs', true) then
-                    c = c + 1
-                end
-            end
-
-            if math.max(h, d, s, c) == h then
-                card.ability.extra.suit = "Hearts"
-            elseif math.max(h, d, s, c) == d then
-                card.ability.extra.suit = "Diamonds"
-            elseif math.max(h, d, s, c) == s then
-                card.ability.extra.suit = "Spades"
-            elseif math.max(h, d, s, c) == c then
-                card.ability.extra.suit = "Clubs"
-            end
-
-            return { vars = { 
-                card.ability.max_highlighted, 
-                localize(card.ability.extra.suit, 'suits_plural'), colours = { G.C.SUITS[card.ability.extra.suit] }
-            } }
-        else
-            return { vars = { 
-                card.ability.max_highlighted, 
-                localize(card.ability.extra.suit, 'suits_plural'), colours = { G.C.SUITS[card.ability.extra.suit] }
-            } }
-        end
+        return { vars = { 
+            card.ability.max_highlighted, 
+            localize(Dentalion.most_popular_suit(), 'suits_plural'), colours = { G.C.SUITS[Dentalion.most_popular_suit()] }
+        } }
     end,
 
     can_use = function(self, card)
@@ -62,6 +29,12 @@ SMODS.Consumable {
     end,
 
     use = function(self, card, area, copier)
+        if not self:can_use(card) then
+            return
+        end
+
+        local cur_suit, _ = Dentalion.most_popular_suit()
+        
         G.E_MANAGER:add_event(Event({
             trigger = 'after',
             delay = 0.4,
@@ -90,7 +63,7 @@ SMODS.Consumable {
                 trigger = 'after',
                 delay = 0.1,
                 func = function()
-                    SMODS.change_base(G.hand.highlighted[i], card.ability.extra.suit)
+                    SMODS.change_base(G.hand.highlighted[i], cur_suit)
                     return true
                 end
             }))

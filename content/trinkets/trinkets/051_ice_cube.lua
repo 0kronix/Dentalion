@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "icecube",
-    pos = get_atlas_pos(51, 10),
+    pos = Dentalion.get_atlas_pos(51, 10),
 
     config = { extra = {  } },
 

@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "equality",
-    pos = get_atlas_pos(38, 10),
+    pos = Dentalion.get_atlas_pos(38, 10),
 
     config = { extra = { chips = 111 } },
 

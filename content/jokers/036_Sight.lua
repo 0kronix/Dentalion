@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "sight",
     atlas = 'jokers',
-    pos = get_atlas_pos(36, 10),
+    pos = Dentalion.get_atlas_pos(36, 10),
 
     cost = 6,
     rarity = 2,
@@ -62,7 +62,7 @@ SMODS.Joker {
                 card.ability.extra.cur_boosters = 0
                 card.ability.extra.active = false
                 for i = 1, card.ability.extra.tags do
-                    create_tag(nil, "sight")
+                    Dentalion.create_tag(nil, "sight")
                 end
             else
                 return {

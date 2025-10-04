@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "tornpocket",
-    pos = get_atlas_pos(49, 10),
+    pos = Dentalion.get_atlas_pos(49, 10),
 
     config = { extra = { cap = 10 } },
 

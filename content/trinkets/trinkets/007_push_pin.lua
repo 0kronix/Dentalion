@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "pushpin",
-    pos = get_atlas_pos(7, 10),
+    pos = Dentalion.get_atlas_pos(7, 10),
 
     atlas = 'trinkets',
     unlocked = true,
@@ -15,7 +15,7 @@ Dentalion_API.Trinket {
 
     calculate = function(self, card, context)
         if context.after then
-            if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "pushpin") then
+            if Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "pushpin") then
                 G.E_MANAGER:add_event(Event({
                     trigger = 'after',
                     func = function()

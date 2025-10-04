@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "givewaysign",
     atlas = 'jokers',
-    pos = get_atlas_pos(18, 10),
+    pos = Dentalion.get_atlas_pos(18, 10),
 
     pixel_size = { w = 71, h = 62 },
 

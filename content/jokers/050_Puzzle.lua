@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "puzzle",
     atlas = 'jokers',
-    pos = get_atlas_pos(50, 10),
+    pos = Dentalion.get_atlas_pos(50, 10),
 
     cost = 4,
     rarity = 1,
@@ -38,7 +38,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         local suit_change = {"c_sun", "c_star", "c_moon", "c_world"}
         if card.ability.extra.active then
-            if context.using_consumeable and tablefind(suit_change, context.consumeable.config.center.key) then
+            if context.using_consumeable and Dentalion.table_find(suit_change, context.consumeable.config.center.key) then
                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                     local rnd_tarot = pseudorandom_element(suit_change, "puzzle" .. G.GAME.round_resets.ante)

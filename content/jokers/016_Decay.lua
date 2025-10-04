@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "decay",
     atlas = 'jokers',
-    pos = get_atlas_pos(16, 10),
+    pos = Dentalion.get_atlas_pos(16, 10),
 
     pixel_size = { w = 71, h = 52 },
 
@@ -21,7 +21,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
         if context.destroy_card and not context.blueprint then
-            if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "decay") then
+            if Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "decay") then
                 return { remove = true }
             end
         end

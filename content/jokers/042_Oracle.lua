@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "oracle",
     atlas = 'jokers',
-    pos = get_atlas_pos(42, 10),
+    pos = Dentalion.get_atlas_pos(42, 10),
 
     cost = 4,
     rarity = 1,
@@ -61,7 +61,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
 		if card.ability.extra.active and context.using_consumeable then
             card.ability.extra.all = card.ability.extra.all + card.ability.extra.blind_change
-            ease_blind(card.ability.extra.blind_change, -1)
+            Dentalion.ease_blind(card.ability.extra.blind_change, -1)
             return {
                 message = tostring(card.ability.extra.all) .. "/" .. tostring(card.ability.extra.blind_max) .. "%",
                 messege_card = context.consumeable

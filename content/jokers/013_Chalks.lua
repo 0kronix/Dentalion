@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "chalks",
     atlas = 'jokers',
-    pos = get_atlas_pos(13, 10),
+    pos = Dentalion.get_atlas_pos(13, 10),
 
     cost = 4,
     rarity = 1,
@@ -26,7 +26,7 @@ SMODS.Joker {
 		if context.after and not context.blueprint then
 			if context.full_hand and #context.full_hand > 0 then
 				for _, played_card in ipairs(context.full_hand) do
-					if played_card.ability.name ~= 'Wild Card' and prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "chalks") then
+					if played_card.ability.name ~= 'Wild Card' and Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "chalks") then
 						G.E_MANAGER:add_event(Event({
 							trigger = 'before',
 							delay = 0.5,

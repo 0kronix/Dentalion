@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "anxiety",
     atlas = 'jokers',
-    pos = get_atlas_pos(52, 10),
+    pos = Dentalion.get_atlas_pos(52, 10),
 
     cost = 6,
     rarity = 2,
@@ -22,7 +22,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         card.ability.extra.percent = 2 * math.max(0, 52 - #G.playing_cards)
         if context.final_scoring_step then
-            balance_percent(card, (card.ability.extra.percent * 0.01))
+            Dentalion.balance_percent(card, (card.ability.extra.percent * 0.01))
         end
     end
 }

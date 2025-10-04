@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "no",
-    pos = get_atlas_pos(34, 10),
+    pos = Dentalion.get_atlas_pos(34, 10),
 
     config = { extra = { prior = nil } },
 

@@ -20,7 +20,7 @@ SMODS.Consumable {
     loc_vars = function(self, info_queue, card)
         return { vars = { 
             card.ability.extra.levels,
-            localize(most_played_hand(), 'poker_hands')
+            localize(Dentalion.most_played_hand(), 'poker_hands')
         } }
     end,
 
@@ -36,7 +36,7 @@ SMODS.Consumable {
             trigger = 'after',
             delay = 0.4,
             func = function()
-                SMODS.smart_level_up_hand(card, most_played_hand(), nil, card.ability.extra.levels)
+                SMODS.smart_level_up_hand(card, Dentalion.most_played_hand(), nil, card.ability.extra.levels)
                 play_sound('tarot1')
                 card:juice_up(0.3, 0.5)
                 return true

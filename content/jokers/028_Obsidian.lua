@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "obsidian",
     atlas = 'jokers',
-    pos = get_atlas_pos(28, 10),
+    pos = Dentalion.get_atlas_pos(28, 10),
 
     cost = 8,
     rarity = 3,
@@ -34,7 +34,7 @@ SMODS.Joker {
     	local count = 0
 		if context.before and not context.blueprint then
 			for _, played_card in ipairs(context.scoring_hand) do
-                if is_dark_suit(played_card) then
+                if Dentalion.is_dark_suit(played_card) then
                 	count = count + 1
                 end
             end
@@ -56,7 +56,7 @@ SMODS.Joker {
 				for _, played_card in ipairs(context.scoring_hand) do
 					if is_light_suit(played_card) then
                         card:juice_up(0.3, 0.3)
-						convert_to(played_card, "dark", "obsidian")
+						Dentalion.convert_to(played_card, "dark", "obsidian")
 			        end
 			    end
 			end

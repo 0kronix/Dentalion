@@ -1,7 +1,7 @@
 SMODS.Tag {
     key = 'star',
     atlas = 'tags',
-    pos = get_atlas_pos(1, 6),
+    pos = Dentalion.get_atlas_pos(1, 6),
     discovered = true,
 
     config = { levels = 2 },

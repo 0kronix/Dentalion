@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "twistedpair",
     atlas = 'jokers',
-    pos = get_atlas_pos(106, 10),
+    pos = Dentalion.get_atlas_pos(106, 10),
 
     cost = 8,
     rarity = 3,
@@ -15,10 +15,10 @@ SMODS.Joker {
 
     loc_vars = function(self, info_queue, card)
         if card.area and card.area == G.jokers then
-            local left_joker = on_left_or_right_of(card, G.jokers.cards, -1)
+            local left_joker = Dentalion.on_left_or_right_of(card, G.jokers.cards, -1)
             local left_compatible = left_joker and left_joker ~= card and left_joker.config.center.blueprint_compat
 
-            local right_joker = on_left_or_right_of(card, G.jokers.cards, 1)
+            local right_joker = Dentalion.on_left_or_right_of(card, G.jokers.cards, 1)
             local right_compatible = right_joker and right_joker ~= card and right_joker.config.center.blueprint_compat
 
             main_end = {
@@ -74,8 +74,8 @@ SMODS.Joker {
         end
         card.is_pair_calculating = true
 
-        local target_joker1 = on_left_or_right_of(card, G.jokers.cards, -1)
-        local target_joker2 = on_left_or_right_of(card, G.jokers.cards, 1)
+        local target_joker1 = Dentalion.on_left_or_right_of(card, G.jokers.cards, -1)
+        local target_joker2 = Dentalion.on_left_or_right_of(card, G.jokers.cards, 1)
         local effect_to_return = nil
         local effect1_def
 

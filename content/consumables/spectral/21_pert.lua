@@ -35,7 +35,7 @@ SMODS.Consumable {
             trigger = 'after',
             delay = 0.4,
             func = function()
-                create_voucher(nil, "pert", "mult", 2)
+                Dentalion.create_voucher(nil, "pert", "mult", 2)
                 play_sound('tarot1')
                 card:juice_up(0.3, 0.5)
                 return true

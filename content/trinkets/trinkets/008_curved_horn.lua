@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "curvedhorn",
-    pos = get_atlas_pos(8, 10),
+    pos = Dentalion.get_atlas_pos(8, 10),
 
     atlas = 'trinkets',
     unlocked = true,

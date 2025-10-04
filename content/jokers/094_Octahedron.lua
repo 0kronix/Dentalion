@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "octahedron",
     atlas = 'jokers',
-    pos = get_atlas_pos(94, 10),
+    pos = Dentalion.get_atlas_pos(94, 10),
 
     cost = 8,
     rarity = 3,
@@ -17,7 +17,7 @@ SMODS.Joker {
         local h_diamonds = 0
         if card.area and card.area == G.jokers then
             for _, h_card in ipairs(G.hand.cards) do
-                if not tablefind(G.hand.highlighted, h_card) and h_card:is_suit("Diamonds") then
+                if not Dentalion.table_find(G.hand.highlighted, h_card) and h_card:is_suit("Diamonds") then
                     h_diamonds = h_diamonds + 1
                 end
             end
@@ -28,7 +28,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         local h_diamonds = 0
         for _, h_card in ipairs(G.hand.cards) do
-            if not tablefind(G.hand.highlighted, hcard) and h_card:is_suit("Diamonds") then
+            if not Dentalion.table_find(G.hand.highlighted, hcard) and h_card:is_suit("Diamonds") then
                 h_diamonds = h_diamonds + 1
             end
         end

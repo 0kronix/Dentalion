@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "d20",
     atlas = 'jokers',
-    pos = get_atlas_pos(92, 10),
+    pos = Dentalion.get_atlas_pos(92, 10),
 
     cost = 8,
     rarity = 3,
@@ -23,7 +23,7 @@ SMODS.Joker {
                 G.E_MANAGER:add_event(Event({
                     delay = 0.2,
                     func = function()
-                        create_tag("tag_uncommon", nil)
+                        Dentalion.create_tag("tag_uncommon", nil)
                         play_sound('generic1', 0.9 + math.random() * 0.1, 0.8)
                         play_sound('holo1', 1.2 + math.random() * 0.1, 0.4)
                         return true
@@ -33,7 +33,7 @@ SMODS.Joker {
                 G.E_MANAGER:add_event(Event({
                     delay = 0.2,
                     func = function()
-                        create_tag("tag_rare", nil)
+                        Dentalion.create_tag("tag_rare", nil)
                         play_sound('generic1', 0.9 + math.random() * 0.1, 0.8)
                         play_sound('holo1', 1.2 + math.random() * 0.1, 0.4)
                         return true

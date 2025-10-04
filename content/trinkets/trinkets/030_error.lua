@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "error",
-    pos = get_atlas_pos(30, 10),
+    pos = Dentalion.get_atlas_pos(30, 10),
 
     config = { extra = { mod = 2 } },
 
@@ -13,15 +13,15 @@ Dentalion_API.Trinket {
                 config = {
                     object = DynaText({
                         string = {
-                            { string = pseudorandom_string("error_str", 4, 8), colour = pseudorandom_element({G.C.BLUE, G.C.YELLOW, G.C.MONEY, G.C.UI.TEXT_DARK}, "error_col") },
-                            { string = pseudorandom_string("error_str", 2, 4), colour = pseudorandom_element({G.C.BLUE, G.C.RED, G.C.MONEY, G.C.UI.TEXT_DARK}, "error_col") },
-                            { string = pseudorandom_string("error_str", 8, 15), colour = pseudorandom_element({G.C.BLUE, G.C.RED, G.C.MONEY, G.C.UI.TEXT_DARK}, "error_col") },
-                            { string = pseudorandom_string("error_str", 4, 8), colour = pseudorandom_element({G.C.BLUE, G.C.RED, G.C.MONEY, G.C.UI.TEXT_DARK}, "error_col") },
-                            { string = pseudorandom_string("error_str", 1, 8), colour = pseudorandom_element({G.C.BLUE, G.C.PURPLE, G.C.MONEY, G.C.UI.TEXT_DARK}, "error_col") },
-                            { string = pseudorandom_string("error_str", 4, 12), colour = pseudorandom_element({G.C.BLUE, G.C.RED, G.C.MONEY, G.C.UI.TEXT_DARK}, "error_col") },
-                            { string = pseudorandom_string("error_str", 2, 3), colour = pseudorandom_element({G.C.BLUE, G.C.RED, G.C.GREEN, G.C.UI.TEXT_DARK}, "error_col") },
-                            { string = pseudorandom_string("error_str", 4, 8), colour = pseudorandom_element({G.C.BLUE, G.C.RED, G.C.MONEY, G.C.UI.TEXT_DARK}, "error_col") },
-                            { string = pseudorandom_string("error_str", 4, 12), colour = pseudorandom_element({G.C.BLUE, G.C.RED, G.C.MONEY, G.C.GREEN}, "error_col") }
+                            { string = Dentalion.pseudorandom_string("error_str", 4, 8), colour = pseudorandom_element({G.C.BLUE, G.C.YELLOW, G.C.MONEY, G.C.UI.TEXT_DARK}, "error_col") },
+                            { string = Dentalion.pseudorandom_string("error_str", 2, 4), colour = pseudorandom_element({G.C.BLUE, G.C.RED, G.C.MONEY, G.C.UI.TEXT_DARK}, "error_col") },
+                            { string = Dentalion.pseudorandom_string("error_str", 8, 15), colour = pseudorandom_element({G.C.BLUE, G.C.RED, G.C.MONEY, G.C.UI.TEXT_DARK}, "error_col") },
+                            { string = Dentalion.pseudorandom_string("error_str", 4, 8), colour = pseudorandom_element({G.C.BLUE, G.C.RED, G.C.MONEY, G.C.UI.TEXT_DARK}, "error_col") },
+                            { string = Dentalion.pseudorandom_string("error_str", 1, 8), colour = pseudorandom_element({G.C.BLUE, G.C.PURPLE, G.C.MONEY, G.C.UI.TEXT_DARK}, "error_col") },
+                            { string = Dentalion.pseudorandom_string("error_str", 4, 12), colour = pseudorandom_element({G.C.BLUE, G.C.RED, G.C.MONEY, G.C.UI.TEXT_DARK}, "error_col") },
+                            { string = Dentalion.pseudorandom_string("error_str", 2, 3), colour = pseudorandom_element({G.C.BLUE, G.C.RED, G.C.GREEN, G.C.UI.TEXT_DARK}, "error_col") },
+                            { string = Dentalion.pseudorandom_string("error_str", 4, 8), colour = pseudorandom_element({G.C.BLUE, G.C.RED, G.C.MONEY, G.C.UI.TEXT_DARK}, "error_col") },
+                            { string = Dentalion.pseudorandom_string("error_str", 4, 12), colour = pseudorandom_element({G.C.BLUE, G.C.RED, G.C.MONEY, G.C.GREEN}, "error_col") }
                         },
                         colours = { G.C.UI.TEXT_DARK },
                         pop_in_rate = 9999999,

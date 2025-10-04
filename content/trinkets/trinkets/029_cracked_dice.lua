@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "crackeddice",
-    pos = get_atlas_pos(29, 10),
+    pos = Dentalion.get_atlas_pos(29, 10),
 
     config = { extra = { modify = 1.5 } },
 

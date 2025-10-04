@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "crowheart",
-    pos = get_atlas_pos(40, 10),
+    pos = Dentalion.get_atlas_pos(40, 10),
 
     config = { extra = { odds = 7, from = "Hearts", to = "Spades" } },
 
@@ -19,7 +19,7 @@ Dentalion_API.Trinket {
         if context.after then
             for _, scored_card in ipairs(context.scoring_hand) do
                 if scored_card.base.suit == card.ability.extra.from and 
-                prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "crowheart") then
+                Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "crowheart") then
                     card:juice_up()
                     convert_to(scored_card, card.ability.extra.to, nil)
                 end

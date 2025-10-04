@@ -47,7 +47,7 @@ SMODS.Consumable {
             delay = 0.2,
             func = function()
                 for _, cardh in ipairs(G.hand.cards) do
-                    if not tablefind(G.hand.highlighted, cardh) then
+                    if not Dentalion.table_find(G.hand.highlighted, cardh) then
                         SMODS.destroy_cards(cardh)
                     end
                 end

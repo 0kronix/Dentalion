@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "fragmentedcard",
-    pos = get_atlas_pos(11, 10),
+    pos = Dentalion.get_atlas_pos(11, 10),
 
     config = { extra = { rate = 1.44, display = 1.2 } },
 

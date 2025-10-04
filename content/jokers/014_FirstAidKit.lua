@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "firstaidkit",
     atlas = 'jokers',
-    pos = get_atlas_pos(14, 10),
+    pos = Dentalion.get_atlas_pos(14, 10),
 
     pixel_size = { w = 67, h = 72 },
 

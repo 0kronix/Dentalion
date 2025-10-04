@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "canser",
-    pos = get_atlas_pos(9, 10),
+    pos = Dentalion.get_atlas_pos(9, 10),
 
     atlas = 'trinkets',
     unlocked = true,

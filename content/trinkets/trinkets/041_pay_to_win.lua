@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "paytowin",
-    pos = get_atlas_pos(41, 10),
+    pos = Dentalion.get_atlas_pos(41, 10),
 
     config = { extra = { odds = 2, active = false } },
 
@@ -14,7 +14,7 @@ Dentalion_API.Trinket {
         }
     end,
     equip = function(self, card)
-        if G.STATE == G.STATES.SHOP and prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "paytowin") then
+        if G.STATE == G.STATES.SHOP and Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "paytowin") then
             SMODS.change_free_rerolls(1)
             card:juice_up()
             card.ability.extra.active = true

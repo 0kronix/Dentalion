@@ -7,13 +7,13 @@ SMODS.Blind {
     discovered = true,
 
     atlas = 'blinds',
-    pos = get_atlas_pos(7, 0), 
+    pos = Dentalion.get_atlas_pos(7, 0), 
 
     calculate = function(self, blind, context)
         if not blind.disabled then
             local suits = {}
             for _, deck_card in ipairs(G.playing_cards) do
-                if tablefind(suits, deck_card.base.suit) then
+                if Dentalion.table_find(suits, deck_card.base.suit) then
                     table.insert(suits, deck_card.base.suit)
                 end
             end

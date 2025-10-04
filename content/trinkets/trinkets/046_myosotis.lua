@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "myosotis",
-    pos = get_atlas_pos(46, 10),
+    pos = Dentalion.get_atlas_pos(46, 10),
 
     config = { extra = {  } },
 

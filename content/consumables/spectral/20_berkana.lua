@@ -55,7 +55,7 @@ SMODS.Consumable {
             delay = 0.4,
             func = function()
                 for i = 1, card.ability.extra.tags do
-                    create_tag(pseudorandom_element(tag_pool, "berkana"), nil)
+                    Dentalion.create_tag(pseudorandom_element(tag_pool, "berkana"), nil)
                 end
                 play_sound('tarot1')
                 card:juice_up(0.3, 0.5)

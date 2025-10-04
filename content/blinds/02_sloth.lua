@@ -9,5 +9,5 @@ SMODS.Blind {
     debuff = { h_size_le = 3 },
 
     atlas = 'blinds',
-    pos = get_atlas_pos(2, 0),
+    pos = Dentalion.get_atlas_pos(2, 0),
 }

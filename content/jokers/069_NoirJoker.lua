@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "noirjoker",
     atlas = 'jokers',
-    pos = get_atlas_pos(69, 10),
+    pos = Dentalion.get_atlas_pos(69, 10),
 
     cost = 6,
     rarity = 2,
@@ -17,7 +17,7 @@ SMODS.Joker {
         local black = 0
         if G.hand then
             for _, hcard in ipairs(G.hand.cards) do
-                if not tablefind(G.hand.highlighted, hcard) and is_dark_suit(hcard) then
+                if not Dentalion.table_find(G.hand.highlighted, hcard) and Dentalion.is_dark_suit(hcard) then
                     black = black + 1
                 end
             end
@@ -37,7 +37,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         local black = 0
         for _, hcard in ipairs(G.hand.cards) do
-            if is_dark_suit(hcard) then
+            if Dentalion.is_dark_suit(hcard) then
                 black = black + 1
             end
         end

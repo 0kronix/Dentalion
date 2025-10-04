@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "replica",
     atlas = 'jokers',
-    pos = get_atlas_pos(59, 10),
+    pos = Dentalion.get_atlas_pos(59, 10),
 
     cost = 6,
     rarity = 2,
@@ -23,7 +23,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.using_consumeable and context.consumeable.ability.set == "Spectral" and 
             #G.consumeables.cards < G.consumeables.config.card_limit then
-            if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "replica") then
+            if Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "replica") then
                 local spec_used = context.consumeable.config.center.key
                 G.E_MANAGER:add_event(Event({
                     trigger = 'before',

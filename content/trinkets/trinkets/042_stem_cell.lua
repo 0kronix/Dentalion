@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "stemcell",
-    pos = get_atlas_pos(42, 10),
+    pos = Dentalion.get_atlas_pos(42, 10),
 
     config = { extra = { odds = 8 } },
 

@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "chainingblast",
     atlas = 'jokers',
-    pos = get_atlas_pos(63, 10),
+    pos = Dentalion.get_atlas_pos(63, 10),
 
     cost = 4,
     rarity = 1,
@@ -33,7 +33,7 @@ SMODS.Joker {
                     end
                 end
             end
-            if tablefind(chain_cards, context.other_card) then
+            if Dentalion.table_find(chain_cards, context.other_card) then
                 return {
                     mult = card.ability.extra.mult
                 }

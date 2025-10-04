@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "fallingjoker",
     atlas = 'jokers',
-    pos = get_atlas_pos(65, 10),
+    pos = Dentalion.get_atlas_pos(65, 10),
 
     cost = 4,
     rarity = 1,
@@ -19,7 +19,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
         if context.after and context.cardarea == G.jokers and not context.blueprint then
-            if context.scoring_name == "Straight" and prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "fallingjoker") then
+            if context.scoring_name == "Straight" and Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "fallingjoker") then
                 G.E_MANAGER:add_event(Event({
                     trigger = 'after',
                     delay = 0.1,

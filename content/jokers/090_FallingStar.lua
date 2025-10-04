@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "fallingstar",
     atlas = 'jokers',
-    pos = get_atlas_pos(90, 10),
+    pos = Dentalion.get_atlas_pos(90, 10),
 
     cost = 4,
     rarity = 1,
@@ -23,7 +23,7 @@ SMODS.Joker {
             G.E_MANAGER:add_event(Event({
                 delay = 0.2,
                 func = function()
-                    create_tag(card.ability.extra.tag, nil)
+                    Dentalion.create_tag(card.ability.extra.tag, nil)
                     play_sound('generic1', 0.9 + math.random() * 0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random() * 0.1, 0.4)
                     return true

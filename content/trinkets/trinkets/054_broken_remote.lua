@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "brokenremote",
-    pos = get_atlas_pos(54, 10),
+    pos = Dentalion.get_atlas_pos(54, 10),
 
     config = { extra = { odds = 5 } },
 
@@ -13,11 +13,11 @@ Dentalion_API.Trinket {
     end,
     calculate = function(self, card, context)
         if context.selling_card then
-            if context.card.ability.set == "Joker" and prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "brokenremote") then
+            if context.card.ability.set == "Joker" and Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "brokenremote") then
                 G.E_MANAGER:add_event(Event({
                     trigger = "after",
                     func = function()
-                        create_tag(nil, "brokenremote_tag")
+                        Dentalion.create_tag(nil, "brokenremote_tag")
                         card:juice_up()
                         return true
                     end

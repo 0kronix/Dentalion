@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "paranoidjoker",
     atlas = 'jokers',
-    pos = get_atlas_pos(45, 10),
+    pos = Dentalion.get_atlas_pos(45, 10),
 
     cost = 4,
     rarity = 1,
@@ -22,7 +22,7 @@ SMODS.Joker {
             card.ability.extra.cur_disc = card.ability.extra.cur_disc - 1
             if card.ability.extra.cur_disc <= 0 then
                 card.ability.extra.cur_disc = card.ability.extra.cur_disc + card.ability.extra.need_disc
-                ease_blind(card.ability.extra.blind_change, -1)
+                Dentalion.ease_blind(card.ability.extra.blind_change, -1)
                 return {
                     message = "-" .. card.ability.extra.blind_change .. "%",
                 }

@@ -1920,6 +1920,66 @@ return {
                     "Earn {C:money}$#2#{} at end of round"
                 }
             },
+
+            DentalionTrinket_dentalion_brokenmagnet = {
+                name = "Broken Magnet",
+                text = {
+                    "{C:attention}Steel Cards{} give {X:chips,C:white}X#1#{} Chips",
+                    "when scored"
+                }
+            },
+
+            DentalionTrinket_dentalion_rosarybead = {
+                name = "Rosary Bead",
+                text = {
+                    "{C:green}#1# in #2#{} chance that {C:attention}leftmost{} joker",
+                    "gains {C:money}$#3#{} of {C:money}sell value",
+                    "at end of round"
+                }
+            },
+
+            DentalionTrinket_dentalion_cartridge = {
+                name = "Cartridge",
+                text = {
+                    "{C:green}#1# in #2#{} chance to create",
+                    "{C:attention}Suit Change Tarot Card",
+                    "at end of round",
+                    "{C:inactive}(Must have room)"
+                }
+            },
+
+            DentalionTrinket_dentalion_momstoenail = {
+                name = "Mom's Toenail",
+                text = {
+                    "{C:green}#1# in #2#{} chance to {C:attention}rettriger",
+                    "card with {C:attention}seal"
+                }
+            },
+
+            DentalionTrinket_dentalion_blacklipstick = {
+                name = "Black Lipstick",
+                text = {
+                    "{C:attention}Dark suit{} cards permanently",
+                    "gain {C:chips}+#1#{} Chips when scored"
+                }
+            },
+
+            DentalionTrinket_dentalion_bibletract = {
+                name = "Bible Tract",
+                text = { 
+                    "{C:green}#1# in #2#{} chance that card in",
+                    "{C:attention}Standart Pack{} become {C:dark_edition}Negative"
+                }
+            },
+
+            DentalionTrinket_dentalion_paperclip = {
+                name = "Paper Clip",
+                text = { 
+                    "{C:green}#1# in #2#{} chance that",
+                    "{C:attention}Consumeable{} in the {C:money}shop",
+                    "would be free"
+                }
+            },
         },
 
 		Other = {

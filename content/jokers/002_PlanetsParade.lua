@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "planetsparade",
     atlas = 'jokers',
-    pos = get_atlas_pos(2, 10),
+    pos = Dentalion.get_atlas_pos(2, 10),
 
     cost = 8,
     rarity = 3,
@@ -24,7 +24,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
 		if context.using_consumeable and context.consumeable.ability.set == "Planet" then
-			if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "planetsparade") then
+			if Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "planetsparade") then
 				update_hand_text({sound = 'button', volume = 0.7, pitch = 0.8, delay = 0.3}, {handname=localize('k_all_hands'),chips = '...', mult = '...', level=''})
 				G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.2, func = function()
 					play_sound('tarot1')

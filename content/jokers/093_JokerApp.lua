@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "jokerapp",
     atlas = 'jokers',
-    pos = get_atlas_pos(93, 10),
+    pos = Dentalion.get_atlas_pos(93, 10),
 
     cost = 6,
     rarity = 2,
@@ -19,7 +19,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
         if context.reroll_shop and not context.blueprint then
-            if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "jokerapp") then
+            if Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "jokerapp") then
                 G.E_MANAGER:add_event(Event({
                     trigger = "before",
                     func = function()

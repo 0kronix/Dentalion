@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "callus",
-    pos = get_atlas_pos(3, 10),
+    pos = Dentalion.get_atlas_pos(3, 10),
 
     config = { extra = { odds = 10 } },
 
@@ -13,7 +13,7 @@ Dentalion_API.Trinket {
     end,
     calculate = function(self, card, context)
         if context.setting_blind and context.blind.boss then
-            if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "callus") then
+            if Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "callus") then
                 G.E_MANAGER:add_event(Event({
                     func = function()
                         G.E_MANAGER:add_event(Event({

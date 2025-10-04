@@ -25,8 +25,8 @@ SMODS.Consumable {
 
     can_use = function(self, card)
         if G.jokers.highlighted then
-            local left_joker = on_left_or_right_of(G.jokers.highlighted[1], G.jokers.cards, -1)
-            local right_joker = on_left_or_right_of(G.jokers.highlighted[1], G.jokers.cards, 1)
+            local left_joker = Dentalion.on_left_or_right_of(G.jokers.highlighted[1], G.jokers.cards, -1)
+            local right_joker = Dentalion.on_left_or_right_of(G.jokers.highlighted[1], G.jokers.cards, 1)
             return (#G.jokers.highlighted == 1) and G.jokers.highlighted[1] and left_joker ~= nil
                 and right_joker ~= nil and not left_joker.ability["eternal"] and not right_joker.ability["eternal"]
                 and G.jokers.highlighted[1].edition
@@ -39,8 +39,8 @@ SMODS.Consumable {
         if not self:can_use(card) then
             return
         end
-        local left_joker = on_left_or_right_of(G.jokers.highlighted[1], G.jokers.cards, -1)
-        local right_joker = on_left_or_right_of(G.jokers.highlighted[1], G.jokers.cards, 1)
+        local left_joker = Dentalion.on_left_or_right_of(G.jokers.highlighted[1], G.jokers.cards, -1)
+        local right_joker = Dentalion.on_left_or_right_of(G.jokers.highlighted[1], G.jokers.cards, 1)
         G.E_MANAGER:add_event(Event({
             trigger = 'after',
             delay = 0.4,

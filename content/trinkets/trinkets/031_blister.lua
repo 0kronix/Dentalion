@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "blister",
-    pos = get_atlas_pos(31, 10),
+    pos = Dentalion.get_atlas_pos(31, 10),
 
     config = { extra = { odds = 3 } },
 
@@ -10,7 +10,7 @@ Dentalion_API.Trinket {
         return { vars = { G.GAME.probabilities.normal, card.ability.extra.odds } }
     end,
     calculate = function(self, card, context)
-        if context.modify_scoring_hand and prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "blister") then
+        if context.modify_scoring_hand and Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "blister") then
             return {
                 add_to_hand = true
             }

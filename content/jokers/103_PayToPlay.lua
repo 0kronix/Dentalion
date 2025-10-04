@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "paytoplay",
     atlas = 'jokers',
-    pos = get_atlas_pos(103, 10),
+    pos = Dentalion.get_atlas_pos(103, 10),
 
     cost = 6,
     rarity = 2,

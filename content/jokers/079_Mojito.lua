@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "mojito",
     atlas = 'jokers',
-    pos = get_atlas_pos(79, 10),
+    pos = Dentalion.get_atlas_pos(79, 10),
 
     cost = 4,
     rarity = 1,
@@ -22,7 +22,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.after and not context.blueprint then
             for _, played_card in ipairs(context.scoring_hand) do
-                if played_card.seal and prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "mojito") then
+                if played_card.seal and Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "mojito") then
                     G.E_MANAGER:add_event(Event({
                         trigger = 'after',
                         delay = 0.4,

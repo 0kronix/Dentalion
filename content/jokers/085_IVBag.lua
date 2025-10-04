@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "ivbag",
     atlas = 'jokers',
-    pos = get_atlas_pos(85, 10),
+    pos = Dentalion.get_atlas_pos(85, 10),
 
     cost = 6,
     rarity = 2,
@@ -34,7 +34,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
         if context.setting_blind and not context.blueprint then
-            local ms_joker = max_sell_joker()
+            local ms_joker = Dentalion.max_sell_joker()
             if ms_joker.sell_cost >= card.ability.extra.money_lose then
                 G.E_MANAGER:add_event(Event({
                     trigger = 'after',

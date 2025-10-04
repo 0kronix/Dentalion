@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "marbas",
     atlas = 'legendary-jokers',
-    pos = get_atlas_pos(1, 5),
+    pos = Dentalion.get_atlas_pos(1, 5),
     soul_pos = {x = 0, y = 1},
 
     cost = 20,
@@ -25,7 +25,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.end_of_round and context.cardarea == G.jokers then
             if G.GAME.blind.boss and not context.blueprint then
-                if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "marbas") then
+                if Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "marbas") then
             		local editionless_jokers = SMODS.Edition:get_edition_cards(G.jokers, true)
                     G.E_MANAGER:add_event(Event({
                         trigger = "after",

@@ -1,6 +1,6 @@
 -- Special Thanks for AIJ mod!
 
-function ease_blind(percent, mod)
+function Dentalion.ease_blind(percent, mod)
     G.GAME.blind.chips = G.GAME.blind.chips + mod * math.ceil(G.GAME.blind.chips * (percent * 0.01))
     G.E_MANAGER:add_event(Event({
         trigger = "ease",
@@ -14,19 +14,19 @@ function ease_blind(percent, mod)
     }))
 end
 
-function pseudorandom_string(key, min, max)
-    local size = pseudorandom(key, min, max)
+function Dentalion.pseudorandom_string(key, min, max)
+    local size = pseudorandom(key .. "size", min, max)
     local letters = {",", "!", "@", "#", "$", "%", "&", "~", "?", ">"}
     local rnd_str = ""
 
     for i = 1, size do
-        rnd_str = rnd_str .. pseudorandom_element(letters, key)
+        rnd_str = rnd_str .. pseudorandom_element(letters, key .. "element")
     end
 
     return rnd_str
 end
 
-function balance_percent(card, percent)
+function Dentalion.balance_percent(card, percent)
     local chip_mod = percent * hand_chips
     local mult_mod = percent * mult
     local avg = (chip_mod + mult_mod)/2
@@ -77,7 +77,7 @@ function balance_percent(card, percent)
     return hand_chips, mult
 end
 
-function randomize_hand(args)
+function Dentalion.randomize_hand(args)
     args = args or {}
     local list = args.list or G.hand.cards
     local key = args.key or "rnd_hand"
@@ -140,7 +140,7 @@ function randomize_hand(args)
     end
 end
 
-function prob_check(chance, odds, key)
+function Dentalion.prob_check(chance, odds, key)
     if pseudorandom(key) < chance / odds then
         return true
     end
@@ -158,7 +158,7 @@ if next(SMODS.find_mod("Bunco")) then
     table.insert(light_suits, "bunc_Fleurons")
 end
 
-function convert_to(card, suit, key)
+function Dentalion.convert_to(card, suit, key)
     local suit_conv = suit
     if suit == "dark" then
         suit_conv = pseudorandom_element(dark_suits, key)
@@ -202,7 +202,7 @@ function convert_to(card, suit, key)
     delay(0.5)
 end
 
-function is_light_suit(card)
+function Dentalion.is_light_suit(card)
     if card:is_suit("Hearts") or card:is_suit("Diamonds") or 
         card:is_suit("paperback_Stars") or card:is_suit("bunc_Fleurons") then
         return true
@@ -210,7 +210,7 @@ function is_light_suit(card)
     return false
 end
 
-function is_dark_suit(card)
+function Dentalion.is_dark_suit(card)
     if card:is_suit("Spades") or card:is_suit("Clubs") or 
         card:is_suit("paperback_Crowns") or card:is_suit("bunc_Halberds") then
         return true
@@ -218,7 +218,7 @@ function is_dark_suit(card)
     return false
 end
 
-function on_left_or_right_of(card, area, step)
+function Dentalion.on_left_or_right_of(card, area, step)
     local ret_card
     for i = 1, #area do
         if area[i] == card then
@@ -228,7 +228,7 @@ function on_left_or_right_of(card, area, step)
     return ret_card
 end
 
-function most_played_hand()
+function Dentalion.most_played_hand()
     local _handname, _played = 'High Card', -1
     for hand_key, hand in pairs(G.GAME.hands) do
         if hand.played > _played and SMODS.is_poker_hand_visible(hand_key) then
@@ -239,7 +239,7 @@ function most_played_hand()
     return _handname
 end
 
-function turn_face(card, seed)
+function Dentalion.turn_face(card, seed)
     local face_cards = {}
     for _, v in pairs(SMODS.Ranks) do
         if v.face then
@@ -250,7 +250,7 @@ function turn_face(card, seed)
     card:juice_up(0.3, 0.5)
 end
 
-function create_tag(tag, seed)
+function Dentalion.create_tag(tag, seed)
     local tag_pool = get_current_pool('Tag')
     if tag == nil then
         tag = pseudorandom_element(tag_pool, seed)
@@ -265,7 +265,7 @@ function create_tag(tag, seed)
     return add_tag(Tag(tag, false, 'Small'))
 end
 
-function create_voucher(voucher, seed, cost_mod, cost)
+function Dentalion.create_voucher(voucher, seed, cost_mod, cost)
     local voucher_pool = get_current_pool('Voucher')
     local voucher_card = nil
     if voucher == nil then
@@ -304,7 +304,7 @@ function create_voucher(voucher, seed, cost_mod, cost)
     }))
 end
 
-function max_sell_joker()
+function Dentalion.max_sell_joker()
     local max_sell = -999999
     local max_sell_joker = nil
     for _, joker in ipairs(G.jokers.cards) do
@@ -316,21 +316,21 @@ function max_sell_joker()
     return max_sell_joker
 end
 
-function apply_multiplier(t, key, factor, tag)
+function Dentalion.apply_multiplier(t, key, factor, tag)
     t.temp_mult_val = t.temp_mult_val or {}
     t.temp_mult_val[key] = t.temp_mult_val[key] or {}
     t.temp_mult_val[key][tag] = factor
     update_multiplied_value(t, key)
 end
 
-function remove_multiplier(t, key, tag)
+function Dentalion.remove_multiplier(t, key, tag)
     if t.temp_mult_val and t.temp_mult_val[key] then
         t.temp_mult_val[key][tag] = nil
         update_multiplied_value(t, key)
     end
 end
 
-function update_multiplied_value(t, key)
+function Dentalion.update_multiplied_value(t, key)
     local base = t["base_"..key] or t[key]
     t["base_"..key] = base  -- Save original if not already
     local result = base
@@ -340,15 +340,7 @@ function update_multiplied_value(t, key)
     t[key] = result
 end
 
-local cash_out_ref = G.FUNCS.cash_out
-G.FUNCS.cash_out = function(e)
-  SMODS.calculate_context({
-    cashing_out = true
-  })
-  cash_out_ref(e)
-end
-
-function tablefind(tbl, val)
+function Dentalion.table_find(tbl, val)
     for i, v in ipairs(tbl) do
         if v == val then
             return true
@@ -357,7 +349,36 @@ function tablefind(tbl, val)
     return false
 end
 
-function get_atlas_pos(id, atl)
+function Dentalion.most_popular_suit()
+    local suits = {}
+    if G.playing_cards then
+        for _, playing_card in ipairs(G.playing_cards) do
+            if not SMODS.has_no_suit(playing_card) then
+                local cur_suit = playing_card.base.suit
+                table.insert(suits, cur_suit)
+                suits[cur_suit] = suits[cur_suit] and (suits[cur_suit] + 1) or 1
+            end
+        end
+        local max_suit_count = -999999
+        local max_suit = nil
+        for _, suit in ipairs(suits) do
+            if suits[suit] > max_suit_count then
+                max_suit_count = suits[suit]
+                max_suit = suit
+            end
+        end
+
+        if max_suit ~= nil then
+            return max_suit, max_suit_count
+        else
+            return "Hearts", 0
+        end
+    else
+        return "Hearts", 0
+    end
+end
+
+function Dentalion.get_atlas_pos(id, atl)
     local x_id, y_id = 0, 0
     if atl > 0 then
         if id <= atl then

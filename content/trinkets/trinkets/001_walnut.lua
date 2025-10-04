@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "walnut",
-    pos = get_atlas_pos(1, 10),
+    pos = Dentalion.get_atlas_pos(1, 10),
 
     config = { extra = { hand_size = 1 } },
 

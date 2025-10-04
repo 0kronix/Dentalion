@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "vibrantbulb",
-    pos = get_atlas_pos(36, 10),
+    pos = Dentalion.get_atlas_pos(36, 10),
 
     config = { extra = { mult = 10 } },
 

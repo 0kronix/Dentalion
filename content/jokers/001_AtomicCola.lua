@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "atomiccola",
     atlas = 'jokers',
-    pos = get_atlas_pos(1, 10),
+    pos = Dentalion.get_atlas_pos(1, 10),
 
     cost = 6,
     rarity = 2,
@@ -22,7 +22,7 @@ SMODS.Joker {
 		if context.selling_self then
 			G.E_MANAGER:add_event(Event({
                 func = (function()
-                    create_tag(card.ability.extra.tag, nil)
+                    Dentalion.create_tag(card.ability.extra.tag, nil)
                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
                     return true

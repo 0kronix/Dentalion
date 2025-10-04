@@ -39,7 +39,7 @@ SMODS.Consumable {
             func = function()
                 for _, c in ipairs(G.hand.cards) do
                     if not c:is_face() then
-                        turn_face(c, "mannaz")
+                        Dentalion.turn_face(c, "mannaz")
                     end
                 end
                 ease_discard(-card.ability.extra.disc_minus)

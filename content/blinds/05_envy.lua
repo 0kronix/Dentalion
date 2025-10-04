@@ -7,12 +7,12 @@ SMODS.Blind {
     discovered = true,
 
     atlas = 'blinds',
-    pos = get_atlas_pos(5, 0), 
+    pos = Dentalion.get_atlas_pos(5, 0), 
 
     calculate = function(self, blind, context)
         if not blind.disabled then
-            if context.setting_blind and max_sell_joker() ~= nil then
-                local ms_joker = max_sell_joker()
+            local ms_joker = Dentalion.max_sell_joker()
+            if context.setting_blind and ms_joker ~= nil then
                 blind.triggered = true
                 G.E_MANAGER:add_event(Event({
                     trigger = 'after',

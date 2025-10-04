@@ -7,7 +7,7 @@ SMODS.Blind {
     discovered = true,
 
     atlas = 'blinds',
-    pos = get_atlas_pos(1, 0),
+    pos = Dentalion.get_atlas_pos(1, 0),
 
     loc_vars = function(self)
         local percent, prev_chips = 20, 0

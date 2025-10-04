@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "numbermagnet",
-    pos = get_atlas_pos(50, 10),
+    pos = Dentalion.get_atlas_pos(50, 10),
 
     config = { extra = {  } },
 

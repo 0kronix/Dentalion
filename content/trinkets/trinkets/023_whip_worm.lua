@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "whipworm",
-    pos = get_atlas_pos(23, 10),
+    pos = Dentalion.get_atlas_pos(23, 10),
 
     config = { extra = { odds = 4, type = 'Four of a Kind' } },
 
@@ -18,7 +18,7 @@ Dentalion_API.Trinket {
 
     calculate = function(self, card, context)
         if context.before and context.scoring_name == card.ability.extra.type then
-            if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "whipworm") then
+            if Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "whipworm") then
                 return {
                     card = card,
                     level_up = true,

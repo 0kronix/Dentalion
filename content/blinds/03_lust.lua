@@ -7,7 +7,7 @@ SMODS.Blind {
     discovered = true,
 
     atlas = 'blinds',
-    pos = get_atlas_pos(3, 0),
+    pos = Dentalion.get_atlas_pos(3, 0),
 
     debuff_hand = function(self, cards, hand, handname, check)
         if cards then

@@ -25,7 +25,7 @@ SMODS.Consumable {
         return { 
             vars = { 
                 card.ability.extra.money, 
-                (#G.jokers.cards or 0) * card.ability.extra.money
+                (G.jokers and #G.jokers.cards or 0) * card.ability.extra.money
             }
         }
     end,

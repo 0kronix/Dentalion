@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "butter",
-    pos = get_atlas_pos(44, 10),
+    pos = Dentalion.get_atlas_pos(44, 10),
 
     config = { extra = { odds = 4 } },
 
@@ -14,7 +14,7 @@ Dentalion_API.Trinket {
         }
     end,
     calculate = function(self, card, context)
-        if context.open_booster and prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "butter") then
+        if context.open_booster and Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "butter") then
             local consums = { "Arcana", "Celestial", "Spectral" }
             local short2 = { "Tarot", "Planet", "Spectral" }
             for i = 1, #consums do

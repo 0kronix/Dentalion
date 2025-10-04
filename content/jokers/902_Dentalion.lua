@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "dentalion",
     atlas = 'legendary-jokers',
-    pos = get_atlas_pos(2, 5),
+    pos = Dentalion.get_atlas_pos(2, 5),
     soul_pos = {x = 1, y = 1},
 
     cost = 20,

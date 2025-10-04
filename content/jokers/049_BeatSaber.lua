@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "beatsaber",
     atlas = 'jokers',
-    pos = get_atlas_pos(49, 10),
+    pos = Dentalion.get_atlas_pos(49, 10),
 
     cost = 4,
     rarity = 1,
@@ -19,7 +19,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
         if context.joker_main and context.cardarea == G.jokers and not context.blueprint then
-            if prob_check(G.GAME.probabilities.normal, card.ability.extra.mult_odds, "beatsaber") then
+            if Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.mult_odds, "beatsaber") then
                 return {
                     mult = card.ability.extra.mult_odds
                 }

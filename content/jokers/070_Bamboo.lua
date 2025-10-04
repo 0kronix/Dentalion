@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "bamboo",
     atlas = 'jokers',
-    pos = get_atlas_pos(70, 10),
+    pos = Dentalion.get_atlas_pos(70, 10),
 
     cost = 6,
     rarity = 2,
@@ -25,7 +25,7 @@ SMODS.Joker {
                     trigger = 'after',
                     delay = 0.3,
                     func = function()
-                        assert(SMODS.modify_rank(G.hand.cards[i], 1))
+                        SMODS.modify_rank(G.hand.cards[i], 1)
                         play_sound('card1', percent)
                         G.hand.cards[i]:juice_up(0.3, 0.3)
                         return true

@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "fnaj",
     atlas = 'jokers',
-    pos = get_atlas_pos(95, 10),
+    pos = Dentalion.get_atlas_pos(95, 10),
 
     cost = 6,
     rarity = 2,
@@ -24,7 +24,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.pre_discard and not context.blueprint then
             if #G.hand.highlighted == G.GAME.current_round.discards_left then
-                if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "fnaj") then
+                if Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "fnaj") then
                     ease_discard(1)
                     card.ability.extra.all = card.ability.extra.all + 1
                     return {

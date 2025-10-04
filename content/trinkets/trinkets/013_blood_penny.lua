@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "bloodpenny",
-    pos = get_atlas_pos(13, 10),
+    pos = Dentalion.get_atlas_pos(13, 10),
 
     config = { extra = { odds = 3, money = 1, suit = 'Hearts' } },
 
@@ -21,7 +21,7 @@ Dentalion_API.Trinket {
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play then
             if context.other_card:is_suit(card.ability.extra.suit) and 
-            prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "bloodpenny") then
+            Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "bloodpenny") then
                 return {
                     dollars = card.ability.extra.money,
                     message_card = context.other_card

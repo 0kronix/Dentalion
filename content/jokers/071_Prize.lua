@@ -2,7 +2,7 @@
 SMODS.Joker {
     key = "prize",
     atlas = 'jokers',
-    pos = get_atlas_pos(71, 10),
+    pos = Dentalion.get_atlas_pos(71, 10),
 
     cost = 4,
     rarity = 1,
@@ -19,19 +19,19 @@ SMODS.Joker {
 	end,
 
     remove_from_deck = function(self, card, from_debuff)
-        remove_multiplier(G.GAME, "interest_amount", tostring(card).."prize")
+        Dentalion.remove_multiplier(G.GAME, "interest_amount", tostring(card).."prize")
     end,
 
     calculate = function(self, card, context)
         if context.end_of_round and G.GAME.blind.boss and not context.blueprint and context.cardarea == G.jokers then
-            apply_multiplier(G.GAME, "interest_amount", 2, tostring(card).."prize")
+            Dentalion.apply_multiplier(G.GAME, "interest_amount", 2, tostring(card).."prize")
             return {
                 message = "X2 Interest",
                 colour = G.C.MONEY
             }
         end
         if not context.blueprint and context.cashing_out then
-            remove_multiplier(G.GAME, "interest_amount", tostring(card).."prize")
+            Dentalion.remove_multiplier(G.GAME, "interest_amount", tostring(card).."prize")
         end
 	end
 }

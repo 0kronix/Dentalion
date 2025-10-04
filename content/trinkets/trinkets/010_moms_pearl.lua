@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "momspearl",
-    pos = get_atlas_pos(10, 10),
+    pos = Dentalion.get_atlas_pos(10, 10),
 
     config = { extra = { rate = 1.44, display = 1.2 } },
 

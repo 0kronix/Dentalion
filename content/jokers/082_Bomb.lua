@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "bomb",
     atlas = 'jokers',
-    pos = get_atlas_pos(82, 10),
+    pos = Dentalion.get_atlas_pos(82, 10),
 
     cost = 4,
     rarity = 1,
@@ -27,8 +27,8 @@ SMODS.Joker {
             end
         end
         if context.after and SMODS.last_hand_oneshot then
-            local left_joker = on_left_or_right_of(card, G.jokers.cards, -1)
-            local right_joker = on_left_or_right_of(card, G.jokers.cards, 1)
+            local left_joker = Dentalion.on_left_or_right_of(card, G.jokers.cards, -1)
+            local right_joker = Dentalion.on_left_or_right_of(card, G.jokers.cards, 1)
             G.E_MANAGER:add_event(Event({
                 trigger = 'after',
                 delay = 0.4,

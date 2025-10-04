@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "safetyscissors",
-    pos = get_atlas_pos(17, 10),
+    pos = Dentalion.get_atlas_pos(17, 10),
 
     config = { extra = { odds = 3 } },
 
@@ -18,7 +18,7 @@ Dentalion_API.Trinket {
     calculate = function(self, card, context)
         if context.after then
             for _, playing_card in ipairs(context.scoring_hand) do
-                if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "safetyscissors") 
+                if Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "safetyscissors") 
                 and next(SMODS.get_enhancements(playing_card)) ~= nil then
                     G.E_MANAGER:add_event(Event({
                         trigger = "after",

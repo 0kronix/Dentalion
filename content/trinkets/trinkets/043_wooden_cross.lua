@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "woodencross",
-    pos = get_atlas_pos(43, 10),
+    pos = Dentalion.get_atlas_pos(43, 10),
 
     config = { extra = { odds = 12, suit = "Clubs" } },
 
@@ -19,7 +19,7 @@ Dentalion_API.Trinket {
         if context.after then
             for _, scored_card in ipairs(context.scoring_hand) do
                 if scored_card.base.suit == card.ability.extra.suit and 
-                prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "woodencross") then
+                Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "woodencross") then
                     G.E_MANAGER:add_event(Event({
                         func = function()
                             scored_card:juice_up()

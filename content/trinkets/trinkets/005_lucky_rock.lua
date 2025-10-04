@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "luckyrock",
-    pos = get_atlas_pos(5, 10),
+    pos = Dentalion.get_atlas_pos(5, 10),
 
     atlas = 'trinkets',
     unlocked = true,
@@ -15,7 +15,7 @@ Dentalion_API.Trinket {
 
     calculate = function(self, card, context)
         if context.joker_type_destroyed then
-            if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "luckyrock") then
+            if Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "luckyrock") then
                 return {
                     dollars = card.ability.extra.money
                 }

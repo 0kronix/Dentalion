@@ -1,6 +1,6 @@
 Dentalion_API.Trinket {
     key = "perfection",
-    pos = get_atlas_pos(47, 10),
+    pos = Dentalion.get_atlas_pos(47, 10),
 
     config = { extra = { modify = 4 } },
 

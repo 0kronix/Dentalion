@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "bumbo",
     atlas = 'jokers',
-    pos = get_atlas_pos(100, 10),
+    pos = Dentalion.get_atlas_pos(100, 10),
 
     cost = 4,
     rarity = 1,
@@ -23,7 +23,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
         if context.setting_blind then
-            if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "bumbo") then
+            if Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "bumbo") then
                 G.E_MANAGER:add_event(Event({
                     trigger = 'after',
                     delay = 0.2,

@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "darkpeasant",
     atlas = 'jokers',
-    pos = get_atlas_pos(43, 10),
+    pos = Dentalion.get_atlas_pos(43, 10),
 
     cost = 8,
     rarity = 3,

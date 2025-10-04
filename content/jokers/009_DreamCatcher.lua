@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "dreamcatcher",
     atlas = 'jokers',
-    pos = get_atlas_pos(9, 10),
+    pos = Dentalion.get_atlas_pos(9, 10),
 
     cost = 4,
     rarity = 1,
@@ -25,7 +25,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
 		if context.before then
 			if #context.full_hand == 1 and (context.full_hand[1]:get_id() == 2 or context.full_hand[1]:get_id() == 3) then
-				if prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "dreamcatcher") and #G.consumeables.cards < G.consumeables.config.card_limit then
+				if Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "dreamcatcher") and #G.consumeables.cards < G.consumeables.config.card_limit then
 					G.E_MANAGER:add_event(Event({
 						trigger = 'before',
 						delay = 0.0,
