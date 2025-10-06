@@ -1980,6 +1980,62 @@ return {
                     "would be free"
                 }
             },
+
+            DentalionTrinket_dentalion_monkeypaw = {
+                name = "Monkey Paw",
+                text = { 
+                    "{C:red}+1{} discard",
+                    "each round",
+                }
+            },
+
+            DentalionTrinket_dentalion_mysteriouspaper = {
+                name = "Mysterious Paper",
+                text = { 
+                    "Give random amount of {C:money}dollars",
+                    "at the end of round",
+                    "{C:inactive}(Between {C:red}-$3{C:inactive} and {C:money}$3{C:inactive})"
+                }
+            },
+
+            DentalionTrinket_dentalion_daemonstail = {
+                name = "Daemon's Tail",
+                text = { 
+                    "Give {C:money}$#1#{}, if hand contain",
+                    "only {C:attention}dark suits"
+                }
+            },
+
+            DentalionTrinket_dentalion_buttpenny = {
+                name = "Butt Penny",
+                text = { 
+                    "Give {C:money}$#1#{} when",
+                    "{C:attention}unequipped"
+                }
+            },
+
+            DentalionTrinket_dentalion_mysteriouscandy = {
+                name = "Mysterious Candy",
+                text = { {
+                    "Each {C:attention}third{} scored card",
+                    "give {X:mult,C:white}X#3#{} Mult"
+                },
+                {
+                    "{C:green}1 in 2{} chance",
+                    "to be {C:attention}consumed,",
+                    "when {C:attention}equipped"
+                } }
+            },
+
+            DentalionTrinket_dentalion_brokenankh = {
+                name = "Broken Ankh",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to create {C:attention}copy",
+                    "of a random joker and {C:red}self destructs",
+                    "at end of round",
+                    "{C:inactive}(Must have room)"
+                }
+            },
         },
 
 		Other = {
