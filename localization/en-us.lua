@@ -2045,6 +2045,15 @@ return {
                     "{C:attention}first{} hand drawn"
                 }
             },
+
+            DentalionTrinket_dentalion_pinkyeye = {
+                name = "Pinky Eye",
+                text = { 
+                    "{C:green}#1# in #2#{} chance to not spend",
+                    "{C:red}discard{} when discarding",
+                    "only {C:attention}1{} card"
+                }
+            },
         },
 
 		Other = {
