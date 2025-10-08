@@ -45,4 +45,4 @@ assert_files_from_folder("content/enhancements")
 assert_files_from_folder("content/consumables/spectral")
 
 -- Jimbos
-assert_files_from_folder("content/jokers")
+-- assert_files_from_folder("content/jokers")

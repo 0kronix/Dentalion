@@ -2,7 +2,7 @@ Dentalion_API.Trinket {
     key = "pinkyeye",
     pos = Dentalion.get_atlas_pos(70, 10),
 
-    config = { extra = { odds = 1 } },
+    config = { extra = { odds = 5 } },
 
     atlas = 'trinkets',
     unlocked = true,
