@@ -14,7 +14,7 @@ Dentalion_API.Trinket {
         }
     end,
     calculate = function(self, card, context)
-        if context.end_of_round and context.cardarea == G.dentalion_trinket_area then
+        if context.setting_blind then
             card.ability.extra.rounds = card.ability.extra.rounds - 1
             if card.ability.extra.rounds <= 0 then
                 if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then

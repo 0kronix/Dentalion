@@ -1831,7 +1831,7 @@ return {
             DentalionTrinket_dentalion_jawbreaker = {
                 name = "Jawbreaker",
                 text = {
-                    "{C:red}Self destructs{} after {C:attention}#1#{} round,",
+                    "{C:red}Self destructs{} after {C:attention}#1#{} round(s),",
                     "create random joker afterwards",
                     "{C:inactive}(Must have room)"
                 }
@@ -2032,8 +2032,17 @@ return {
                 text = { 
                     "{C:green}#1# in #2#{} chance to create {C:attention}copy",
                     "of a random joker and {C:red}self destructs",
-                    "at end of round",
+                    "at start of round",
                     "{C:inactive}(Must have room)"
+                }
+            },
+
+            DentalionTrinket_dentalion_fishhead = {
+                name = "Fish Head",
+                text = { 
+                    "{C:green}#1# in #2#{} chance that card in hand",
+                    "permanently gain {C:chips}+#3#{} Chips when",
+                    "{C:attention}first{} hand drawn"
                 }
             },
         },

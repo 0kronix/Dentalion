@@ -2,7 +2,7 @@ Dentalion_API.Trinket {
     key = "brokenankh",
     pos = Dentalion.get_atlas_pos(68, 10),
 
-    config = { extra = { odds = 1 } },
+    config = { extra = { odds = 879 } },
 
     atlas = 'trinkets',
     unlocked = true,
@@ -13,13 +13,11 @@ Dentalion_API.Trinket {
     end,
 
     calculate = function(self, card, context)
-        if context.end_of_round and #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit 
-        and Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "brokenankh") then
+        if context.setting_blind and #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit 
+        and Dentalion.prob_check(G.GAME.probabilities.normal, card.ability.extra.odds, "brokenankh") and #G.jokers.cards > 0 then
             G.GAME.joker_buffer = G.GAME.joker_buffer + 1
             local chosen_joker = pseudorandom_element(G.jokers.cards, 'broken_ankh_choice')
             G.E_MANAGER:add_event(Event({
-                trigger = 'before',
-                delay = 0.4,
                 func = function()
                     local copied_joker = copy_card(chosen_joker, nil, nil, nil, chosen_joker.edition and chosen_joker.edition.negative)
                     copied_joker:start_materialize()
